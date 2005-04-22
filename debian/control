@@ -1,0 +1,15 @@
+Source: libaio
+Priority: optional
+Maintainer: William Lee Irwin III <wli@holomorphy.com>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.1
+Section: libs
+
+Package: libaio
+Section: libs
+Architecture: i386 ia64 s390 alpha powerpc
+Depends:
+Description: kernel aio access library
+ This library enables userspace to use kernel asynchronous I/O system
+ calls, important for the performance of databases and other advanced
+ applications.

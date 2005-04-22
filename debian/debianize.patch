@@ -1,0 +1,15 @@
+--- ./src/Makefile.orig	2005-04-22 15:24:29.000000000 -0700
++++ ./src/Makefile	2005-04-22 15:25:02.000000000 -0700
+@@ -52,10 +52,10 @@
+ 
+ install: $(all_targets)
+ 	install -D -m 644 libaio.h $(includedir)/libaio.h
+-	install -D -m 644 libaio.a $(libdir)/libaio.a
+ 	install -D -m 755 $(libname) $(libdir)/$(libname)
+ 	ln -sf $(libname) $(libdir)/$(soname)
+-	ln -sf $(libname) $(libdir)/libaio.so
++#	install -D -m 644 libaio.a $(libdir)/libaio.a
++#	ln -sf $(libname) $(libdir)/libaio.so
+ 
+ $(libaio_objs): libaio.h
+ 
