@@ -1,15 +1,23 @@
 Source: libaio
-Priority: optional
-Maintainer: William Lee Irwin III <wli@holomorphy.com>
-Build-Depends: debhelper (>= 4.0.0)
-Standards-Version: 3.6.1
+Maintainer: Guillem Jover <guillem@debian.org>
+Priority: extra
 Section: libs
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
 
-Package: libaio
-Section: libs
-Architecture: i386 ia64 s390 alpha powerpc
-Depends:
-Description: kernel aio access library
- This library enables userspace to use kernel asynchronous I/O system
- calls, important for the performance of databases and other advanced
- applications.
+Package: libaio1
+Architecture: i386 amd64 ia64 s390 alpha powerpc
+Description: linux kernel aio access library - shared library
+ This library enables userspace to use Linux kernel asynchronous I/O
+ system calls, important for the performance of databases and other
+ advanced applications.
+
+Package: libaio-dev
+Section: libdevel
+Architecture: i386 amd64 ia64 s390 alpha powerpc
+Depends: libaio1 (= ${Source-Version})
+Description: linux kernel aio access library - development files
+ This library enables userspace to use Linux kernel asynchronous I/O
+ system calls, important for the performance of databases and other
+ advanced applications.
+

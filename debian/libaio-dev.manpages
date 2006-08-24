@@ -1,0 +1,9 @@
+man/io.3
+man/io_fsync.3
+man/io_prep_*.3
+man/io_queue_*.3
+man/io_set_*.3
+man/aio.3
+man/aio_init.3
+man/aio*64.3
+man/lio*.3

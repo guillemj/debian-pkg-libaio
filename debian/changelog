@@ -1,3 +1,40 @@
+libaio (0.3.104-2) unstable; urgency=low
+
+  * New Maintainer.
+  * Provide a new binary package libaio-dev, with the static library
+    the .so symlink and the manpages. (Closes: #318795)
+  * Add debian/libaio-dev.install.
+  * Add debian/libaio-dev.manpages.
+  * Rename the binary package libaio to libaio1 to match the soname, no
+    transition package as no one depends on it.
+  * Rename debian/lintian.override to debian/libaio1.lintian.
+  * Remove shlib-missing-in-control-file lintian override as we provide
+    now the shlibs file.
+  * Only put "usr/share/lintian/override" in libaio1.dirs.
+  * Remove temporal debhelper leftover files:
+    - debian/libaio-0.3.104.postinst.debhelper
+    - debian/libaio-0.3.104.postrm.debhelper
+  * Add amd64 to the Architecture fields. (Closes: #335352)
+  * Switch to debhelper compat level 5.
+  * Now using Standards-Version 3.7.2.
+  * Change Priority from optional to extra.
+  * Specify in the package description that this library is for Linux.
+  * Remove unneeded debian/dirs file.
+  * Remove debian/debianize.patch, we actually want the .so symlink
+    and the .a library when doing "make install".
+  * Clean up debian/rules:
+    - Do not use stamp files.
+    - Remove unused comments.
+    - Remove unused configure target.
+    - Do not pass DESTDIR to make as it is not using it.
+  * Complete debian/copyright:
+    - Add copyright holder information.
+    - Add the LGPL license snippet.
+    - Specify a download url which actually works.
+  * Add a watch file.
+
+ -- Guillem Jover <guillem@debian.org>  Thu, 24 Aug 2006 05:45:36 +0300
+
 libaio (0.3.104-1) unstable; urgency=low
 
   * Initial Release.

@@ -1,2 +1,0 @@
-libaio: shared-lib-without-dependency-information ./usr/lib/libaio.so.1.0.1
-libaio: shlib-missing-in-control-file libaio usr/lib/libaio.so.1.0.1

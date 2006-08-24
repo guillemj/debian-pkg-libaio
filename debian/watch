@@ -1,0 +1,3 @@
+# Site		Directory		Pattern			Version	Script
+version=3
+http://redhat.download.fedoraproject.org/pub/fedora/linux/core/development/source/SRPMS/ libaio-([\d\.]+)-[\d\.]+\.src.rpm debian uupdate
