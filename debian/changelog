@@ -1,3 +1,11 @@
+libaio (0.3.106-1) unstable; urgency=low
+
+  * New Upstream Release. (Closes: #384268)
+    - Fix .endp being outside of procedure on ia64 with new binutils.
+      (Closes: #385373)
+
+ -- Guillem Jover <guillem@debian.org>  Fri,  1 Sep 2006 05:51:36 +0300
+
 libaio (0.3.104-2) unstable; urgency=low
 
   * New Maintainer.
