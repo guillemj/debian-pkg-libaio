@@ -1,3 +1,15 @@
+libaio (0.3.106-2) unstable; urgency=low
+
+  * Use quilt for patching:
+    - Add new debian/patches/series file.
+    - Add Build-Depends on 'quilt (>= 0.40)'.
+    - Include quilt.make from debian/rules.
+  * Add support for arm, hppa, m68k, mips, mipsel and sparc. Those have yet
+    to be tested with the harness test suite and pass it.
+  * Add a Tag: field to all binary packages.
+
+ -- Guillem Jover <guillem@debian.org>  Tue, 19 Sep 2006 00:48:10 +0300
+
 libaio (0.3.106-1) unstable; urgency=low
 
   * New Upstream Release. (Closes: #384268)
