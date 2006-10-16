@@ -1,3 +1,11 @@
+libaio (0.3.106-3) unstable; urgency=low
+
+  * Fix a typo in the arm io_syscall5 macro, making the library end up
+    with unresolvable symbols. (Closes: #393156)
+    Thanks to Marcin Juszkiewicz <debian-bugs@hrw.one.pl>.
+
+ -- Guillem Jover <guillem@debian.org>  Mon, 16 Oct 2006 10:44:02 +0300
+
 libaio (0.3.106-2) unstable; urgency=low
 
   * Use quilt for patching:
