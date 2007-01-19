@@ -1,3 +1,9 @@
+libaio (0.3.106-4) unstable; urgency=low
+
+  * Add armeb and armel to the Architecture fields.
+
+ -- Guillem Jover <guillem@debian.org>  Fri, 19 Jan 2007 06:48:26 +0200
+
 libaio (0.3.106-3) unstable; urgency=low
 
   * Fix a typo in the arm io_syscall5 macro, making the library end up
