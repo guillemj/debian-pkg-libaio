@@ -1,3 +1,17 @@
+libaio (0.3.106-5) unstable; urgency=low
+
+  * Do not ignore 'make clean' errors on clean.
+  * Support build-arch and build-indep in debian/rules:
+    - Rename install to install-arch.
+    - Rename build to build-arch.
+    - Add an empty build target that depends on build-arch and build-indep.
+  * Switch directory variables to simply expanded ones in debian/rules.
+  * Use binary:Version instead of the deprecated Source-Version substvar.
+  * Remove Tag field as it does not seem to make much sense to include it
+    in the packages.
+
+ -- Guillem Jover <guillem@debian.org>  Tue, 17 Jul 2007 09:19:26 +0300
+
 libaio (0.3.106-4) unstable; urgency=low
 
   * Add armeb and armel to the Architecture fields.

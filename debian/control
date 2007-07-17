@@ -7,7 +7,6 @@ Standards-Version: 3.7.2
 
 Package: libaio1
 Architecture: i386 amd64 ia64 s390 alpha powerpc arm armeb armel hppa m68k mips mipsel sparc
-XB-Tag: implemented-in::c, role::devel-lib
 Description: linux kernel aio access library - shared library
  This library enables userspace to use Linux kernel asynchronous I/O
  system calls, important for the performance of databases and other
@@ -16,8 +15,7 @@ Description: linux kernel aio access library - shared library
 Package: libaio-dev
 Section: libdevel
 Architecture: i386 amd64 ia64 s390 alpha powerpc arm armeb armel hppa m68k mips mipsel sparc
-Depends: libaio1 (= ${Source-Version})
-XB-Tag: implemented-in::c, role::shared-lib, devel::library
+Depends: libaio1 (= ${binary:Version})
 Description: linux kernel aio access library - development files
  This library enables userspace to use Linux kernel asynchronous I/O
  system calls, important for the performance of databases and other

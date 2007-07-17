@@ -11,40 +11,44 @@ else
 	CFLAGS += -O2
 endif
 
-lib=libaio1
-libdev=libaio-dev
+lib := libaio1
+libdev := libaio-dev
 
 include /usr/share/quilt/quilt.make
 
-build: patch
+build-indep:
+
+build-arch: patch
 	dh_testdir
 	
 	$(MAKE)
+
+build: build-indep build-arch
 
 clean: unpatch
 	dh_testdir
 	dh_testroot
 	
-	-$(MAKE) clean
+	[ ! -f Makefile ] || $(MAKE) clean
 	
 	dh_clean
 
-install: build
+install-arch: build-arch
 	dh_testdir
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
 	
 	$(MAKE) install prefix=$(CURDIR)/debian/tmp/usr
-	install -D -m 644 debian/$(lib).lintian	\
+	install -D -m 644 debian/$(lib).lintian \
 		$(CURDIR)/debian/$(lib)/usr/share/lintian/overrides/$(lib)
 
 binary: binary-indep binary-arch
 
-binary-indep: install
+binary-indep:
 	# Nothing to do.
 
-binary-arch: install
+binary-arch: install-arch
 	dh_testdir
 	dh_testroot
 	dh_install --sourcedir=$(CURDIR)/debian/tmp
@@ -63,5 +67,6 @@ binary-arch: install
 	dh_md5sums
 	dh_builddeb
 
-.PHONY: build clean binary-indep binary-arch binary install
+.PHONY: clean build-indep build-arch build 
+.PHONY: install-arch binary-indep binary-arch binary
 
