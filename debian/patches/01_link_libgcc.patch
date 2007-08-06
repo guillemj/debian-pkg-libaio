@@ -1,0 +1,13 @@
+Index: src/Makefile
+===================================================================
+--- src/Makefile.orig	2007-08-06 04:34:13.000000000 +0300
++++ src/Makefile	2007-08-06 04:34:52.000000000 +0300
+@@ -6,7 +6,7 @@ ARCH := $(shell uname -m | sed -e s/i.86
+ CFLAGS := -nostdlib -nostartfiles -Wall -I. -g -fomit-frame-pointer -O2 -fPIC
+ SO_CFLAGS=-shared $(CFLAGS)
+ L_CFLAGS=$(CFLAGS)
+-LINK_FLAGS=
++LINK_FLAGS := -lgcc
+ 
+ soname=libaio.so.1
+ minor=0

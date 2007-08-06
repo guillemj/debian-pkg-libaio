@@ -1,3 +1,14 @@
+libaio (0.3.106-6) unstable; urgency=low
+
+  * Link against libgcc to avoid unresolved symbols on at least hppa.
+    - debian/01_link_libgcc.patch: New file.
+    Thanks to Steve Langasek <vorlon@debian.org> for the analysis.
+  * Add shlibs:Depends substvar back into libaio1 Depends, since we link
+    against an external library now (although it might not be used on any
+    architecture).
+
+ -- Guillem Jover <guillem@debian.org>  Mon, 06 Aug 2007 04:50:18 +0300
+
 libaio (0.3.106-5) unstable; urgency=low
 
   * Do not ignore 'make clean' errors on clean.
