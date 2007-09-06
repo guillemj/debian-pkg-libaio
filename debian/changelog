@@ -1,3 +1,9 @@
+libaio (0.3.106-7) UNRELEASED; urgency=low
+
+  * Add a new library udeb needed for multipath support. (Closes: #440320)
+
+ -- Guillem Jover <guillem@debian.org>  Thu, 06 Sep 2007 02:53:33 +0300
+
 libaio (0.3.106-6) unstable; urgency=low
 
   * Link against libgcc to avoid unresolved symbols on at least hppa.
