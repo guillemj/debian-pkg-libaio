@@ -1,8 +1,8 @@
-libaio (0.3.106-7) UNRELEASED; urgency=low
+libaio (0.3.106-7) unstable; urgency=low
 
   * Add a new library udeb needed for multipath support. (Closes: #440320)
 
- -- Guillem Jover <guillem@debian.org>  Thu, 06 Sep 2007 02:53:33 +0300
+ -- Guillem Jover <guillem@debian.org>  Thu, 06 Sep 2007 03:11:08 +0300
 
 libaio (0.3.106-6) unstable; urgency=low
 
