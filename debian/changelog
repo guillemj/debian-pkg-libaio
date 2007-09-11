@@ -1,4 +1,4 @@
-libaio (0.3.106-8) UNRELEASED; urgency=low
+libaio (0.3.106-8) unstable; urgency=low
 
   * Install shared library under /lib, needed by multipath binaries which
     reside under /sbin. (Closes: #441244)
@@ -6,7 +6,7 @@ libaio (0.3.106-8) UNRELEASED; urgency=low
   * Add a debugging symbols library package.
   * Add Vcs-Browser and Vcs-Git fields.
 
- -- Guillem Jover <guillem@debian.org>  Tue, 11 Sep 2007 03:40:38 +0300
+ -- Guillem Jover <guillem@debian.org>  Tue, 11 Sep 2007 04:29:22 +0300
 
 libaio (0.3.106-7) unstable; urgency=low
 
