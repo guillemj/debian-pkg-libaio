@@ -1,2 +1,3 @@
 00_arches.patch
 01_link_libgcc.patch -p0
+02_libdevdir.patch

@@ -40,7 +40,10 @@ install-arch: build-arch
 	dh_clean -k
 	dh_installdirs
 	
-	$(MAKE) install prefix=$(CURDIR)/debian/tmp/usr
+	$(MAKE) install \
+	  DESTDIR=$(CURDIR)/debian/tmp \
+	  libdir=/lib
+	
 	install -D -m 644 debian/$(lib).lintian \
 		$(CURDIR)/debian/$(lib)/usr/share/lintian/overrides/$(lib)
 

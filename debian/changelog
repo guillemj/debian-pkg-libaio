@@ -1,3 +1,11 @@
+libaio (0.3.106-8) UNRELEASED; urgency=low
+
+  * Install shared library under /lib, needed by multipath binaries which
+    reside under /sbin. (Closes: #441244)
+    - debian/patches/02_libdevdir.patch: New file.
+
+ -- Guillem Jover <guillem@debian.org>  Tue, 11 Sep 2007 03:40:38 +0300
+
 libaio (0.3.106-7) unstable; urgency=low
 
   * Add a new library udeb needed for multipath support. (Closes: #440320)
