@@ -4,6 +4,7 @@ libaio (0.3.106-8) UNRELEASED; urgency=low
     reside under /sbin. (Closes: #441244)
     - debian/patches/02_libdevdir.patch: New file.
   * Add a debugging symbols library package.
+  * Add Vcs-Browser and Vcs-Git fields.
 
  -- Guillem Jover <guillem@debian.org>  Tue, 11 Sep 2007 03:40:38 +0300
 
