@@ -12,6 +12,7 @@ else
 endif
 
 lib := libaio1
+libdbg := $(lib)-dbg
 libudeb := $(lib)-udeb
 libdev := libaio-dev
 
@@ -61,7 +62,7 @@ binary-arch: install-arch
 	dh_installexamples
 	dh_installman
 	dh_link
-	dh_strip
+	dh_strip --dbg-package=$(libdbg)
 	dh_compress
 	dh_fixperms
 	dh_makeshlibs --add-udeb '$(libudeb)'

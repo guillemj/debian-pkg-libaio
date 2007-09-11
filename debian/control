@@ -23,6 +23,15 @@ Description: linux kernel aio access library - shared library
  system calls, important for the performance of databases and other
  advanced applications.
 
+Package: libaio1-dbg
+Section: libdevel
+Architecture: i386 amd64 ia64 s390 alpha powerpc arm armeb armel hppa m68k mips mipsel sparc
+Depends: libaio1 (= ${binary:Version})
+Description: linux kernel aio access library - debugging symbols
+ This library enables userspace to use Linux kernel asynchronous I/O
+ system calls, important for the performance of databases and other
+ advanced applications.
+
 Package: libaio-dev
 Section: libdevel
 Architecture: i386 amd64 ia64 s390 alpha powerpc arm armeb armel hppa m68k mips mipsel sparc
