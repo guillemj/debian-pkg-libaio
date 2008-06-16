@@ -2,8 +2,8 @@ Source: libaio
 Maintainer: Guillem Jover <guillem@debian.org>
 Priority: extra
 Section: libs
-Vcs-Browser: http://git.debian.org/?p=users/guillem/pkg-libaio.git
-Vcs-Git: git://git.debian.org/~guillem/pkg-libaio.git
+Vcs-Browser: http://git.hadrons.org/?p=debian/pkgs/libaio.git
+Vcs-Git: git://git.hadrons.org/debian/pkgs/libaio.git
 Build-Depends: debhelper (>= 5), quilt (>= 0.40)
 Standards-Version: 3.7.2
 

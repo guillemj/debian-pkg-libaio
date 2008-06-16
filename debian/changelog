@@ -1,6 +1,7 @@
 libaio (0.3.106-9) UNRELEASED; urgency=low
 
   * Fix misspelled words (linux -> Linux and aio -> AIO).
+  * Update packaging Vcs fields to the new URL.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 18 May 2008 10:15:48 +0300
 
