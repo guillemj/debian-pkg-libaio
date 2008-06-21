@@ -5,6 +5,7 @@ libaio (0.3.106-9) UNRELEASED; urgency=low
   * Improve debian/copyright:
     - Use UTF-8 copyright sign.
     - Update upstream download url.
+  * Add a debian/README.source file.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 18 May 2008 10:15:48 +0300
 
