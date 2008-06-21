@@ -7,7 +7,7 @@ It was downloaded from:
 
     cvs -d :pserver:anonymous@rhlinux.redhat.com:/usr/local/CVS co libaio
 
-Copyright Holder:
+Copyright Holders:
 
     Copyright © 2002-2003 Benjamin LaHaise <bcrl@redhat.com>
     Copyright © 2003-2004 Jeff Moyer <jmoyer@redhat.com>

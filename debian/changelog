@@ -3,6 +3,7 @@ libaio (0.3.106-9) UNRELEASED; urgency=low
   * Fix misspelled words (linux -> Linux and aio -> AIO).
   * Update packaging Vcs fields to the new URL.
   * Improve debian/copyright:
+    - Change 'Copyright Holder' to 'Copyright Holders'.
     - Use UTF-8 copyright sign.
     - Update upstream download url.
   * Add a debian/README.source file.
