@@ -1,7 +1,7 @@
 Index: b/Makefile
 ===================================================================
---- a/Makefile	2004-02-26 17:25:10.000000000 +0200
-+++ b/Makefile	2007-09-11 03:36:25.000000000 +0300
+--- a/Makefile
++++ b/Makefile
 @@ -5,9 +5,11 @@ RELEASE=$(shell awk '/Release:/ { print 
  CVSTAG = $(NAME)_$(subst .,-,$(VERSION))_$(subst .,-,$(RELEASE))
  RPMBUILD=$(shell `which rpmbuild >&/dev/null` && echo "rpmbuild" || echo "rpm")
@@ -30,8 +30,8 @@ Index: b/Makefile
  clean:
 Index: b/src/Makefile
 ===================================================================
---- a/src/Makefile	2007-09-11 03:35:54.000000000 +0300
-+++ b/src/Makefile	2007-09-11 03:37:26.000000000 +0300
+--- a/src/Makefile
++++ b/src/Makefile
 @@ -1,6 +1,8 @@
 +DESTDIR=
  prefix=/usr
