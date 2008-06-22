@@ -1,4 +1,4 @@
-libaio (0.3.106-9) UNRELEASED; urgency=low
+libaio (0.3.106-9) unstable; urgency=low
 
   * Fix misspelled words (linux -> Linux and aio -> AIO).
   * Update packaging Vcs fields to the new URL.
@@ -12,7 +12,7 @@ libaio (0.3.106-9) UNRELEASED; urgency=low
   * Refresh patches with -pab. (Closes: #484962)
   * Update watch file URL. (Closes: #450017)
 
- -- Guillem Jover <guillem@debian.org>  Sun, 18 May 2008 10:15:48 +0300
+ -- Guillem Jover <guillem@debian.org>  Sun, 22 Jun 2008 07:42:52 +0300
 
 libaio (0.3.106-8) unstable; urgency=low
 
