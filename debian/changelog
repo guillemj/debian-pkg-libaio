@@ -6,6 +6,7 @@ libaio (0.3.106-9) UNRELEASED; urgency=low
     - Change 'Copyright Holder' to 'Copyright Holders'.
     - Use UTF-8 copyright sign.
     - Update upstream download url.
+    - Refer to LGPL-2.1 from common-licenses instead of just LGPL.
   * Add a debian/README.source file.
   * Now using Standards-Version 3.8.0.
   * Refresh patches with -pab. (Closes: #484962)
