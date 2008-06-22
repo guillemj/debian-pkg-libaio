@@ -10,6 +10,7 @@ libaio (0.3.106-9) UNRELEASED; urgency=low
   * Add a debian/README.source file.
   * Now using Standards-Version 3.8.0.
   * Refresh patches with -pab. (Closes: #484962)
+  * Update watch file URL. (Closes: #450017)
 
  -- Guillem Jover <guillem@debian.org>  Sun, 18 May 2008 10:15:48 +0300
 
