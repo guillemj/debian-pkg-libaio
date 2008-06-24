@@ -1,6 +1,8 @@
 libaio (0.3.107-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Run the test suite on install, and support nocheck DEB_BUILD_OPTIONS
+    to disable it.
 
  -- Guillem Jover <guillem@debian.org>  Tue, 24 Jun 2008 08:02:50 +0300
 

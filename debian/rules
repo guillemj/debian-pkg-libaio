@@ -35,7 +35,14 @@ clean: unpatch
 	
 	dh_clean
 
-install-arch: build-arch
+check-arch: build-arch
+	dh_testdir
+	
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	$(MAKE) partcheck
+endif
+
+install-arch: check-arch
 	dh_testdir
 	dh_testroot
 	dh_clean -k
