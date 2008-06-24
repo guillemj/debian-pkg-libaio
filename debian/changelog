@@ -1,3 +1,9 @@
+libaio (0.3.107-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Guillem Jover <guillem@debian.org>  Tue, 24 Jun 2008 08:02:50 +0300
+
 libaio (0.3.106-9) unstable; urgency=low
 
   * Fix misspelled words (linux -> Linux and aio -> AIO).

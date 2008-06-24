@@ -469,7 +469,7 @@ Index: b/src/libaio.h
 ===================================================================
 --- a/src/libaio.h
 +++ b/src/libaio.h
-@@ -72,6 +72,40 @@ typedef enum io_iocb_cmd {
+@@ -73,6 +73,40 @@ typedef enum io_iocb_cmd {
  #define PADDED(x, y)	unsigned y; x
  #define PADDEDptr(x, y) unsigned y; x
  #define PADDEDul(x, y)	unsigned y; unsigned long x

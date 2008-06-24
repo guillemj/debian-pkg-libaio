@@ -26,8 +26,8 @@ Index: b/Makefile
 +	  libdir=$(libdir) \
 +	  libdevdir=$(libdevdir)
  
- 
- clean:
+ check:
+ 	@$(MAKE) -C harness check
 Index: b/src/Makefile
 ===================================================================
 --- a/src/Makefile
