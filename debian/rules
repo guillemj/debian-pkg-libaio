@@ -56,9 +56,6 @@ install-arch: check-arch
 	$(MAKE) install \
 	  DESTDIR=$(CURDIR)/debian/tmp \
 	  libdir=/lib
-	
-	install -D -m 644 debian/$(lib).lintian \
-		$(CURDIR)/debian/$(lib)/usr/share/lintian/overrides/$(lib)
 
 binary: binary-indep binary-arch
 
@@ -73,6 +70,7 @@ binary-arch: install-arch
 	dh_installdocs
 	dh_installexamples
 	dh_installman
+	dh_lintian
 	dh_link
 	dh_strip --dbg-package=$(libdbg)
 	dh_compress
