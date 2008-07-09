@@ -1,4 +1,4 @@
-libaio (0.3.107-2) UNRELEASED; urgency=low
+libaio (0.3.107-2) unstable; urgency=low
 
   * Only run the test suite on i386 as it has not been ported for other
     architectures. (Closes: #488812)
@@ -9,7 +9,7 @@ libaio (0.3.107-2) UNRELEASED; urgency=low
   * Switch to use dh_lintian instead of manually installing the overrides.
     - Bump the versioned debhelper Build-Depends to 6.0.7.
 
- -- Guillem Jover <guillem@debian.org>  Wed, 09 Jul 2008 05:13:14 +0300
+ -- Guillem Jover <guillem@debian.org>  Wed, 09 Jul 2008 05:32:30 +0300
 
 libaio (0.3.107-1) unstable; urgency=low
 
