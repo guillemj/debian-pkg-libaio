@@ -3,7 +3,7 @@ Maintainer: Guillem Jover <guillem@debian.org>
 Priority: extra
 Section: libs
 Vcs-Browser: http://git.hadrons.org/?p=debian/pkgs/libaio.git
-Vcs-Git: git://git.hadrons.org/debian/pkgs/libaio.git
+Vcs-Git: git://git.hadrons.org/git/debian/pkgs/libaio.git
 Build-Depends: debhelper (>= 6.0.7), quilt (>= 0.40)
 Standards-Version: 3.8.0
 

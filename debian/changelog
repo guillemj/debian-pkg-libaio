@@ -1,3 +1,9 @@
+libaio (0.3.107-3) UNRELEASED; urgency=low
+
+  * Fix the Vcs-Git URL.
+
+ -- Guillem Jover <guillem@debian.org>  Mon, 20 Oct 2008 20:29:33 +0300
+
 libaio (0.3.107-2) unstable; urgency=low
 
   * Only run the test suite on i386 as it has not been ported for other
