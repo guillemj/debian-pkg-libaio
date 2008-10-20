@@ -16,7 +16,7 @@ Description: Linux kernel AIO access library - shared library
  advanced applications.
 
 Package: libaio1-udeb
-XB-Package-Type: udeb
+Package-Type: udeb
 Section: debian-installer
 Architecture: i386 amd64 ia64 s390 alpha powerpc arm armeb armel hppa m68k mips mipsel sparc
 Depends: ${shlibs:Depends}
