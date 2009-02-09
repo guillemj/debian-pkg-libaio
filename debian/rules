@@ -50,7 +50,7 @@ endif
 install-arch: check-arch
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_clean
 	dh_installdirs
 	
 	$(MAKE) install \
