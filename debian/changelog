@@ -1,4 +1,4 @@
-libaio (0.3.107-4) UNRELEASED; urgency=low
+libaio (0.3.107-4) unstable; urgency=low
 
   * Switch to debhelper compatibility level 7.
   * Use dh_prep instead of “dh_clean -k”.
@@ -7,7 +7,7 @@ libaio (0.3.107-4) UNRELEASED; urgency=low
   * Now using Standards-Version 3.8.1 (no changes needed).
   * Switch the upstream repository reference from CVS to git.
 
- -- Guillem Jover <guillem@debian.org>  Mon, 09 Feb 2009 22:01:55 +0200
+ -- Guillem Jover <guillem@debian.org>  Mon, 08 Jun 2009 19:40:54 +0200
 
 libaio (0.3.107-3) unstable; urgency=low
 
