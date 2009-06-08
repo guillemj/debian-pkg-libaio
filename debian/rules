@@ -41,10 +41,7 @@ check-arch: build-arch
 	dh_testdir
 	
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
-# The test suite only runs on i386, for now
-ifeq ($(DEB_HOST_ARCH_CPU),i386)
 	$(MAKE) partcheck
-endif
 endif
 
 install-arch: check-arch
