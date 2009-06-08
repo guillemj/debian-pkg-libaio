@@ -5,7 +5,7 @@ Currently maintained by Guillem Jover <guillem@debian.org>.
 
 It was downloaded from:
 
-    cvs -d :pserver:anonymous@rhlinux.redhat.com:/usr/local/CVS co libaio
+    git://git.kernel.org/pub/scm/libs/libaio/libaio.git
 
 Copyright Holders:
 
