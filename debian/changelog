@@ -4,6 +4,7 @@ libaio (0.3.107-4) UNRELEASED; urgency=low
   * Use dh_prep instead of “dh_clean -k”.
   * Remove libaio1.dirs, unneeded due to dh_lintian taking care of it.
   * Run the test suite on all architectures and not only on i386.
+  * Now using Standards-Version 3.8.1 (no changes needed).
 
  -- Guillem Jover <guillem@debian.org>  Mon, 09 Feb 2009 22:01:55 +0200
 
