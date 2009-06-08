@@ -26,7 +26,7 @@ Description: Linux kernel AIO access library - shared library
  advanced applications.
 
 Package: libaio1-dbg
-Section: libdevel
+Section: debug
 Architecture: i386 amd64 ia64 s390 alpha powerpc arm armeb armel hppa m68k mips mipsel sparc
 Depends: libaio1 (= ${binary:Version})
 Description: Linux kernel AIO access library - debugging symbols
