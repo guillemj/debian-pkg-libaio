@@ -1,5 +1,14 @@
-Index: b/src/syscall-m68k.h
-===================================================================
+---
+ harness/main.c       |    8 +
+ src/libaio.h         |   34 +++++++
+ src/syscall-arm.h    |  116 ++++++++++++++++++++++++++
+ src/syscall-m68k.h   |   78 +++++++++++++++++
+ src/syscall-mips.h   |  223 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/syscall-parisc.h |  146 +++++++++++++++++++++++++++++++++
+ src/syscall-sparc.h  |  130 +++++++++++++++++++++++++++++
+ src/syscall.h        |   10 ++
+ 8 files changed, 744 insertions(+), 1 deletion(-)
+
 --- /dev/null
 +++ b/src/syscall-m68k.h
 @@ -0,0 +1,78 @@
@@ -81,8 +90,6 @@ Index: b/src/syscall-m68k.h
 +return (type) __res; \
 +}
 +
-Index: b/src/syscall-sparc.h
-===================================================================
 --- /dev/null
 +++ b/src/syscall-sparc.h
 @@ -0,0 +1,130 @@
@@ -216,8 +223,6 @@ Index: b/src/syscall-sparc.h
 +return -1; \
 +}
 +
-Index: b/src/syscall.h
-===================================================================
 --- a/src/syscall.h
 +++ b/src/syscall.h
 @@ -22,6 +22,16 @@
@@ -237,8 +242,6 @@ Index: b/src/syscall.h
  #else
  #error "add syscall-arch.h"
  #endif
-Index: b/src/syscall-mips.h
-===================================================================
 --- /dev/null
 +++ b/src/syscall-mips.h
 @@ -0,0 +1,223 @@
@@ -465,8 +468,6 @@ Index: b/src/syscall-mips.h
 +
 +#endif /* (_MIPS_SIM == _MIPS_SIM_NABI32) || (_MIPS_SIM == _MIPS_SIM_ABI64) */
 +
-Index: b/src/libaio.h
-===================================================================
 --- a/src/libaio.h
 +++ b/src/libaio.h
 @@ -73,6 +73,40 @@ typedef enum io_iocb_cmd {
@@ -510,8 +511,6 @@ Index: b/src/libaio.h
  #else
  #error	endian?
  #endif
-Index: b/src/syscall-parisc.h
-===================================================================
 --- /dev/null
 +++ b/src/syscall-parisc.h
 @@ -0,0 +1,146 @@
@@ -661,8 +660,6 @@ Index: b/src/syscall-parisc.h
 +    return K_INLINE_SYSCALL(sname, 5, arg1, arg2, arg3, arg4, arg5);	\
 +}
 +
-Index: b/src/syscall-arm.h
-===================================================================
 --- /dev/null
 +++ b/src/syscall-arm.h
 @@ -0,0 +1,116 @@
@@ -782,3 +779,21 @@ Index: b/src/syscall-arm.h
 +  return (type) __res_r0;						\
 +}
 +
+--- a/harness/main.c
++++ b/harness/main.c
+@@ -11,8 +11,14 @@
+ 
+ #include <libaio.h>
+ 
+-#if defined(__i386__)
++#if defined(__i386__) || defined(__powerpc__) || defined(__mips__)
+ #define KERNEL_RW_POINTER	((void *)0xc0010000)
++#elif defined(__arm__) || defined(__m68k__) || defined(__s390__)
++#define KERNEL_RW_POINTER	((void *)0x00010000)
++#elif defined(__hppa__)
++#define KERNEL_RW_POINTER	((void *)0x10100000)
++#elif defined(__sparc__) && !defined(__arch64__)
++#define KERNEL_RW_POINTER	((void *)0xf0010000)
+ #else
+ //#warning Not really sure where kernel memory is.  Guessing.
+ #define KERNEL_RW_POINTER	((void *)0xffffffffc0010000)
