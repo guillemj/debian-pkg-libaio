@@ -1,3 +1,4 @@
 00_arches.patch
 01_link_libgcc.patch
 02_libdevdir.patch
+03_man_errors.patch
