@@ -1,4 +1,4 @@
-libaio (0.3.107-6) UNRELEASED; urgency=low
+libaio (0.3.107-6) unstable; urgency=low
 
   * Workaround debhelper compat v7 bug (#534565) in dh_install which makes
     files end up under /debian/tmp/ in the binary package, by not passing
@@ -6,7 +6,7 @@ libaio (0.3.107-6) UNRELEASED; urgency=low
   * Pass -s to arch dependent debhelper commands.
   * Now using Standards-Version 3.8.2 (no changes needed).
 
- -- Guillem Jover <guillem@debian.org>  Thu, 25 Jun 2009 12:12:08 +0200
+ -- Guillem Jover <guillem@debian.org>  Thu, 25 Jun 2009 14:11:25 +0200
 
 libaio (0.3.107-5) unstable; urgency=low
 
