@@ -62,22 +62,22 @@ binary-indep:
 binary-arch: install-arch
 	dh_testdir
 	dh_testroot
-	dh_install
-	dh_installchangelogs ChangeLog
-	dh_installdocs
-	dh_installexamples
-	dh_installman
-	dh_lintian
-	dh_link
-	dh_strip --dbg-package=$(libdbg)
-	dh_compress
-	dh_fixperms
-	dh_makeshlibs --add-udeb '$(libudeb)'
-	dh_shlibdeps
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
+	dh_install -s
+	dh_installchangelogs -s ChangeLog
+	dh_installdocs -s
+	dh_installexamples -s
+	dh_installman -s
+	dh_lintian -s
+	dh_link -s
+	dh_strip -s --dbg-package=$(libdbg)
+	dh_compress -s
+	dh_fixperms -s
+	dh_makeshlibs -s --add-udeb '$(libudeb)'
+	dh_shlibdeps -s
+	dh_installdeb -s
+	dh_gencontrol -s
+	dh_md5sums -s
+	dh_builddeb -s
 
 .PHONY: clean build-indep build-arch build 
 .PHONY: install-arch binary-indep binary-arch binary
