@@ -1,3 +1,11 @@
+libaio (0.3.107-6) UNRELEASED; urgency=low
+
+  * Workaround debhelper compat v7 bug (#534565) in dh_install which makes
+    files end up under /debian/tmp/ in the binary package, by not passing
+    --sourcedir to dh_install. (Closes: #533359, #532644)
+
+ -- Guillem Jover <guillem@debian.org>  Thu, 25 Jun 2009 12:12:08 +0200
+
 libaio (0.3.107-5) unstable; urgency=low
 
   * Change libaio1-dbg section to debug.
