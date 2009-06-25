@@ -4,6 +4,7 @@ libaio (0.3.107-6) UNRELEASED; urgency=low
     files end up under /debian/tmp/ in the binary package, by not passing
     --sourcedir to dh_install. (Closes: #533359, #532644)
   * Pass -s to arch dependent debhelper commands.
+  * Now using Standards-Version 3.8.2 (no changes needed).
 
  -- Guillem Jover <guillem@debian.org>  Thu, 25 Jun 2009 12:12:08 +0200
 
