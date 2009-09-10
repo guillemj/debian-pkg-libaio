@@ -2,6 +2,7 @@ libaio (0.3.107-7) UNRELEASED; urgency=low
 
   * Add support for sh3 and sh4. (Closes: #535288)
     Thanks to Nobuhiro Iwamatsu <iwamatsu@nigauri.org>.
+  * Now using Standards-Version 3.8.3 (no changes needed).
 
  -- Guillem Jover <guillem@debian.org>  Thu, 10 Sep 2009 12:47:44 +0200
 
