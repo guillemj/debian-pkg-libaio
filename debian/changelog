@@ -1,3 +1,10 @@
+libaio (0.3.107-7) UNRELEASED; urgency=low
+
+  * Add support for sh3 and sh4. (Closes: #535288)
+    Thanks to Nobuhiro Iwamatsu <iwamatsu@nigauri.org>.
+
+ -- Guillem Jover <guillem@debian.org>  Thu, 10 Sep 2009 12:47:44 +0200
+
 libaio (0.3.107-6) unstable; urgency=low
 
   * Workaround debhelper compat v7 bug (#534565) in dh_install which makes
