@@ -1,3 +1,13 @@
+libaio (0.3.107-8) UNRELEASED; urgency=low
+
+  * Switch to source format “3.0 (quilt)”:
+    - Remove quilt from Build-Depends.
+    - Remove quilt.make include from debian/rules.
+    - Remove patch and unpatch targets from debian/rules.
+    - Remove now unneeded debian/README.source.
+
+ -- Guillem Jover <guillem@debian.org>  Sat, 14 Nov 2009 06:37:32 +0100
+
 libaio (0.3.107-7) unstable; urgency=low
 
   * Add support for sh3 and sh4. (Closes: #535288)

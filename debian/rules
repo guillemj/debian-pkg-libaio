@@ -18,18 +18,16 @@ libdbg := $(lib)-dbg
 libudeb := $(lib)-udeb
 libdev := libaio-dev
 
-include /usr/share/quilt/quilt.make
-
 build-indep:
 
-build-arch: patch
+build-arch:
 	dh_testdir
 	
 	$(MAKE)
 
 build: build-indep build-arch
 
-clean: unpatch
+clean:
 	dh_testdir
 	dh_testroot
 	
