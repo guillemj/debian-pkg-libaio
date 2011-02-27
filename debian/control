@@ -43,4 +43,3 @@ Description: Linux kernel AIO access library - development files
  This library enables userspace to use Linux kernel asynchronous I/O
  system calls, important for the performance of databases and other
  advanced applications.
-
