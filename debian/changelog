@@ -5,6 +5,7 @@ libaio (0.3.107-8) UNRELEASED; urgency=low
     - Remove quilt.make include from debian/rules.
     - Remove patch and unpatch targets from debian/rules.
     - Remove now unneeded debian/README.source.
+  * Update watch file to point to the new upstream URL at kernel.org.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 14 Nov 2009 06:37:32 +0100
 
