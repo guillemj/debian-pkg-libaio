@@ -4,6 +4,7 @@ Priority: extra
 Section: libs
 Vcs-Browser: http://git.hadrons.org/?p=debian/pkgs/libaio.git
 Vcs-Git: git://git.hadrons.org/git/debian/pkgs/libaio.git
+Homepage: http://www.kernel.org/pub/linux/libs/aio/
 Build-Depends: debhelper (>= 7)
 Standards-Version: 3.9.1
 

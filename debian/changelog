@@ -13,6 +13,7 @@ libaio (0.3.107-8) UNRELEASED; urgency=low
     will miss the syscall-<arch>.h header support among others, it just
     needs to be ported, and this way it's easier to spot. This implicitly
     adds amrhf support. (Closes: #596996)
+  * Add a Homepage field. (Closes: #566338)
 
  -- Guillem Jover <guillem@debian.org>  Sat, 14 Nov 2009 06:37:32 +0100
 
