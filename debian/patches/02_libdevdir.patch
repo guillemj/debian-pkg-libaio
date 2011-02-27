@@ -1,8 +1,11 @@
-Index: b/Makefile
-===================================================================
+---
+ Makefile     |    9 ++++++++-
+ src/Makefile |   12 +++++++-----
+ 2 files changed, 15 insertions(+), 6 deletions(-)
+
 --- a/Makefile
 +++ b/Makefile
-@@ -5,9 +5,11 @@ RELEASE=$(shell awk '/Release:/ { print 
+@@ -5,9 +5,11 @@ RELEASE=$(shell awk '/Release:/ { print
  CVSTAG = $(NAME)_$(subst .,-,$(VERSION))_$(subst .,-,$(RELEASE))
  RPMBUILD=$(shell `which rpmbuild >&/dev/null` && echo "rpmbuild" || echo "rpm")
  
@@ -12,9 +15,9 @@ Index: b/Makefile
  libdir=$(prefix)/lib
 +libdevdir=$(prefix)/lib
  
- default: all
- 
-@@ -15,7 +17,12 @@ all:
+ pkgname := libaio
+ ver := $(shell cat .version)
+@@ -23,7 +25,12 @@ all:
  	@$(MAKE) -C src
  
  install:
@@ -28,8 +31,6 @@ Index: b/Makefile
  
  check:
  	@$(MAKE) -C harness check
-Index: b/src/Makefile
-===================================================================
 --- a/src/Makefile
 +++ b/src/Makefile
 @@ -1,6 +1,8 @@

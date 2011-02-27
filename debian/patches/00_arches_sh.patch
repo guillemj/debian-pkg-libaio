@@ -6,12 +6,18 @@ The test-suite logs can be found at:
   <http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=535288>
 
 
-diff --git a/harness/main.c b/harness/main.c
-index f472da7..01fbb87 100644
+---
+ harness/main.c   |    2 -
+ src/libaio.h     |   10 +++++++
+ src/syscall-sh.h |   78 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/syscall.h    |    2 +
+ 4 files changed, 91 insertions(+), 1 deletion(-)
+
+
 --- a/harness/main.c
 +++ b/harness/main.c
-@@ -13,7 +13,7 @@
- 
+@@ -14,7 +14,7 @@
+ #if __LP64__ == 0
  #if defined(__i386__) || defined(__powerpc__) || defined(__mips__)
  #define KERNEL_RW_POINTER	((void *)0xc0010000)
 -#elif defined(__arm__) || defined(__m68k__) || defined(__s390__)
@@ -19,8 +25,6 @@ index f472da7..01fbb87 100644
  #define KERNEL_RW_POINTER	((void *)0x00010000)
  #elif defined(__hppa__)
  #define KERNEL_RW_POINTER	((void *)0x10100000)
-diff --git a/src/libaio.h b/src/libaio.h
-index 68e22ac..d306084 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
 @@ -107,6 +107,16 @@ typedef enum io_iocb_cmd {
@@ -40,9 +44,6 @@ index 68e22ac..d306084 100644
  #else
  #error	endian?
  #endif
-diff --git a/src/syscall-sh.h b/src/syscall-sh.h
-new file mode 100644
-index 0000000..9945ec6
 --- /dev/null
 +++ b/src/syscall-sh.h
 @@ -0,0 +1,78 @@
@@ -124,8 +125,6 @@ index 0000000..9945ec6
 +	: "memory" ); \
 +	return (type) __sc0;\
 +}
-diff --git a/src/syscall.h b/src/syscall.h
-index b957bbe..ea0435e 100644
 --- a/src/syscall.h
 +++ b/src/syscall.h
 @@ -32,6 +32,8 @@
@@ -137,6 +136,3 @@ index b957bbe..ea0435e 100644
  #else
  #error "add syscall-arch.h"
  #endif
--- 
-1.6.3.1
-

@@ -1,5 +1,7 @@
-libaio (0.3.107-8) UNRELEASED; urgency=low
+libaio (0.3.109-1) UNRELEASED; urgency=low
 
+  * New upstream release.
+    - Refresh patches.
   * Switch to source format “3.0 (quilt)”:
     - Remove quilt from Build-Depends.
     - Remove quilt.make include from debian/rules.
