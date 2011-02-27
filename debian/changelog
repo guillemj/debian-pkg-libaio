@@ -1,4 +1,4 @@
-libaio (0.3.109-1) UNRELEASED; urgency=low
+libaio (0.3.109-1) unstable; urgency=low
 
   * New upstream release.
     - Refresh patches.
@@ -17,7 +17,7 @@ libaio (0.3.109-1) UNRELEASED; urgency=low
     adds amrhf support. (Closes: #596996)
   * Add a Homepage field. (Closes: #566338)
 
- -- Guillem Jover <guillem@debian.org>  Sat, 14 Nov 2009 06:37:32 +0100
+ -- Guillem Jover <guillem@debian.org>  Sun, 27 Feb 2011 05:22:27 +0100
 
 libaio (0.3.107-7) unstable; urgency=low
 
