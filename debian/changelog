@@ -8,6 +8,11 @@ libaio (0.3.107-8) UNRELEASED; urgency=low
   * Update watch file to point to the new upstream URL at kernel.org.
   * Now using Standards-Version 3.9.1 (no changes needed).
   * Add missing ${misc:Depends} to eveyr package Depends fields.
+  * Switch Architecture field list to just linux-any, and although the
+    code will not automatically support new Linux architectures, as it
+    will miss the syscall-<arch>.h header support among others, it just
+    needs to be ported, and this way it's easier to spot. This implicitly
+    adds amrhf support. (Closes: #596996)
 
  -- Guillem Jover <guillem@debian.org>  Sat, 14 Nov 2009 06:37:32 +0100
 
