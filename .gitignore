@@ -1,0 +1,9 @@
+*.tar.gz
+*.tar.bz2
+*.diff.gz
+*.dsc
+*.deb
+*.udeb
+*.changes
+*.build
+*.upload
