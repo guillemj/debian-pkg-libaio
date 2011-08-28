@@ -3,3 +3,5 @@
 01_link_libgcc.patch
 02_libdevdir.patch
 03_man_errors.patch
+04_check_waitpid_return.patch
+04_no_Werror.patch
