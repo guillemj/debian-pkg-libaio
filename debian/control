@@ -5,11 +5,13 @@ Section: libs
 Vcs-Browser: http://git.hadrons.org/?p=debian/pkgs/libaio.git
 Vcs-Git: git://git.hadrons.org/git/debian/pkgs/libaio.git
 Homepage: http://www.kernel.org/pub/linux/libs/aio/
-Build-Depends: debhelper (>= 7)
+Build-Depends: debhelper (>= 8.1.3)
 Standards-Version: 3.9.1
 
 Package: libaio1
 Architecture: linux-any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Linux kernel AIO access library - shared library
  This library enables userspace to use Linux kernel asynchronous I/O
@@ -29,6 +31,7 @@ Description: Linux kernel AIO access library - shared library
 Package: libaio1-dbg
 Section: debug
 Architecture: linux-any
+Multi-Arch: same
 Depends: libaio1 (= ${binary:Version}), ${misc:Depends}
 Description: Linux kernel AIO access library - debugging symbols
  This library enables userspace to use Linux kernel asynchronous I/O
