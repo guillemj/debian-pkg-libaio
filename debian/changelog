@@ -12,6 +12,8 @@ libaio (0.3.109-2) UNRELEASED; urgency=low
     - Change paths from lib/ to lib/* in install and lintian-override files.
     - Define DEB_HOST_MULTIARCH and use it to set libdir and libdevdir.
   * Install all libaio io*.3 man pages. (Closes: #418048)
+  * Do not install man pages for functions coming from libc, the aio*
+    and lio_listio* man pages are already shipped by manpages-dev.
 
  -- Guillem Jover <guillem@debian.org>  Tue, 31 May 2011 09:39:13 +0200
 
