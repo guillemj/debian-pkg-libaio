@@ -18,6 +18,7 @@ libaio (0.3.109-2) UNRELEASED; urgency=low
     - Change Priority from extra to optional.
     - Add support for sparc64 and hppa 64-bit architectures.
   * Set libaio1-dbg Priority back to extra.
+  * Now using Standards-Version 3.9.2 (no changes needed).
 
  -- Guillem Jover <guillem@debian.org>  Tue, 31 May 2011 09:39:13 +0200
 
