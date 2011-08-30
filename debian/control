@@ -29,6 +29,7 @@ Description: Linux kernel AIO access library - shared library
  advanced applications.
 
 Package: libaio1-dbg
+Priority: extra
 Section: debug
 Architecture: linux-any
 Multi-Arch: same
