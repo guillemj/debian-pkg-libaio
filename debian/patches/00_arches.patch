@@ -1,12 +1,12 @@
 ---
  harness/main.c       |   10 ++
- src/libaio.h         |   24 +++++
+ src/libaio.h         |   30 ++++++
  src/syscall-m68k.h   |   78 +++++++++++++++++
  src/syscall-mips.h   |  223 +++++++++++++++++++++++++++++++++++++++++++++++++++
  src/syscall-parisc.h |  146 +++++++++++++++++++++++++++++++++
  src/syscall-sparc.h  |  130 +++++++++++++++++++++++++++++
  src/syscall.h        |    8 +
- 7 files changed, 619 insertions(+)
+ 7 files changed, 625 insertions(+)
 
 --- /dev/null
 +++ b/src/syscall-m68k.h
@@ -467,7 +467,7 @@
 +
 --- a/src/libaio.h
 +++ b/src/libaio.h
-@@ -83,6 +83,30 @@ typedef enum io_iocb_cmd {
+@@ -83,6 +83,36 @@ typedef enum io_iocb_cmd {
  #define PADDEDptr(x, y)	x; unsigned y
  #define PADDEDul(x, y)	unsigned long x; unsigned y
  #  endif
@@ -479,10 +479,16 @@
 +#define PADDED(x, y)	unsigned y; x
 +#define PADDEDptr(x, y)	unsigned y; x
 +#define PADDEDul(x, y)	unsigned y; unsigned long x
-+#elif defined(__hppa__) /* big endian, 32 bits */
++#elif defined(__hppa__)
++#  if defined(__arch64__) /* big endian, 64 bits */
++#define PADDED(x, y)	unsigned y; x
++#define PADDEDptr(x,y)	x
++#define PADDEDul(x, y)	unsigned long x
++#  else                    /* big endian, 32 bits */
 +#define PADDED(x, y)	unsigned y; x
 +#define PADDEDptr(x, y)	unsigned y; x
 +#define PADDEDul(x, y)	unsigned y; unsigned long x
++#endif
 +#elif defined(__mips__)
 +#  if defined (__MIPSEB__) /* big endian, 32 bits */
 +#define PADDED(x, y)	unsigned y; x

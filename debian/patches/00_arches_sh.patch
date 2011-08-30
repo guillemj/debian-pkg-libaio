@@ -27,7 +27,7 @@ The test-suite logs can be found at:
  #define KERNEL_RW_POINTER	((void *)0x10100000)
 --- a/src/libaio.h
 +++ b/src/libaio.h
-@@ -107,6 +107,16 @@ typedef enum io_iocb_cmd {
+@@ -113,6 +113,16 @@ typedef enum io_iocb_cmd {
  #  else
  #    error "neither mipseb nor mipsel?"
  #  endif
