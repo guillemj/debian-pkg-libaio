@@ -1,3 +1,10 @@
+libaio (0.3.109-3) UNRELEASED; urgency=low
+
+  * Escape backslash in man pages. (Closes: #651833)
+    Thanks to Stephan Springl <springl-libaio@bfw-online.de>.
+
+ -- Guillem Jover <guillem@debian.org>  Mon, 12 Dec 2011 21:01:15 +0100
+
 libaio (0.3.109-2) unstable; urgency=low
 
   * Add a symbols file for libaio1.
