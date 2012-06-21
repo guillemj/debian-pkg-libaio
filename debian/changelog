@@ -1,4 +1,4 @@
-libaio (0.3.109-3) UNRELEASED; urgency=low
+libaio (0.3.109-3) unstable; urgency=low
 
   * Escape backslash in man pages. (Closes: #651833)
     Thanks to Stephan Springl <springl-libaio@bfw-online.de>.
@@ -6,7 +6,7 @@ libaio (0.3.109-3) UNRELEASED; urgency=low
   * Use dpkg-buildflags to set CPPFLAGS, CFLAGS and LDFLAGS.
   * Now using Standards-Version 3.9.3 (no changes needed).
 
- -- Guillem Jover <guillem@debian.org>  Mon, 12 Dec 2011 21:01:15 +0100
+ -- Guillem Jover <guillem@debian.org>  Thu, 21 Jun 2012 09:21:59 +0200
 
 libaio (0.3.109-2) unstable; urgency=low
 
