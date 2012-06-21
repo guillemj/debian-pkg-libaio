@@ -2,6 +2,7 @@ libaio (0.3.109-3) UNRELEASED; urgency=low
 
   * Escape backslash in man pages. (Closes: #651833)
     Thanks to Stephan Springl <springl-libaio@bfw-online.de>.
+  * Do not install man pages now provided by manpages-dev. (Closes: #650108)
 
  -- Guillem Jover <guillem@debian.org>  Mon, 12 Dec 2011 21:01:15 +0100
 
