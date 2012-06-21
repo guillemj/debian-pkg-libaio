@@ -4,6 +4,7 @@ libaio (0.3.109-3) UNRELEASED; urgency=low
     Thanks to Stephan Springl <springl-libaio@bfw-online.de>.
   * Do not install man pages now provided by manpages-dev. (Closes: #650108)
   * Use dpkg-buildflags to set CPPFLAGS, CFLAGS and LDFLAGS.
+  * Now using Standards-Version 3.9.3 (no changes needed).
 
  -- Guillem Jover <guillem@debian.org>  Mon, 12 Dec 2011 21:01:15 +0100
 
