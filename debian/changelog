@@ -7,6 +7,8 @@ libaio (0.3.109-4) UNRELEASED; urgency=low
     Thanks to Daniel Schepler <dschepler@gmail.com>.
   * Add support for arm64 (stolen from upstream). (Closes: #702409)
     Thanks to Ian Campbell <ijc@hellion.org.uk>.
+  * Add cross-compilation support.
+    Based on a patch by Ian Campbell <ijc@hellion.org.uk>.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 06 May 2013 17:37:49 +0200
 
