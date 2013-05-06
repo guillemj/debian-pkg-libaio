@@ -1,6 +1,7 @@
 00_arches.patch
 00_arches_sh.patch
 00_arches_sparc64.patch
+00_arches_x32.patch
 01_link_libgcc.patch
 02_libdevdir.patch
 03_man_errors.patch
