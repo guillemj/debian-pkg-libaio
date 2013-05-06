@@ -5,6 +5,8 @@ libaio (0.3.109-4) UNRELEASED; urgency=low
   * Update upstream git URL in debian/copyright.
   * Add support for x32 (from the Yocto project). (Closes: #702183)
     Thanks to Daniel Schepler <dschepler@gmail.com>.
+  * Add support for arm64 (stolen from upstream). (Closes: #702409)
+    Thanks to Ian Campbell <ijc@hellion.org.uk>.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 06 May 2013 17:37:49 +0200
 
