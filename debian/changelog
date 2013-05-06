@@ -2,6 +2,7 @@ libaio (0.3.109-4) UNRELEASED; urgency=low
 
   * Now using Standards-Version 3.9.4 (no changes needed).
   * Remove package creation information from debian/copyright.
+  * Update upstream git URL in debian/copyright.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 06 May 2013 17:37:49 +0200
 
