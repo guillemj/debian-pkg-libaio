@@ -1,12 +1,12 @@
 ---
  harness/main.c       |   10 ++
- src/libaio.h         |   30 ++++++
+ src/libaio.h         |    1 
  src/syscall-m68k.h   |   78 +++++++++++++++++
  src/syscall-mips.h   |  223 +++++++++++++++++++++++++++++++++++++++++++++++++++
  src/syscall-parisc.h |  146 +++++++++++++++++++++++++++++++++
- src/syscall-sparc.h  |  130 +++++++++++++++++++++++++++++
- src/syscall.h        |    8 +
- 7 files changed, 625 insertions(+)
+ src/syscall-sparc.h  |   20 +++-
+ src/syscall.h        |    6 +
+ 7 files changed, 479 insertions(+), 5 deletions(-)
 
 --- /dev/null
 +++ b/src/syscall-m68k.h
@@ -89,156 +89,21 @@
 +return (type) __res; \
 +}
 +
---- /dev/null
-+++ b/src/syscall-sparc.h
-@@ -0,0 +1,130 @@
-+/* $Id: unistd.h,v 1.74 2002/02/08 03:57:18 davem Exp $ */
-+
-+/*
-+ * System calls under the Sparc.
-+ *
-+ * Don't be scared by the ugly clobbers, it is the only way I can
-+ * think of right now to force the arguments into fixed registers
-+ * before the trap into the system call with gcc 'asm' statements.
-+ *
-+ * Copyright (C) 1995 David S. Miller (davem@caip.rutgers.edu)
-+ *
-+ * SunOS compatibility based upon preliminary work which is:
-+ *
-+ * Copyright (C) 1995 Adrian M. Rodriguez (adrian@remus.rutgers.edu)
-+ */
-+
-+
-+#define __NR_io_setup		268
-+#define __NR_io_destroy		269
-+#define __NR_io_submit		270
-+#define __NR_io_cancel		271
-+#define __NR_io_getevents	272
-+
-+
-+#define io_syscall1(type,fname,sname,type1,arg1) \
-+type fname(type1 arg1) \
-+{ \
-+long __res; \
-+register long __g1 __asm__ ("g1") = __NR_##sname; \
-+register long __o0 __asm__ ("o0") = (long)(arg1); \
-+__asm__ __volatile__ ("t 0x10\n\t" \
-+		      "bcc 1f\n\t" \
-+		      "mov %%o0, %0\n\t" \
-+		      "sub %%g0, %%o0, %0\n\t" \
-+		      "1:\n\t" \
-+		      : "=r" (__res), "=&r" (__o0) \
-+		      : "1" (__o0), "r" (__g1) \
-+		      : "cc"); \
-+if (__res < -255 || __res >= 0) \
-+	return (type) __res; \
-+return -1; \
-+}
-+
-+#define io_syscall2(type,fname,sname,type1,arg1,type2,arg2) \
-+type fname(type1 arg1,type2 arg2) \
-+{ \
-+long __res; \
-+register long __g1 __asm__ ("g1") = __NR_##sname; \
-+register long __o0 __asm__ ("o0") = (long)(arg1); \
-+register long __o1 __asm__ ("o1") = (long)(arg2); \
-+__asm__ __volatile__ ("t 0x10\n\t" \
-+		      "bcc 1f\n\t" \
-+		      "mov %%o0, %0\n\t" \
-+		      "sub %%g0, %%o0, %0\n\t" \
-+		      "1:\n\t" \
-+		      : "=r" (__res), "=&r" (__o0) \
-+		      : "1" (__o0), "r" (__o1), "r" (__g1) \
-+		      : "cc"); \
-+if (__res < -255 || __res >= 0) \
-+	return (type) __res; \
-+return -1; \
-+}
-+
-+#define io_syscall3(type,fname,sname,type1,arg1,type2,arg2,type3,arg3) \
-+type fname(type1 arg1,type2 arg2,type3 arg3) \
-+{ \
-+long __res; \
-+register long __g1 __asm__ ("g1") = __NR_##sname; \
-+register long __o0 __asm__ ("o0") = (long)(arg1); \
-+register long __o1 __asm__ ("o1") = (long)(arg2); \
-+register long __o2 __asm__ ("o2") = (long)(arg3); \
-+__asm__ __volatile__ ("t 0x10\n\t" \
-+		      "bcc 1f\n\t" \
-+		      "mov %%o0, %0\n\t" \
-+		      "sub %%g0, %%o0, %0\n\t" \
-+		      "1:\n\t" \
-+		      : "=r" (__res), "=&r" (__o0) \
-+		      : "1" (__o0), "r" (__o1), "r" (__o2), "r" (__g1) \
-+		      : "cc"); \
-+if (__res < -255 || __res>=0) \
-+	return (type) __res; \
-+return -1; \
-+}
-+
-+#define io_syscall4(type,fname,sname,type1,arg1,type2,arg2,type3,arg3,type4,arg4) \
-+type fname(type1 arg1, type2 arg2, type3 arg3, type4 arg4) \
-+{ \
-+long __res; \
-+register long __g1 __asm__ ("g1") = __NR_##sname; \
-+register long __o0 __asm__ ("o0") = (long)(arg1); \
-+register long __o1 __asm__ ("o1") = (long)(arg2); \
-+register long __o2 __asm__ ("o2") = (long)(arg3); \
-+register long __o3 __asm__ ("o3") = (long)(arg4); \
-+__asm__ __volatile__ ("t 0x10\n\t" \
-+		      "bcc 1f\n\t" \
-+		      "mov %%o0, %0\n\t" \
-+		      "sub %%g0, %%o0, %0\n\t" \
-+		      "1:\n\t" \
-+		      : "=r" (__res), "=&r" (__o0) \
-+		      : "1" (__o0), "r" (__o1), "r" (__o2), "r" (__o3), "r" (__g1) \
-+		      : "cc"); \
-+if (__res < -255 || __res>=0) \
-+	return (type) __res; \
-+return -1; \
-+}
-+
-+#define io_syscall5(type,fname,sname,type1,arg1,type2,arg2,type3,arg3,type4,arg4, \
-+	  type5,arg5) \
-+type fname(type1 arg1,type2 arg2,type3 arg3,type4 arg4,type5 arg5) \
-+{ \
-+long __res; \
-+register long __g1 __asm__ ("g1") = __NR_##sname; \
-+register long __o0 __asm__ ("o0") = (long)(arg1); \
-+register long __o1 __asm__ ("o1") = (long)(arg2); \
-+register long __o2 __asm__ ("o2") = (long)(arg3); \
-+register long __o3 __asm__ ("o3") = (long)(arg4); \
-+register long __o4 __asm__ ("o4") = (long)(arg5); \
-+__asm__ __volatile__ ("t 0x10\n\t" \
-+		      "bcc 1f\n\t" \
-+		      "mov %%o0, %0\n\t" \
-+		      "sub %%g0, %%o0, %0\n\t" \
-+		      "1:\n\t" \
-+		      : "=r" (__res), "=&r" (__o0) \
-+		      : "1" (__o0), "r" (__o1), "r" (__o2), "r" (__o3), "r" (__o4), "r" (__g1) \
-+		      : "cc"); \
-+if (__res < -255 || __res>=0) \
-+	return (type) __res; \
-+return -1; \
-+}
-+
 --- a/src/syscall.h
 +++ b/src/syscall.h
-@@ -24,6 +24,14 @@
- #include "syscall-alpha.h"
- #elif defined(__arm__)
- #include "syscall-arm.h"
+@@ -28,6 +28,12 @@
+ #include "syscall-sparc.h"
+ #elif defined(__aarch64__)
+ #include "syscall-arm64.h"
 +#elif defined(__m68k__)
 +#include "syscall-m68k.h"
-+#elif defined(__sparc__)
-+#include "syscall-sparc.h"
 +#elif defined(__hppa__)
 +#include "syscall-parisc.h"
 +#elif defined(__mips__)
 +#include "syscall-mips.h"
  #else
- #error "add syscall-arch.h"
- #endif
+ #warning "using generic syscall method"
+ #include "syscall-generic.h"
 --- /dev/null
 +++ b/src/syscall-mips.h
 @@ -0,0 +1,223 @@
@@ -467,43 +332,14 @@
 +
 --- a/src/libaio.h
 +++ b/src/libaio.h
-@@ -83,6 +83,36 @@ typedef enum io_iocb_cmd {
- #define PADDEDptr(x, y)	x; unsigned y
- #define PADDEDul(x, y)	unsigned long x; unsigned y
- #  endif
-+#elif defined(__m68k__) /* big endian, 32 bits */
-+#define PADDED(x, y)	unsigned y; x
-+#define PADDEDptr(x, y)	unsigned y; x
-+#define PADDEDul(x, y)	unsigned y; unsigned long x
-+#elif defined(__sparc__) /* big endian, 32 bits */
-+#define PADDED(x, y)	unsigned y; x
-+#define PADDEDptr(x, y)	unsigned y; x
-+#define PADDEDul(x, y)	unsigned y; unsigned long x
-+#elif defined(__hppa__)
-+#  if defined(__arch64__) /* big endian, 64 bits */
-+#define PADDED(x, y)	unsigned y; x
-+#define PADDEDptr(x,y)	x
-+#define PADDEDul(x, y)	unsigned long x
-+#  else                    /* big endian, 32 bits */
-+#define PADDED(x, y)	unsigned y; x
-+#define PADDEDptr(x, y)	unsigned y; x
-+#define PADDEDul(x, y)	unsigned y; unsigned long x
-+#endif
-+#elif defined(__mips__)
-+#  if defined (__MIPSEB__) /* big endian, 32 bits */
-+#define PADDED(x, y)	unsigned y; x
-+#define PADDEDptr(x, y)	unsigned y; x
-+#define PADDEDul(x, y)	unsigned y; unsigned long x
-+#  elif defined(__MIPSEL__) /* little endian, 32 bits */
-+#define PADDED(x, y)	x; unsigned y
-+#define PADDEDptr(x, y)	x; unsigned y
-+#define PADDEDul(x, y)	unsigned long x; unsigned y
-+#  else
-+#    error "neither mipseb nor mipsel?"
-+#  endif
- #else
- #error	endian?
- #endif
+@@ -66,6 +66,7 @@ typedef enum io_iocb_cmd {
+ 
+ /* big endian, 64 bits */
+ #elif defined(__powerpc64__) || defined(__s390x__) || \
++      (defined(__hppa__) && defined(__arch64__)) || \
+       (defined(__sparc__) && defined(__arch64__)) || \
+       (defined(__aarch64__) && defined(__AARCH64EB__))
+ #define PADDED(x, y)	unsigned y; x
 --- /dev/null
 +++ b/src/syscall-parisc.h
 @@ -0,0 +1,146 @@
@@ -673,3 +509,58 @@
  #else
  //#warning Not really sure where kernel memory is.  Guessing.
  #define KERNEL_RW_POINTER	((void *)0xffffffff81000000)
+--- a/src/syscall-sparc.h
++++ b/src/syscall-sparc.h
+@@ -20,7 +20,9 @@ __asm__ __volatile__ ("t 0x10\n\t" \
+                       : "=r" (__res), "=&r" (__o0) \
+                       : "1" (__o0), "r" (__g1) \
+                       : "cc"); \
+-return (type) __res; \
++if (__res < -255 || __res >= 0) \
++	return (type) __res; \
++return -1; \
+ }
+ 
+ #define io_syscall2(type,fname,sname,type1,arg1,type2,arg2) \
+@@ -38,7 +40,9 @@ __asm__ __volatile__ ("t 0x10\n\t" \
+                       : "=r" (__res), "=&r" (__o0) \
+                       : "1" (__o0), "r" (__o1), "r" (__g1) \
+                       : "cc"); \
+-return (type) __res; \
++if (__res < -255 || __res >= 0) \
++	return (type) __res; \
++return -1; \
+ }
+ 
+ #define io_syscall3(type,fname,sname,type1,arg1,type2,arg2,type3,arg3) \
+@@ -57,7 +61,9 @@ __asm__ __volatile__ ("t 0x10\n\t" \
+                       : "=r" (__res), "=&r" (__o0) \
+                       : "1" (__o0), "r" (__o1), "r" (__o2), "r" (__g1) \
+                       : "cc"); \
+-return (type) __res; \
++if (__res < -255 || __res >= 0) \
++	return (type) __res; \
++return -1; \
+ }
+ 
+ #define io_syscall4(type,fname,sname,type1,arg1,type2,arg2,type3,arg3,type4,arg4) \
+@@ -77,7 +83,9 @@ __asm__ __volatile__ ("t 0x10\n\t" \
+                       : "=r" (__res), "=&r" (__o0) \
+                       : "1" (__o0), "r" (__o1), "r" (__o2), "r" (__o3), "r" (__g1) \
+                       : "cc"); \
+-return (type) __res; \
++if (__res < -255 || __res >= 0) \
++	return (type) __res; \
++return -1; \
+ }
+ 
+ #define io_syscall5(type,fname,sname,type1,arg1,type2,arg2,type3,arg3,type4,arg4, \
+@@ -99,5 +107,7 @@ __asm__ __volatile__ ("t 0x10\n\t" \
+                       : "=r" (__res), "=&r" (__o0) \
+                       : "1" (__o0), "r" (__o1), "r" (__o2), "r" (__o3), "r" (__o4), "r" (__g1) \
+                       : "cc"); \
+-return (type) __res; \
++if (__res < -255 || __res >= 0) \
++	return (type) __res; \
++return -1; \
+ }

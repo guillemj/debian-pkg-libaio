@@ -2,12 +2,9 @@
 00_arches_sh.patch
 00_arches_sparc64.patch
 00_arches_x32.patch
-00_arches_arm64.patch
-00_arches_arm64_tests.patch
 01_link_libgcc.patch
 02_libdevdir.patch
 03_man_errors.patch
 03_man_escape_backslash.patch
-04_check_waitpid_return.patch
 04_no_Werror.patch
 05_build-flags.patch

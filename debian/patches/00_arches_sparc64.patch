@@ -1,26 +1,19 @@
---- a/src/libaio.h
-+++ b/src/libaio.h
-@@ -57,7 +57,8 @@
- #define PADDED(x, y)	x, y
- #define PADDEDptr(x, y)	x
- #define PADDEDul(x, y)	unsigned long x
--#elif defined(__powerpc64__) /* big endian, 64 bits */
-+#elif defined(__powerpc64__) || \
-+      (defined(__sparc__) && defined(__arch64__)) /* big endian, 64 bits */
- #define PADDED(x, y)	unsigned y; x
- #define PADDEDptr(x,y)	x
- #define PADDEDul(x, y)	unsigned long x
+---
+ src/syscall-sparc64.h |   98 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/syscall.h         |    2 +
+ 2 files changed, 100 insertions(+)
+
 --- a/src/syscall.h
 +++ b/src/syscall.h
-@@ -26,6 +26,8 @@
+@@ -24,6 +24,8 @@
+ #include "syscall-alpha.h"
+ #elif defined(__arm__)
  #include "syscall-arm.h"
- #elif defined(__m68k__)
- #include "syscall-m68k.h"
 +#elif defined(__sparc__) && defined(__arch64__)
 +#include "syscall-sparc64.h"
  #elif defined(__sparc__)
  #include "syscall-sparc.h"
- #elif defined(__hppa__)
+ #elif defined(__aarch64__)
 --- /dev/null
 +++ b/src/syscall-sparc64.h
 @@ -0,0 +1,98 @@
