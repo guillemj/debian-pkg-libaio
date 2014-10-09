@@ -3,6 +3,7 @@
 00_arches_sparc64.patch
 00_arches_x32.patch
 00_arches_mips.patch
+00_arches_mips_fix_padding.patch
 01_link_libs.patch
 02_libdevdir.patch
 03_man_errors.patch
