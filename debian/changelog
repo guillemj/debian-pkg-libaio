@@ -1,4 +1,4 @@
-libaio (0.3.110-1) UNRELEASED; urgency=low
+libaio (0.3.110-1) unstable; urgency=low
 
   * New upstream release.
     - Refresh patches.
@@ -13,7 +13,7 @@ libaio (0.3.110-1) UNRELEASED; urgency=low
     Thanks to Jurica Stanojkovic <Jurica.Stanojkovic@rt-rk.com>.
   * Add mips64 support. Reported by Jeremy Fitzhardinge <jeremy@exablox.com>.
 
- -- Guillem Jover <guillem@debian.org>  Mon, 14 Jul 2014 18:07:19 +0200
+ -- Guillem Jover <guillem@debian.org>  Thu, 09 Oct 2014 05:44:48 +0200
 
 libaio (0.3.109-4) unstable; urgency=low
 
