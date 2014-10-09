@@ -2,6 +2,10 @@ libaio (0.3.110-1) UNRELEASED; urgency=low
 
   * New upstream release.
     - Refresh patches.
+  * Link against -lc and -Wl,--as-needed so that we pull the required
+    fortified functions from the internal libc_nonshared.a, but do not link
+    against the shared library because we do not use any of its symbols.
+    (Closes: #764509)
 
  -- Guillem Jover <guillem@debian.org>  Mon, 14 Jul 2014 18:07:19 +0200
 

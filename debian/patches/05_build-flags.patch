@@ -34,14 +34,14 @@
 -CFLAGS += -nostdlib -nostartfiles -Wall -I. -fPIC
 -SO_CFLAGS=-shared $(CFLAGS)
 -L_CFLAGS=$(CFLAGS)
--LINK_FLAGS=-lgcc
+-LINK_FLAGS=-Wl,--as-needed -lgcc -lc
 -LINK_FLAGS+=$(LDFLAGS)
 +MK_CPPFLAGS=-I.
 +MK_CFLAGS=-nostdlib -nostartfiles -fomit-frame-pointer -fPIC $(CFLAGS)
 +CFLAGS=-Wall -g -O2
 +SO_CFLAGS=-shared $(MK_CFLAGS)
 +L_CFLAGS=$(MK_CFLAGS)
-+MK_LDFLAGS=-lgcc $(LDFLAGS)
++MK_LDFLAGS=-Wl,--as-needed -lgcc -lc $(LDFLAGS)
  
  soname=libaio.so.1
  minor=0
