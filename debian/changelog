@@ -9,6 +9,8 @@ libaio (0.3.110-1) UNRELEASED; urgency=low
   * Switch debian/copyright to machine-readable format 1.0.
   * Now using Standards-Version 3.9.6 (no changes needed).
   * Switch to debhelper compatibility level 9.
+  * Fix mips/mipsel syscall wrappers to return correct error values.
+    Thanks to Jurica Stanojkovic <Jurica.Stanojkovic@rt-rk.com>.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 14 Jul 2014 18:07:19 +0200
 
