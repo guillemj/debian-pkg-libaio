@@ -7,6 +7,7 @@ libaio (0.3.110-1) UNRELEASED; urgency=low
     against the shared library because we do not use any of its symbols.
     (Closes: #764509)
   * Switch debian/copyright to machine-readable format 1.0.
+  * Now using Standards-Version 3.9.6 (no changes needed).
 
  -- Guillem Jover <guillem@debian.org>  Mon, 14 Jul 2014 18:07:19 +0200
 
