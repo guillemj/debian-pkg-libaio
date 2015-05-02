@@ -4,7 +4,7 @@ Priority: optional
 Section: libs
 Vcs-Browser: http://git.hadrons.org/cgit/debian/pkgs/libaio.git
 Vcs-Git: git://git.hadrons.org/git/debian/pkgs/libaio.git
-Homepage: http://www.kernel.org/pub/linux/libs/aio/
+Homepage: https://fedorahosted.org/releases/l/i/libaio/
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 
