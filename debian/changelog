@@ -1,3 +1,9 @@
+libaio (0.3.110-2) UNRELEASED; urgency=low
+
+  * Use https for the debian/copyright Format URL.
+
+ -- Guillem Jover <guillem@debian.org>  Sat, 02 May 2015 03:50:00 +0200
+
 libaio (0.3.110-1) unstable; urgency=low
 
   * New upstream release.
