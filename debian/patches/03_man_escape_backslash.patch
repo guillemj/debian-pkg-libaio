@@ -1,5 +1,9 @@
+Description: Verbatim \n should be escaped in order to make it through roff
 Author: Stephan Springl <springl-libaio@bfw-online.de>
-Subject: Verbatim \n should be escaped in order to make it through roff
+Origin: vendor
+Forwarded: no
+Bug-Debian: 651833
+Last-Update: 2011-12-12
 
 
 diff --git a/man/io.3 b/man/io.3

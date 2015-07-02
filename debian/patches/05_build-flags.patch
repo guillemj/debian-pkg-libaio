@@ -1,3 +1,13 @@
+Description: Honour user build flags
+ CPPFLAGS, CFLAGS and LDFLAGS are user flags, which we need to preserve, any
+ required flag that the build system needs, has to be set in some other flag
+ so that the build will succeed even of the user flags are passed.
+Author: Guillem Jover <guillem@debian.org>
+Origin: vendor
+Forwarded: no
+Last-Update: 2014-10-09
+
+
 ---
  harness/Makefile |    7 +++++--
  src/Makefile     |   18 +++++++++---------

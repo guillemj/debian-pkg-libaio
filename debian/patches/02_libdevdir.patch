@@ -1,3 +1,10 @@
+Description: Fix installation of shared vs static libraries
+Author: Guillem Jover <guillem@debian.org>
+Origin: vendor
+Forwarded: no
+Last-Update: 2007-09-11
+
+
 ---
  Makefile     |    9 ++++++++-
  src/Makefile |   12 +++++++-----

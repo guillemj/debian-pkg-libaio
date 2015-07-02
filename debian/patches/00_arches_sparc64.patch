@@ -1,3 +1,10 @@
+Description: Add sparc64 support
+Author: David S. Miller <davem@davemloft.net>
+Forwarded: no
+Bug-Debian: 588112
+Last-Update: 2010-07-05
+
+
 ---
  src/syscall-sparc64.h |   98 ++++++++++++++++++++++++++++++++++++++++++++++++++
  src/syscall.h         |    2 +

@@ -1,3 +1,10 @@
+Description: Add/fix support for m68k, mips, paris, sparc
+Author: Guillem Jover <guillem@debian.org>
+Origin: vendor
+Forwarded: no
+Last-Update: 2014-10-09
+
+
 ---
  harness/main.c       |   10 ++
  src/libaio.h         |    1 

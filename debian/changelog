@@ -7,6 +7,7 @@ libaio (0.3.110-2) UNRELEASED; urgency=low
   * Use https in debian/watch URL.
   * Add a small note on each long package description explaining what is
     contained on each package.
+  * Document each patch.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 02 May 2015 03:50:00 +0200
 

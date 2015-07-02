@@ -1,3 +1,11 @@
+Description: Add support for x32 (from the Yocto project)
+Author: Daniel Schepler <dschepler@gmail.com>
+Origin: vendor
+Forwarded: no
+Bug-Debian: 702183
+Last-Update: 2013-05-06
+
+
 Index: libaio-0.3.109/src/syscall-x86_64.h
 ===================================================================
 --- libaio-0.3.109.orig/src/syscall-x86_64.h	2009-10-09 11:17:02.000000000 -0700

@@ -1,3 +1,17 @@
+Description: Link against libgcc and libc to avoid unresolved symbols
+ We need to link agaisnt -lgcc, on at least hppa.
+ .
+ We also link against -lc and -Wl,--as-needed, this way we pull the
+ required fortified functions from the internal libc_nonshared.a, but
+ do not link against the shared library because we do not use any of
+ its symbols.
+Author: Guillem Jover <guillem@debian.org>
+Origin: vendor
+Bug-Debian: 764509
+Forwarded: no
+Last-Update: 2014-10-09
+
+
 ---
  src/Makefile |    2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
