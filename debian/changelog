@@ -1,4 +1,4 @@
-libaio (0.3.110-2) UNRELEASED; urgency=low
+libaio (0.3.110-2) unstable; urgency=medium
 
   * Use https for the debian/copyright Format URL.
   * Switch Vcs-Browser to a cgit URL.
@@ -9,7 +9,7 @@ libaio (0.3.110-2) UNRELEASED; urgency=low
     contained on each package.
   * Document each patch.
 
- -- Guillem Jover <guillem@debian.org>  Sat, 02 May 2015 03:50:00 +0200
+ -- Guillem Jover <guillem@debian.org>  Tue, 29 Sep 2015 16:48:30 +0200
 
 libaio (0.3.110-1) unstable; urgency=low
 
