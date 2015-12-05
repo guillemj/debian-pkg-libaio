@@ -1,3 +1,9 @@
+libaio (0.3.110-3) UNRELEASED; urgency=medium
+
+  * Use https for hadrons.org URLs.
+
+ -- Guillem Jover <guillem@debian.org>  Sat, 05 Dec 2015 16:44:05 +0100
+
 libaio (0.3.110-2) unstable; urgency=medium
 
   * Use https for the debian/copyright Format URL.
