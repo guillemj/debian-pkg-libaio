@@ -5,7 +5,7 @@ Section: libs
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/libaio.git
 Vcs-Git: git://git.hadrons.org/git/debian/pkgs/libaio.git
 Homepage: https://fedorahosted.org/releases/l/i/libaio/
-Build-Depends: debhelper (>= 9)
+Build-Depends: debhelper (>= 9.20150811)
 Standards-Version: 3.9.6
 
 Package: libaio1
@@ -31,19 +31,6 @@ Description: Linux kernel AIO access library - shared library
  advanced applications.
  .
  This package contains the udeb shared library.
-
-Package: libaio1-dbg
-Priority: extra
-Section: debug
-Architecture: linux-any
-Multi-Arch: same
-Depends: libaio1 (= ${binary:Version}), ${misc:Depends}
-Description: Linux kernel AIO access library - debugging symbols
- This library enables userspace to use Linux kernel asynchronous I/O
- system calls, important for the performance of databases and other
- advanced applications.
- .
- This package contains the debugging symbols.
 
 Package: libaio-dev
 Section: libdevel

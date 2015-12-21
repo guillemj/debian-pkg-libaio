@@ -71,7 +71,7 @@ binary-arch: install-arch
 	dh_installman -s
 	dh_lintian -s
 	dh_link -s
-	dh_strip -s --dbg-package=$(libdbg)
+	dh_strip -s --ddeb-migration='$(libdbg) (<< 0.3.110-2~)'
 	dh_compress -s
 	dh_fixperms -s
 	dh_makeshlibs -s --add-udeb '$(libudeb)'
