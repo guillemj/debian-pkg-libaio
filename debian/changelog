@@ -1,4 +1,4 @@
-libaio (0.3.110-3) UNRELEASED; urgency=medium
+libaio (0.3.110-3) unstable; urgency=medium
 
   * Use https for hadrons.org and debian.org URLs.
   * Switch debug package to a ddeb.
@@ -8,7 +8,7 @@ libaio (0.3.110-3) UNRELEASED; urgency=medium
   * Fix typos in man pages, reported by lintian.
   * Now using Standards-Version 3.9.8 (no changes needed).
 
- -- Guillem Jover <guillem@debian.org>  Sat, 05 Dec 2015 16:44:05 +0100
+ -- Guillem Jover <guillem@debian.org>  Tue, 31 May 2016 20:38:08 +0200
 
 libaio (0.3.110-2) unstable; urgency=medium
 
