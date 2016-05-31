@@ -3,6 +3,7 @@ libaio (0.3.110-3) UNRELEASED; urgency=medium
   * Use https for hadrons.org and debian.org URLs.
   * Switch debug package to a ddeb.
   * Switch to the dpkg makefile fragments in debian/rules.
+  * Enable hardening bindnow feature.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 05 Dec 2015 16:44:05 +0100
 
