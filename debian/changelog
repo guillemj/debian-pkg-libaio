@@ -4,6 +4,7 @@ libaio (0.3.110-3) UNRELEASED; urgency=medium
   * Switch debug package to a ddeb.
   * Switch to the dpkg makefile fragments in debian/rules.
   * Enable hardening bindnow feature.
+  * Update URL in debian/watch.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 05 Dec 2015 16:44:05 +0100
 
