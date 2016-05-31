@@ -1,6 +1,6 @@
 libaio (0.3.110-3) UNRELEASED; urgency=medium
 
-  * Use https for hadrons.org URLs.
+  * Use https for hadrons.org and debian.org URLs.
   * Switch debug package to a ddeb.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 05 Dec 2015 16:44:05 +0100
