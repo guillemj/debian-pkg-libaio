@@ -2,6 +2,7 @@ libaio (0.3.110-4) UNRELEASED; urgency=medium
 
   * Update upstream URLs to point to pagure.io instead of obsolete
     fedorahosted.org site.
+  * Switch to debhelper compatibility level 10.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 07 Aug 2017 23:56:12 +0200
 
