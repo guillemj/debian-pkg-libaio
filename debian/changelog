@@ -1,4 +1,4 @@
-libaio (0.3.110-4) UNRELEASED; urgency=medium
+libaio (0.3.110-4) unstable; urgency=medium
 
   * Update upstream URLs to point to pagure.io instead of obsolete
     fedorahosted.org site.
@@ -8,7 +8,7 @@ libaio (0.3.110-4) UNRELEASED; urgency=medium
     debian/copyright.
   * Use -a instead of deprecated -s in debhelper commands.
 
- -- Guillem Jover <guillem@debian.org>  Mon, 07 Aug 2017 23:56:12 +0200
+ -- Guillem Jover <guillem@debian.org>  Tue, 08 Aug 2017 00:29:32 +0200
 
 libaio (0.3.110-3) unstable; urgency=medium
 
