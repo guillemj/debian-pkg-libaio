@@ -6,7 +6,7 @@ Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/libaio.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/libaio.git
 Homepage: https://pagure.io/libaio
 Build-Depends: debhelper (>= 10)
-Standards-Version: 3.9.8
+Standards-Version: 4.0.1
 
 Package: libaio1
 Architecture: linux-any
