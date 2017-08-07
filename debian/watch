@@ -1,4 +1,3 @@
 # Site		Directory		Pattern			Version	Script
 version=3
-https://fedorahosted.org/releases/l/i/libaio/libaio-([\d\.]+)\.tar\.gz debian uupdate
-#http://ftp.kernel.org/pub/linux/libs/aio/ libaio-([\d\.]+)\.tar.gz debian uupdate
+https://releases.pagure.org/libaio/libaio-([\d\.]+)\.tar\.(gz|xz) debian uupdate
