@@ -6,6 +6,7 @@ libaio (0.3.110-4) UNRELEASED; urgency=medium
   * Now using Standards-Version 4.0.1 (no changes needed).
   * Move location of LGPL in Debian systems into a Comment field in
     debian/copyright.
+  * Use -a instead of deprecated -s in debhelper commands.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 07 Aug 2017 23:56:12 +0200
 

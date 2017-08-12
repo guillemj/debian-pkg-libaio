@@ -61,22 +61,22 @@ binary-indep:
 binary-arch: install-arch
 	dh_testdir
 	dh_testroot
-	dh_install -s
-	dh_installchangelogs -s ChangeLog
-	dh_installdocs -s
-	dh_installexamples -s
-	dh_installman -s
-	dh_lintian -s
-	dh_link -s
-	dh_strip -s --ddeb-migration='$(libdbg) (<< 0.3.110-2~)'
-	dh_compress -s
-	dh_fixperms -s
-	dh_makeshlibs -s --add-udeb '$(libudeb)'
-	dh_shlibdeps -s
-	dh_installdeb -s
-	dh_gencontrol -s
-	dh_md5sums -s
-	dh_builddeb -s
+	dh_install -a
+	dh_installchangelogs -a ChangeLog
+	dh_installdocs -a
+	dh_installexamples -a
+	dh_installman -a
+	dh_lintian -a
+	dh_link -a
+	dh_strip -a --ddeb-migration='$(libdbg) (<< 0.3.110-2~)'
+	dh_compress -a
+	dh_fixperms -a
+	dh_makeshlibs -a --add-udeb '$(libudeb)'
+	dh_shlibdeps -a
+	dh_installdeb -a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
 
 .PHONY: clean build-indep build-arch build 
 .PHONY: install-arch binary-indep binary-arch binary
