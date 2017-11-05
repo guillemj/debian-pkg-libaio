@@ -1,3 +1,9 @@
+libaio (0.3.110-5) UNRELEASED; urgency=medium
+
+  * Line-wrap and sort debian/control fields.
+
+ -- Guillem Jover <guillem@debian.org>  Sun, 05 Nov 2017 16:21:26 +0100
+
 libaio (0.3.110-4) unstable; urgency=medium
 
   * Update upstream URLs to point to pagure.io instead of obsolete

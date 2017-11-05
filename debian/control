@@ -5,14 +5,18 @@ Section: libs
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/libaio.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/libaio.git
 Homepage: https://pagure.io/libaio
-Build-Depends: debhelper (>= 10)
 Standards-Version: 4.0.1
+Build-Depends:
+ debhelper (>= 10),
 
 Package: libaio1
 Architecture: linux-any
 Multi-Arch: same
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends:
+ ${misc:Pre-Depends},
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
 Description: Linux kernel AIO access library - shared library
  This library enables userspace to use Linux kernel asynchronous I/O
  system calls, important for the performance of databases and other
@@ -24,7 +28,9 @@ Package: libaio1-udeb
 Package-Type: udeb
 Section: debian-installer
 Architecture: linux-any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
 Description: Linux kernel AIO access library - shared library
  This library enables userspace to use Linux kernel asynchronous I/O
  system calls, important for the performance of databases and other
@@ -35,7 +41,9 @@ Description: Linux kernel AIO access library - shared library
 Package: libaio-dev
 Section: libdevel
 Architecture: linux-any
-Depends: libaio1 (= ${binary:Version}), ${misc:Depends}
+Depends:
+ ${misc:Depends},
+ libaio1 (= ${binary:Version}),
 Description: Linux kernel AIO access library - development files
  This library enables userspace to use Linux kernel asynchronous I/O
  system calls, important for the performance of databases and other
