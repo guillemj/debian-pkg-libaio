@@ -5,6 +5,7 @@ libaio (0.3.110-5) UNRELEASED; urgency=medium
   * Use dpkg buildtools.mk fragment to set a correct CC.
   * Set Rules-Requires-Root to no.
   * Switch to debian/watch format version 4.
+  * Fix regex in debian/watch file to not include extension in the version.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 05 Nov 2017 16:21:26 +0100
 
