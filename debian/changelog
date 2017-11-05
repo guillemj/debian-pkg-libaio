@@ -1,6 +1,7 @@
 libaio (0.3.110-5) UNRELEASED; urgency=medium
 
   * Line-wrap and sort debian/control fields.
+  * Now using Standards-Version 4.1.1 (no changes needed).
 
  -- Guillem Jover <guillem@debian.org>  Sun, 05 Nov 2017 16:21:26 +0100
 
