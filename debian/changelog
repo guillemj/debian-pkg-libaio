@@ -4,6 +4,7 @@ libaio (0.3.110-5) UNRELEASED; urgency=medium
   * Now using Standards-Version 4.1.1 (no changes needed).
   * Use dpkg buildtools.mk fragment to set a correct CC.
   * Set Rules-Requires-Root to no.
+  * Switch to debian/watch format version 4.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 05 Nov 2017 16:21:26 +0100
 
