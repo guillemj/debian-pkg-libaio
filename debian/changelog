@@ -1,4 +1,4 @@
-libaio (0.3.110-5) UNRELEASED; urgency=medium
+libaio (0.3.110-5) unstable; urgency=medium
 
   * Line-wrap and sort debian/control fields.
   * Now using Standards-Version 4.1.1 (no changes needed).
@@ -7,7 +7,7 @@ libaio (0.3.110-5) UNRELEASED; urgency=medium
   * Switch to debian/watch format version 4.
   * Fix regex in debian/watch file to not include extension in the version.
 
- -- Guillem Jover <guillem@debian.org>  Sun, 05 Nov 2017 16:21:26 +0100
+ -- Guillem Jover <guillem@debian.org>  Sun, 05 Nov 2017 16:26:47 +0100
 
 libaio (0.3.110-4) unstable; urgency=medium
 
