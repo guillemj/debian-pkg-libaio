@@ -43,6 +43,7 @@ Description: Linux kernel AIO access library - shared library
 Package: libaio-dev
 Section: libdevel
 Architecture: linux-any
+Multi-Arch: same
 Depends:
  ${misc:Depends},
  libaio1 (= ${binary:Version}),

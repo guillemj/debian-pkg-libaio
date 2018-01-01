@@ -1,3 +1,9 @@
+libaio (0.3.110-6) UNRELEASED; urgency=medium
+
+  * Mark libaio-dev as Multi-Arch same.
+
+ -- Guillem Jover <guillem@debian.org>  Mon, 01 Jan 2018 22:36:24 +0100
+
 libaio (0.3.110-5) unstable; urgency=medium
 
   * Line-wrap and sort debian/control fields.
