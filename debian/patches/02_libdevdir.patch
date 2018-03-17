@@ -12,8 +12,8 @@ Last-Update: 2007-09-11
 
 --- a/Makefile
 +++ b/Makefile
-@@ -5,9 +5,11 @@ RELEASE=$(shell awk '/Release:/ { print
- CVSTAG = $(NAME)_$(subst .,-,$(VERSION))_$(subst .,-,$(RELEASE))
+@@ -4,9 +4,11 @@ VERSION=$(shell awk '/Version:/ { print
+ TAG = $(NAME)-$(VERSION)
  RPMBUILD=$(shell `which rpmbuild >&/dev/null` && echo "rpmbuild" || echo "rpm")
  
 +DESTDIR=
@@ -24,7 +24,7 @@ Last-Update: 2007-09-11
  
  default: all
  
-@@ -15,7 +17,12 @@ all:
+@@ -14,7 +16,12 @@ all:
  	@$(MAKE) -C src
  
  install:
@@ -48,7 +48,7 @@ Last-Update: 2007-09-11
 +libdevdir=$(prefix)/lib
  
  CFLAGS ?= -g -fomit-frame-pointer -O2
- CFLAGS += -nostdlib -nostartfiles -Wall -I. -fPIC
+ CFLAGS += -Wall -I. -fPIC
 @@ -53,11 +55,11 @@ $(libname): $(libaio_sobjs) libaio.map
  	$(CC) $(SO_CFLAGS) -Wl,--version-script=libaio.map -Wl,-soname=$(soname) -o $@ $(libaio_sobjs) $(LINK_FLAGS)
  

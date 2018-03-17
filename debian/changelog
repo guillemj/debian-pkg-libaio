@@ -1,5 +1,14 @@
-libaio (0.3.110-6) UNRELEASED; urgency=medium
+libaio (0.3.111-1) UNRELEASED; urgency=medium
 
+  * New upstream release.
+    - Refresh patches.
+    - Fix x32 support. (Closes: #883904)
+    - Add riscv64 support. (Closes: #893003)
+  * Fix cross-building by not invoking getconf for PAGESIZE, and instead
+    getting the value at run-time.
+  * Do not pass -fomit-frame-pointer as part of the required compiler flags.
+  * Remove now always unused lintian override, as upstream requires linking
+    against libc everywhere for its syscall(3) usage.
   * Mark libaio-dev as Multi-Arch same.
   * Now using Standards-Version 4.1.3 (no changes needed).
 

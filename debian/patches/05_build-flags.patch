@@ -19,17 +19,17 @@ Last-Update: 2014-10-09
  HARNESS_SRCS:=main.c
  # io_queue.c
  
--CFLAGS+=-Wall -I../src -g -O
-+MK_CPPFLAGS:=-I../src
-+CFLAGS=-Wall -g -O
+-CFLAGS+=-Wall -I../src -g -O2 -DPAGE_SIZE=$(shell getconf PAGESIZE)
++MK_CPPFLAGS:=-I../src -DPAGE_SIZE=$(shell getconf PAGESIZE) $(CPPFLAGS)
++CFLAGS=-Wall -g -O2
  #-lpthread -lrt
 +MK_CFLAGS=$(CFLAGS)
-+MK_LDFLAGS=main.c ../src/libaio.a $(LDFLAGS)
++MK_LDFLAGS=main.c ../src/libaio.a -lpthread $(LDFLAGS)
  
  all: $(PROGS)
  
  $(PROGS): %.p: %.t $(HARNESS_SRCS)
--	$(CC) $(CFLAGS) -DTEST_NAME=\"$<\" -o $@ main.c ../src/libaio.a
+-	$(CC) $(CFLAGS) -DTEST_NAME=\"$<\" -o $@ main.c ../src/libaio.a -lpthread
 +	$(CC) $(MK_CPPFLAGS) $(MK_CFLAGS) -DTEST_NAME=\"$<\" -o $@ $(MK_LDFLAGS)
  
  clean:
@@ -41,17 +41,17 @@ Last-Update: 2014-10-09
  libdevdir=$(prefix)/lib
  
 -CFLAGS ?= -g -fomit-frame-pointer -O2
--CFLAGS += -nostdlib -nostartfiles -Wall -I. -fPIC
+-CFLAGS += -Wall -I. -fPIC
 -SO_CFLAGS=-shared $(CFLAGS)
 -L_CFLAGS=$(CFLAGS)
--LINK_FLAGS=-Wl,--as-needed -lgcc -lc
+-LINK_FLAGS=
 -LINK_FLAGS+=$(LDFLAGS)
 +MK_CPPFLAGS=-I.
-+MK_CFLAGS=-nostdlib -nostartfiles -fomit-frame-pointer -fPIC $(CFLAGS)
-+CFLAGS=-Wall -g -O2
++MK_CFLAGS=-fPIC $(CFLAGS)
++CFLAGS=-Wall -g -fomit-frame-pointer -O2
 +SO_CFLAGS=-shared $(MK_CFLAGS)
 +L_CFLAGS=$(MK_CFLAGS)
-+MK_LDFLAGS=-Wl,--as-needed -lgcc -lc $(LDFLAGS)
++MK_LDFLAGS=$(LDFLAGS)
  
  soname=libaio.so.1
  minor=0

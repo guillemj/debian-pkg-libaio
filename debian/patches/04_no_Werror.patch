@@ -17,8 +17,8 @@ Last-Update: 2014-10-09
  HARNESS_SRCS:=main.c
  # io_queue.c
  
--CFLAGS+=-Wall -Werror -I../src -g -O
-+CFLAGS+=-Wall -I../src -g -O
+-CFLAGS+=-Wall -Werror -I../src -g -O2 -DPAGE_SIZE=$(shell getconf PAGESIZE)
++CFLAGS+=-Wall -I../src -g -O2 -DPAGE_SIZE=$(shell getconf PAGESIZE)
  #-lpthread -lrt
  
  all: $(PROGS)
