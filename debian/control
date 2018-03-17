@@ -9,7 +9,7 @@ Standards-Version: 4.1.3
 Rules-Requires-Root: no
 Build-Depends:
  dpkg-dev (>= 1.19.0),
- debhelper (>= 10),
+ debhelper (>= 11),
 
 Package: libaio1
 Architecture: linux-any
