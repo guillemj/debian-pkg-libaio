@@ -1,4 +1,4 @@
-libaio (0.3.111-1) UNRELEASED; urgency=medium
+libaio (0.3.111-1) unstable; urgency=medium
 
   * New upstream release.
     - Refresh patches.
@@ -13,7 +13,7 @@ libaio (0.3.111-1) UNRELEASED; urgency=medium
   * Now using Standards-Version 4.1.3 (no changes needed).
   * Switch to debhelper compatibility level 11.
 
- -- Guillem Jover <guillem@debian.org>  Mon, 01 Jan 2018 22:36:24 +0100
+ -- Guillem Jover <guillem@debian.org>  Sun, 18 Mar 2018 02:58:44 +0100
 
 libaio (0.3.110-5) unstable; urgency=medium
 
