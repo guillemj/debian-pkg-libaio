@@ -13,6 +13,8 @@ libaio (0.3.112-1) UNRELEASED; urgency=medium
   * Only install upstream TODO into libaio-dev.
   * Remove support for old debug symbol package migration.
   * Add comment for dpkg-dev versioned Build-Depends.
+  * Perform a proper and correct /usr-merge transition by moving the package
+    contents from / to /usr.
 
  -- Guillem Jover <guillem@debian.org>  Fri, 08 Feb 2019 11:02:24 +0100
 

@@ -48,8 +48,7 @@ install-arch: check-arch
 	
 	$(MAKE) install \
 	  DESTDIR=$(CURDIR)/debian/tmp \
-	  libdir=/lib/$(DEB_HOST_MULTIARCH) \
-	  libdevdir=/usr/lib/$(DEB_HOST_MULTIARCH)
+	  libdir=/usr/lib/$(DEB_HOST_MULTIARCH)
 
 binary: binary-indep binary-arch
 
