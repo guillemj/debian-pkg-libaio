@@ -12,7 +12,6 @@ include /usr/share/dpkg/buildtools.mk
 export CC
 
 lib := libaio1
-libdbg := $(lib)-dbg
 libudeb := $(lib)-udeb
 libdev := libaio-dev
 
@@ -67,7 +66,7 @@ binary-arch: install-arch
 	dh_installman -a
 	dh_lintian -a
 	dh_link -a
-	dh_strip -a --ddeb-migration='$(libdbg) (<< 0.3.110-2~)'
+	dh_strip -a
 	dh_compress -a
 	dh_fixperms -a
 	dh_makeshlibs -a --add-udeb '$(libudeb)'
