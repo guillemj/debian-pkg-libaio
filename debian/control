@@ -8,6 +8,7 @@ Homepage: https://pagure.io/libaio
 Standards-Version: 4.1.3
 Rules-Requires-Root: no
 Build-Depends:
+# Needed for buildtools.mk fragment.
  dpkg-dev (>= 1.19.0),
  debhelper (>= 11),
 
