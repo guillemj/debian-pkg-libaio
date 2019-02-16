@@ -9,6 +9,7 @@ libaio (0.3.112-1) UNRELEASED; urgency=medium
   * Use expanded symbol file instead of matching on symver. Even though
     upstream manages versioned symbols correctly, being explicit makes it
     safer against accidental changes.
+  * Add a Build-Depends-Package field to the symbols file.
 
  -- Guillem Jover <guillem@debian.org>  Fri, 08 Feb 2019 11:02:24 +0100
 
