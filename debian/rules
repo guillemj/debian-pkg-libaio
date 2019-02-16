@@ -13,7 +13,6 @@ export CC
 
 lib := libaio1
 libudeb := $(lib)-udeb
-libdev := libaio-dev
 
 build-indep:
 
