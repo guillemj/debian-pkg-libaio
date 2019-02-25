@@ -6,6 +6,9 @@ libaio (0.3.112-1) UNRELEASED; urgency=medium
     - Add new patch to fix error due to -Werror=sizeof-pointer-memaccess.
     - Split man page cleanup into logic changes, and further improve the
       formatting, markup, typo fixes, etc.
+  * Use expanded symbol file instead of matching on symver. Even though
+    upstream manages versioned symbols correctly, being explicit makes it
+    safer against accidental changes.
 
  -- Guillem Jover <guillem@debian.org>  Fri, 08 Feb 2019 11:02:24 +0100
 
