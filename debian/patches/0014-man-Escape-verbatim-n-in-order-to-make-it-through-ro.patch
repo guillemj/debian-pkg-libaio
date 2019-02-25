@@ -1,16 +1,19 @@
-Description: Verbatim \n should be escaped in order to make it through roff
-Author: Stephan Springl <springl-libaio@bfw-online.de>
-Origin: vendor
-Forwarded: no
-Bug-Debian: 651833
-Last-Update: 2011-12-12
+From 91cfb8e29f999a5eb72f256cf9649d1c71ccabe7 Mon Sep 17 00:00:00 2001
+From: Stephan Springl <springl-libaio@bfw-online.de>
+Date: Sat, 9 Feb 2019 00:03:54 +0100
+Subject: [PATCH 14/15] man: Escape verbatim \n in order to make it through
+ roff
 
+Signed-off-by: Guillem Jover <guillem@hadrons.org>
+---
+ man/io.3 | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/man/io.3 b/man/io.3
-index d82e0d1..f277673 100644
+index bbb0a2d..2840bc7 100644
 --- a/man/io.3
 +++ b/man/io.3
-@@ -172,11 +172,11 @@ static const char *srcname = NULL;
+@@ -174,11 +174,11 @@ static const char *srcname = NULL;
  static void io_error(const char *func, int rc)
  {
      if (rc == -ENOSYS)
@@ -25,7 +28,7 @@ index d82e0d1..f277673 100644
  
      if (dstfd > 0)
  	close(dstfd);
-@@ -195,7 +195,7 @@ static void wr_done(io_context_t ctx, struct iocb *iocb, long res, long res2)
+@@ -197,7 +197,7 @@ static void wr_done(io_context_t ctx, struct iocb *iocb, long res, long res2)
  	io_error("aio write", res2);
      }
      if (res != iocb->u.c.nbytes) {
@@ -34,7 +37,7 @@ index d82e0d1..f277673 100644
  	exit(1);
      }
      --tocopy;
-@@ -221,7 +221,7 @@ static void rd_done(io_context_t ctx, struct iocb *iocb, long res, long res2)
+@@ -223,7 +223,7 @@ static void rd_done(io_context_t ctx, struct iocb *iocb, long res, long res2)
      if (res2 != 0)
  	io_error("aio read", res2);
      if (res != iosize) {
@@ -43,7 +46,7 @@ index d82e0d1..f277673 100644
  	exit(1);
      }
  
-@@ -281,7 +281,7 @@ int main(int argc, char *const *argv)
+@@ -283,7 +283,7 @@ int main(int argc, char *const *argv)
  		char *buf = (char *) malloc(iosize);
  
  		if (NULL == buf || NULL == io) {
@@ -52,3 +55,6 @@ index d82e0d1..f277673 100644
  		    exit(1);
  		}
  
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+

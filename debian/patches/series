@@ -2,11 +2,27 @@
 00_arches_sh.patch
 00_arches_x32.patch
 00_arches_mips_fix_padding.patch
+# Build system
 01_link_libs.patch
 02_libdevdir.patch
-03_man_errors.patch
-03_man_escape_backslash.patch
-03_man_typos.patch
 04_no_Werror.patch
 05_build-flags.patch
-06_cross-build.patch
+# Harness fixes
+0001-harness-Use-destination-strncpy-expression-for-sizeo.patch
+0002-harness-Use-run-time-_SC_PAGE_SIZE-instead-of-build-.patch
+# Man pages fixes
+0001-man-Add-missing-space-in-man-page-references.patch
+0002-man-Use-the-correct-troff-macro-for-comments.patch
+0003-man-Refer-to-libaio.h-instead-of-libio.h.patch
+0004-man-End-sentences-with-a-period.patch
+0005-man-Fix-casing.patch
+0006-man-Fix-period-formatting.patch
+0007-man-Remove-spurious-spaces.patch
+0008-man-Remove-spurious-text.patch
+0009-man-Add-None-to-empty-sections.patch
+0010-man-Fix-typos.patch
+0011-man-Fix-title-header.patch
+0012-man-Fix-markup.patch
+0013-man-Fold-short-lines.patch
+0014-man-Escape-verbatim-n-in-order-to-make-it-through-ro.patch
+0015-Use-ctx-consistently-for-io_context_t-instead-of-ctx.patch

@@ -1,0 +1,27 @@
+From 6d39d8f03e277b459d05b8d22f0baf0d496037f2 Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Sun, 13 Aug 2017 20:36:23 +0200
+Subject: [PATCH 09/15] man: Add "None" to empty sections
+
+Signed-off-by: Guillem Jover <guillem@hadrons.org>
+---
+ man/io_set_callback.3 | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/man/io_set_callback.3 b/man/io_set_callback.3
+index 71efd2f..4ee4b05 100644
+--- a/man/io_set_callback.3
++++ b/man/io_set_callback.3
+@@ -27,7 +27,9 @@ typedef void (*io_callback_t)(io_context_t ctx, struct iocb *iocb, long res, lon
+ The callback is not done if the caller uses raw events from 
+ io_getevents, only with the library helpers.
+ .SH "RETURN VALUES"
++None.
+ .SH ERRORS
++None.
+ .SH "SEE ALSO"
+ .BR io (3),
+ .BR io_cancel (3),
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+

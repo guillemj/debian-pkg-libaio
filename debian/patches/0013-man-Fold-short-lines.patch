@@ -1,0 +1,54 @@
+From 312d88fe494adc12737a6019d917be9fba757b8e Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Fri, 8 Feb 2019 22:45:18 +0100
+Subject: [PATCH 13/15] man: Fold short lines
+
+Signed-off-by: Guillem Jover <guillem@hadrons.org>
+---
+ man/io_prep_fsync.3 | 3 +--
+ man/io_submit.3     | 9 +++------
+ 2 files changed, 4 insertions(+), 8 deletions(-)
+
+diff --git a/man/io_prep_fsync.3 b/man/io_prep_fsync.3
+index 61e8850..31cc9c5 100644
+--- a/man/io_prep_fsync.3
++++ b/man/io_prep_fsync.3
+@@ -39,8 +39,7 @@ The file for which
+ .nf
+ .IR "iocb->aio_fildes = fd" 
+ .fi
+-is a descriptor is set up with
+-the command
++is a descriptor is set up with the command
+ .nf
+ .IR "iocb->aio_lio_opcode = IO_CMD_FSYNC"
+ .fi
+diff --git a/man/io_submit.3 b/man/io_submit.3
+index 587045b..7f4e27a 100644
+--- a/man/io_submit.3
++++ b/man/io_submit.3
+@@ -47,18 +47,15 @@ between.
+ .BR io_submit ()
+ gets the 
+ .I nr
+-requests from the array pointed to
+-by 
++requests from the array pointed to by
+ .IR "iocbs" .
+ The operation to be performed is determined by the
+ .IR "aio_lio_opcode"
+ member in each element of 
+ .IR "iocbs" .
+-If this
+-field is 
++If this field is
+ .B "IO_CMD_PREAD"
+-a read operation is enqueued, similar to a call
+-of 
++a read operation is enqueued, similar to a call of
+ .IR "io_prep_pread"
+ for this element of the array (except that the way
+ the termination is signalled is different, as we will see below).  If
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+

@@ -1,0 +1,52 @@
+From a9f29505e66613e9e4ce4038882ca1cb44eda6c8 Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Sat, 9 Feb 2019 00:25:38 +0100
+Subject: [PATCH 1/2] harness: Use destination strncpy() expression for
+ sizeof() argument
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Even though this is the same size, as the sizeof() is derived from the
+source expression, recent gcc versions will emit a warning, which is
+turned into an error by -Werror:
+
+  error: argument to ‘sizeof’ in ‘strncpy’ call is the same expression
+    as the source; did you mean to use the size of the destination?
+    [-Werror=sizeof-pointer-memaccess]
+
+Signed-off-by: Guillem Jover <guillem@hadrons.org>
+---
+ harness/cases/19.t | 2 +-
+ harness/cases/21.t | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/harness/cases/19.t b/harness/cases/19.t
+index 4989510..5c3e0d6 100644
+--- a/harness/cases/19.t
++++ b/harness/cases/19.t
+@@ -41,7 +41,7 @@ open_temp_file(void)
+ 	int fd;
+ 	char template[sizeof(TEMPLATE)];
+ 
+-	strncpy(template, TEMPLATE, sizeof(TEMPLATE));
++	strncpy(template, TEMPLATE, sizeof(template));
+ 	fd = mkostemp(template, O_DIRECT);
+ 	if (fd < 0) {
+ 		perror("mkstemp");
+diff --git a/harness/cases/21.t b/harness/cases/21.t
+index 441eaa8..fe33a9d 100644
+--- a/harness/cases/21.t
++++ b/harness/cases/21.t
+@@ -43,7 +43,7 @@ open_temp_file()
+ 	int fd;
+ 	char temp_file[sizeof(TEMPLATE)];
+ 
+-	strncpy(temp_file, TEMPLATE, sizeof(TEMPLATE));
++	strncpy(temp_file, TEMPLATE, sizeof(temp_file));
+ 	fd = mkstemp(temp_file);
+ 	if (fd < 0) {
+ 		perror("mkstemp");
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+

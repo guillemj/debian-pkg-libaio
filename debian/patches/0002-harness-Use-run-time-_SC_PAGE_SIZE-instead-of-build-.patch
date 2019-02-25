@@ -1,13 +1,14 @@
-Description: Use run-time _SC_PAGE_SIZE instead of build-time PAGESIZE
- The getconf command is inherently not cross-compilation friendly. In addition
- PAGESIZE depends on the specific system, even within a specific arch, so
- using a hard-coded value is never safe.
-Author: Guillem Jover <guillem@debian.org>
-Origin: vendor
-Forwarded: no
-Last-Update: 2018-03-17
+From fc8b751e332650e988185d0f107f80fff3436af6 Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Sat, 9 Feb 2019 00:28:53 +0100
+Subject: [PATCH 2/2] harness: Use run-time _SC_PAGE_SIZE instead of build-time
+ PAGESIZE
 
+The getconf(1) command is inherently not cross-compilation friendly.
+In addition PAGESIZE depends on the specific system, even within a
+specific arch, so using a hard-coded value is never safe.
 
+Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
  harness/Makefile   |    2 +-
  harness/cases/18.t |   34 ++++++++++++++++++++++++----------
@@ -19,11 +20,11 @@ Last-Update: 2018-03-17
  HARNESS_SRCS:=main.c
  # io_queue.c
  
--MK_CPPFLAGS:=-I../src -DPAGE_SIZE=$(shell getconf PAGESIZE) $(CPPFLAGS)
-+MK_CPPFLAGS:=-I../src $(CPPFLAGS)
- CFLAGS=-Wall -g -O2
+-MK_CPPFLAGS := -I../src -DPAGE_SIZE=$(shell getconf PAGESIZE) $(CPPFLAGS)
++MK_CPPFLAGS := -I../src $(CPPFLAGS)
+ CFLAGS = -Wall -g -O2
  #-lpthread -lrt
- MK_CFLAGS=$(CFLAGS)
+ MK_CFLAGS = $(CFLAGS)
 --- a/harness/cases/18.t
 +++ b/harness/cases/18.t
 @@ -40,11 +40,17 @@

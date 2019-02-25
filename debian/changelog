@@ -1,3 +1,14 @@
+libaio (0.3.112-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+    - Refresh patches.
+    - Remove patches merged upstream.
+    - Add new patch to fix error due to -Werror=sizeof-pointer-memaccess.
+    - Split man page cleanup into logic changes, and further improve the
+      formatting, markup, typo fixes, etc.
+
+ -- Guillem Jover <guillem@debian.org>  Fri, 08 Feb 2019 11:02:24 +0100
+
 libaio (0.3.111-1) unstable; urgency=medium
 
   * New upstream release.

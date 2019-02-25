@@ -20,11 +20,11 @@ Last-Update: 2014-10-09
  # io_queue.c
  
 -CFLAGS+=-Wall -I../src -g -O2 -DPAGE_SIZE=$(shell getconf PAGESIZE)
-+MK_CPPFLAGS:=-I../src -DPAGE_SIZE=$(shell getconf PAGESIZE) $(CPPFLAGS)
-+CFLAGS=-Wall -g -O2
++MK_CPPFLAGS := -I../src -DPAGE_SIZE=$(shell getconf PAGESIZE) $(CPPFLAGS)
++CFLAGS = -Wall -g -O2
  #-lpthread -lrt
-+MK_CFLAGS=$(CFLAGS)
-+MK_LDFLAGS=main.c ../src/libaio.a -lpthread $(LDFLAGS)
++MK_CFLAGS = $(CFLAGS)
++MK_LDFLAGS = main.c ../src/libaio.a -lpthread $(LDFLAGS)
  
  all: $(PROGS)
  
@@ -38,7 +38,7 @@ Last-Update: 2014-10-09
 +++ b/src/Makefile
 @@ -4,12 +4,12 @@ includedir=$(prefix)/include
  libdir=$(prefix)/lib
- libdevdir=$(prefix)/lib
+ libdevdir=$(libdir)
  
 -CFLAGS ?= -g -fomit-frame-pointer -O2
 -CFLAGS += -Wall -I. -fPIC
@@ -46,16 +46,16 @@ Last-Update: 2014-10-09
 -L_CFLAGS=$(CFLAGS)
 -LINK_FLAGS=
 -LINK_FLAGS+=$(LDFLAGS)
-+MK_CPPFLAGS=-I.
-+MK_CFLAGS=-fPIC $(CFLAGS)
-+CFLAGS=-Wall -g -fomit-frame-pointer -O2
-+SO_CFLAGS=-shared $(MK_CFLAGS)
-+L_CFLAGS=$(MK_CFLAGS)
-+MK_LDFLAGS=$(LDFLAGS)
++MK_CPPFLAGS = -I.
++MK_CFLAGS = -fPIC $(CFLAGS)
++CFLAGS = -Wall -g -fomit-frame-pointer -O2
++SO_CFLAGS = -shared $(MK_CFLAGS)
++L_CFLAGS = $(MK_CFLAGS)
++MK_LDFLAGS = $(LDFLAGS)
+ ENABLE_SHARED ?= 1
  
  soname=libaio.so.1
- minor=0
-@@ -39,10 +39,10 @@ libaio_sobjs := $(patsubst %.c,%.os,$(li
+@@ -44,10 +44,10 @@ libaio_sobjs := $(patsubst %.c,%.os,$(li
  $(libaio_objs) $(libaio_sobjs): libaio.h vsys_def.h
  
  %.os: %.c
@@ -68,7 +68,7 @@ Last-Update: 2014-10-09
  
  AR ?= ar
  RANLIB ?= ranlib
-@@ -52,7 +52,7 @@ libaio.a: $(libaio_objs)
+@@ -57,7 +57,7 @@ libaio.a: $(libaio_objs)
  	$(RANLIB) libaio.a
  
  $(libname): $(libaio_sobjs) libaio.map

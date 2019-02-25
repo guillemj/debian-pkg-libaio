@@ -1,0 +1,54 @@
+From a1b19f2b9806c1585bab7ecc7ffb3df477498dce Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Fri, 8 Feb 2019 22:31:15 +0100
+Subject: [PATCH 08/15] man: Remove spurious text
+
+Signed-off-by: Guillem Jover <guillem@hadrons.org>
+---
+ man/io_getevents.3     | 1 -
+ man/io_prep_pread.3    | 2 +-
+ man/io_queue_release.3 | 3 +--
+ 3 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/man/io_getevents.3 b/man/io_getevents.3
+index 24c07c3..37e9f7a 100644
+--- a/man/io_getevents.3
++++ b/man/io_getevents.3
+@@ -73,7 +73,6 @@ events happens or until a signal is caught.
+ The following
+ .BR io_pgetevents ()
+ call:
+-call:
+ .PP
+ .in +4n
+ .EX
+diff --git a/man/io_prep_pread.3 b/man/io_prep_pread.3
+index 6d66c0f..b32fe4c 100644
+--- a/man/io_prep_pread.3
++++ b/man/io_prep_pread.3
+@@ -20,7 +20,7 @@ io_prep_pread \- Set up asynchronous read
+ .br
+ .sp
+ .BI "inline void io_prep_pread(struct iocb *iocb, int fd, void *buf, size_t count, long long offset)
+-"
++.
+ .sp
+ struct iocb {
+ 	void		*data;
+diff --git a/man/io_queue_release.3 b/man/io_queue_release.3
+index db91bad..6444aff 100644
+--- a/man/io_queue_release.3
++++ b/man/io_queue_release.3
+@@ -14,8 +14,7 @@ io_queue_release \- Release the context associated with the userspace handle
+ .B io_queue_release
+ destroys the context associated with the userspace handle. May cancel any outstanding
+ AIOs and block on completion.
+-
+-.B cts.
++.
+ .SH "RETURN VALUES"
+ On success,
+ .B io_queue_release
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+
