@@ -1,3 +1,13 @@
+libaio (0.3.112-3) UNRELEASED; urgency=medium
+
+  * Test suite fixes:
+    - Fix logic inversion in EINVAL check.
+    - Revert making the test suite fatal on failures, as the Debian buildd
+      setup is peculiar enough to make at least two tests fail. This will
+      need further work.
+
+ -- Guillem Jover <guillem@debian.org>  Tue, 26 Feb 2019 05:21:45 +0100
+
 libaio (0.3.112-2) unstable; urgency=medium
 
   * Test suite fixes:

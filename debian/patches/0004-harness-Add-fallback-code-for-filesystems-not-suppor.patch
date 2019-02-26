@@ -65,7 +65,7 @@ index fe33a9d..c1370fd 100644
  	flags = fcntl(fd, F_GETFL);
  	ret = fcntl(fd, F_SETFL, flags | O_DIRECT);
 -	if (ret != 0) {
-+	if (ret != 0 && errno == EINVAL) {
++	if (ret != 0 && errno != EINVAL) {
  		perror("fcntl");
  		return 1;
  	}
