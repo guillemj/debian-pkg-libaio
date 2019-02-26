@@ -1,0 +1,37 @@
+From 42e252f5fd42f147559452a781b5bb851ff0f40a Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Tue, 26 Feb 2019 01:45:15 +0100
+Subject: [PATCH 3/7] harness: Make RISC-V use SYS_eventfd2 instead of
+ SYS_eventfd
+
+This is a recent architecture and as such does not provide legacy
+support for SYS_eventfd. Declare that we need to use the new syscall.
+
+Signed-off-by: Guillem Jover <guillem@hadrons.org>
+---
+ harness/cases/16.t | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/harness/cases/16.t b/harness/cases/16.t
+index 5a546ff..b36bbd2 100644
+--- a/harness/cases/16.t
++++ b/harness/cases/16.t
+@@ -18,12 +18,12 @@
+ #define SYS_eventfd 318
+ #elif defined(__alpha__)
+ #define SYS_eventfd 478
+-#elif defined(__aarch64__)
+-/* arm64 does not implement eventfd, only eventfd2 */
++#elif defined(__aarch64__) || defined(__riscv)
++/* arm64 and riscv do not implement eventfd, only eventfd2 */
+ #define USE_EVENTFD2
+ #ifndef SYS_eventfd2
+ #define SYS_eventfd2 19
+-#endif /* __aarch64__ */
++#endif /* __aarch64__ || __riscv */
+ #else
+ #error define SYS_eventfd for your arch!
+ #endif
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+

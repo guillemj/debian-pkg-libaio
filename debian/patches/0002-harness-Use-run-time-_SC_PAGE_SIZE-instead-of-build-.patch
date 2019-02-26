@@ -1,7 +1,7 @@
-From fc8b751e332650e988185d0f107f80fff3436af6 Mon Sep 17 00:00:00 2001
+From ce13c8eb716beec3b6a83285a6295212cbf3ce80 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 9 Feb 2019 00:28:53 +0100
-Subject: [PATCH 2/2] harness: Use run-time _SC_PAGE_SIZE instead of build-time
+Subject: [PATCH 2/7] harness: Use run-time _SC_PAGE_SIZE instead of build-time
  PAGESIZE
 
 The getconf(1) command is inherently not cross-compilation friendly.
@@ -10,10 +10,12 @@ specific arch, so using a hard-coded value is never safe.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
- harness/Makefile   |    2 +-
- harness/cases/18.t |   34 ++++++++++++++++++++++++----------
+ harness/Makefile   |  2 +-
+ harness/cases/18.t | 34 ++++++++++++++++++++++++----------
  2 files changed, 25 insertions(+), 11 deletions(-)
 
+diff --git a/harness/Makefile b/harness/Makefile
+index f477737..a3c3b46 100644
 --- a/harness/Makefile
 +++ b/harness/Makefile
 @@ -6,7 +6,7 @@ PROGS:=$(PARTPROGS) $(EXTRAPROGS)
@@ -25,6 +27,8 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  CFLAGS = -Wall -g -O2
  #-lpthread -lrt
  MK_CFLAGS = $(CFLAGS)
+diff --git a/harness/cases/18.t b/harness/cases/18.t
+index 5587ceb..daa1d26 100644
 --- a/harness/cases/18.t
 +++ b/harness/cases/18.t
 @@ -40,11 +40,17 @@
@@ -106,3 +110,6 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  	close(fd);
  
  	for (i = 0; i < THREADS_NUM; i++) {
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+

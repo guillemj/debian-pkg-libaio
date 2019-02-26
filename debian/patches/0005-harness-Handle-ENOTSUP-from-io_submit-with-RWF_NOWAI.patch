@@ -1,0 +1,34 @@
+From 649fc347f191bc228fe3509b2a2d0651f09ebf2f Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Tue, 26 Feb 2019 02:57:05 +0100
+Subject: [PATCH 5/7] harness: Handle -ENOTSUP from io_submit() with RWF_NOWAIT
+
+On filesystems such as tmpfs the syscall might return -ENOTSUP instead
+of EINVAL when it does not support the RWF_NOWAIT flag.
+
+Signed-off-by: Guillem Jover <guillem@hadrons.org>
+---
+ harness/cases/21.t | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/harness/cases/21.t b/harness/cases/21.t
+index c1370fd..2b39eff 100644
+--- a/harness/cases/21.t
++++ b/harness/cases/21.t
+@@ -105,10 +105,11 @@ test_main()
+ 	ret = io_submit(ctx, 1, &iocbp);
+ 
+ 	/*
+-	 * io_submit will return -EINVAL if RWF_NOWAIT is not supported.
++	 * io_submit will return -EINVAL or -ENOTSUP if RWF_NOWAIT is not
++	 * supported.
+ 	 */
+ 	if (ret != 1) {
+-		if (ret == -EINVAL) {
++		if (ret == -EINVAL || ret == -ENOTSUP) {
+ 			fprintf(stderr, "RWF_NOWAIT not supported by kernel.\n");
+ 			/* just return success */
+ 			return 0;
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+

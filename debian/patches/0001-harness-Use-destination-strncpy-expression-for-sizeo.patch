@@ -1,7 +1,7 @@
-From a9f29505e66613e9e4ce4038882ca1cb44eda6c8 Mon Sep 17 00:00:00 2001
+From ad2cdc64cd2953288f4cccadbf448e1bbf9ab338 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 9 Feb 2019 00:25:38 +0100
-Subject: [PATCH 1/2] harness: Use destination strncpy() expression for
+Subject: [PATCH 1/7] harness: Use destination strncpy() expression for
  sizeof() argument
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8

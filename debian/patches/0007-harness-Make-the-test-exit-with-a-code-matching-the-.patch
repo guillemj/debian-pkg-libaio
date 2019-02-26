@@ -1,0 +1,36 @@
+From 6649e73243e8167821d6aefd5f83343b85c2980b Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Tue, 26 Feb 2019 03:07:28 +0100
+Subject: [PATCH 7/7] harness: Make the test exit with a code matching the
+ pass/fail state
+
+This way we can use the exit code to check whether the tests passed or
+failed, and fail the package build.
+---
+ harness/runtests.sh | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/harness/runtests.sh b/harness/runtests.sh
+index 717c72a..d7fd247 100755
+--- a/harness/runtests.sh
++++ b/harness/runtests.sh
+@@ -3,7 +3,7 @@
+ passes=0
+ fails=0
+ 
+-echo "Test run starting at" `date`
++echo "Test run starting at $(date)"
+ 
+ while [ $# -ge 1 ] ; do
+ 	this_test=$1
+@@ -16,4 +16,6 @@ while [ $# -ge 1 ] ; do
+ done
+ 
+ echo "Pass: $passes  Fail: $fails"
+-echo "Test run complete at" `date`
++echo "Test run complete at $(date)"
++
++exit $fails
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+

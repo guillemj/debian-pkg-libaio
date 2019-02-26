@@ -1,0 +1,74 @@
+From 67bec1779c8232f37f68b4ad17865427003b3f35 Mon Sep 17 00:00:00 2001
+From: Guillem Jover <guillem@hadrons.org>
+Date: Tue, 26 Feb 2019 02:55:40 +0100
+Subject: [PATCH 4/7] harness: Add fallback code for filesystems not supporting
+ O_DIRECT
+
+When running the harness on a filesystem such as a tmpfs, which do not
+support O_DIRECT, fallback to calls without the flag.
+
+Signed-off-by: Guillem Jover <guillem@hadrons.org>
+---
+ harness/cases/17.t | 2 ++
+ harness/cases/18.t | 2 ++
+ harness/cases/19.t | 4 ++++
+ harness/cases/21.t | 2 +-
+ 4 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/harness/cases/17.t b/harness/cases/17.t
+index 38ada4d..10c6b9c 100644
+--- a/harness/cases/17.t
++++ b/harness/cases/17.t
+@@ -138,6 +138,8 @@ void run_test(int max_ios, int getevents_type)
+ 
+ 	unlink(filename);
+ 	fd = open(filename, O_CREAT | O_RDWR | O_DIRECT, 0644);
++	if (fd < 0 && errno == EINVAL)
++		fd = open(filename, O_CREAT | O_RDWR, 0644);
+ 	assert(fd >= 0);
+ 
+ 	ret = ftruncate(fd, max_ios * io_size);
+diff --git a/harness/cases/18.t b/harness/cases/18.t
+index daa1d26..d58f99b 100644
+--- a/harness/cases/18.t
++++ b/harness/cases/18.t
+@@ -53,6 +53,8 @@ aio_worker(void *ptr)
+ 	assert(buffer != NULL);
+ 
+ 	fd = open(FILENAME, O_DIRECT|O_RDONLY);
++	if (fd < 0 && errno == EINVAL)
++		fd = open(FILENAME, O_RDONLY);
+ 	assert(fd >= 0);
+ 
+ 	for (i = 0; i < 1000; i++) {
+diff --git a/harness/cases/19.t b/harness/cases/19.t
+index 5c3e0d6..aad9bdb 100644
+--- a/harness/cases/19.t
++++ b/harness/cases/19.t
+@@ -43,6 +43,10 @@ open_temp_file(void)
+ 
+ 	strncpy(template, TEMPLATE, sizeof(template));
+ 	fd = mkostemp(template, O_DIRECT);
++	if (fd < 0 && errno == EINVAL) {
++		strncpy(template, TEMPLATE, sizeof(template));
++		fd = mkstemp(template);
++	}
+ 	if (fd < 0) {
+ 		perror("mkstemp");
+ 		exit(1);
+diff --git a/harness/cases/21.t b/harness/cases/21.t
+index fe33a9d..c1370fd 100644
+--- a/harness/cases/21.t
++++ b/harness/cases/21.t
+@@ -92,7 +92,7 @@ test_main()
+ 	 */
+ 	flags = fcntl(fd, F_GETFL);
+ 	ret = fcntl(fd, F_SETFL, flags | O_DIRECT);
+-	if (ret != 0) {
++	if (ret != 0 && errno == EINVAL) {
+ 		perror("fcntl");
+ 		return 1;
+ 	}
+-- 
+2.21.0.rc2.261.ga7da99ff1b
+

@@ -10,6 +10,11 @@
 # Harness fixes
 0001-harness-Use-destination-strncpy-expression-for-sizeo.patch
 0002-harness-Use-run-time-_SC_PAGE_SIZE-instead-of-build-.patch
+0003-harness-Make-RISC-V-use-SYS_eventfd2-instead-of-SYS_.patch
+0004-harness-Add-fallback-code-for-filesystems-not-suppor.patch
+0005-harness-Handle-ENOTSUP-from-io_submit-with-RWF_NOWAI.patch
+0006-harness-The-WRITE-call-does-not-change-across-differ.patch
+0007-harness-Make-the-test-exit-with-a-code-matching-the-.patch
 # Man pages fixes
 0001-man-Add-missing-space-in-man-page-references.patch
 0002-man-Use-the-correct-troff-macro-for-comments.patch
