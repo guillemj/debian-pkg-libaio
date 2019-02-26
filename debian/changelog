@@ -1,4 +1,4 @@
-libaio (0.3.112-3) UNRELEASED; urgency=medium
+libaio (0.3.112-3) unstable; urgency=medium
 
   * Test suite fixes:
     - Fix logic inversion in EINVAL check.
@@ -6,7 +6,7 @@ libaio (0.3.112-3) UNRELEASED; urgency=medium
       setup is peculiar enough to make at least two tests fail. This will
       need further work.
 
- -- Guillem Jover <guillem@debian.org>  Tue, 26 Feb 2019 05:21:45 +0100
+ -- Guillem Jover <guillem@debian.org>  Tue, 26 Feb 2019 05:26:21 +0100
 
 libaio (0.3.112-2) unstable; urgency=medium
 
