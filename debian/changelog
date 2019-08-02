@@ -1,3 +1,9 @@
+libaio (0.3.112-4) UNRELEASED; urgency=medium
+
+  * Switch to Standards-Version 4.4.0 (no changes needed).
+
+ -- Guillem Jover <guillem@debian.org>  Fri, 02 Aug 2019 04:24:39 +0200
+
 libaio (0.3.112-3) unstable; urgency=medium
 
   * Test suite fixes:
