@@ -1,33 +1,28 @@
-From 6f7f780b5a9ae3ce80de3caa5fc7d8a53c40661e Mon Sep 17 00:00:00 2001
-From: Guillem Jover <guillem@hadrons.org>
-Date: Tue, 26 Feb 2019 02:09:22 +0100
-Subject: [PATCH 6/7] harness: The WRITE call does not change across different
- arches anymore
-
-Signed-off-by: Guillem Jover <guillem@hadrons.org>
----
- harness/cases/5.t | 8 +-------
- 1 file changed, 1 insertion(+), 7 deletions(-)
+From: Jeff Moyer <jmoyer@redhat.com>
+Date: Mon, 29 Jul 2019 10:30:05 -0400
+Subject: [PATCH 6/7] harness: Fix the arch-dependent condition for the READ
+ call
 
 diff --git a/harness/cases/5.t b/harness/cases/5.t
-index 2b4b4bb..322564a 100644
+index 2b4b4bb..7d67562 100644
 --- a/harness/cases/5.t
 +++ b/harness/cases/5.t
-@@ -41,13 +41,7 @@ int test_main(void)
+@@ -40,14 +40,14 @@ int test_main(void)
+ 	buf = mmap(0, page_size, PROT_WRITE, MAP_SHARED, rwfd, 0);
  	assert(buf != (char *)-1);
  
- 	status |= attempt_rw(rwfd, buf, SIZE,  0,  READ, SIZE);
+-	status |= attempt_rw(rwfd, buf, SIZE,  0,  READ, SIZE);
 -
--	/* Whether PROT_WRITE is readable is arch-dependent.  So compare
--	 * against read result. */
--	res = read(rwfd, buf, SIZE);
--	if (res < 0)
--		res = -errno;
+ 	/* Whether PROT_WRITE is readable is arch-dependent.  So compare
+ 	 * against read result. */
+ 	res = read(rwfd, buf, SIZE);
+ 	if (res < 0)
+ 		res = -errno;
 -	status |= attempt_rw(rwfd, buf, SIZE,  0, WRITE, res);
++	status |= attempt_rw(rwfd, buf, SIZE,  0,  READ, res);
++
 +	status |= attempt_rw(rwfd, buf, SIZE,  0, WRITE, SIZE);
  
  	return status;
  }
--- 
-2.21.0.rc2.261.ga7da99ff1b
 
