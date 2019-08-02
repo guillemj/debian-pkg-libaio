@@ -1,4 +1,4 @@
-libaio (0.3.112-4) UNRELEASED; urgency=medium
+libaio (0.3.112-4) unstable; urgency=medium
 
   * Switch to Standards-Version 4.4.0 (no changes needed).
   * Switch to debhelper compatibility level 12.
@@ -7,7 +7,7 @@ libaio (0.3.112-4) UNRELEASED; urgency=medium
     - Fix the attempt_rw READ call to be arch-dependent instead of making
       it the WRITE call. Thanks to Jeff Moyer <jmoyer@redhat.com>.
 
- -- Guillem Jover <guillem@debian.org>  Fri, 02 Aug 2019 04:24:39 +0200
+ -- Guillem Jover <guillem@debian.org>  Fri, 02 Aug 2019 05:33:44 +0200
 
 libaio (0.3.112-3) unstable; urgency=medium
 
