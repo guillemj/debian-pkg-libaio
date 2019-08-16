@@ -1,4 +1,4 @@
-libaio (0.3.112-5) UNRELEASED; urgency=medium
+libaio (0.3.112-5) unstable; urgency=medium
 
   * Sync with upstream commits:
     - Make test suite failures fatal, so we ignore errors for now, until it
@@ -15,7 +15,7 @@ libaio (0.3.112-5) UNRELEASED; urgency=medium
     This fixes test case 22.t. The kernel fix is being prepared as well.
   * Add more detailed error messages to test case 22.t.
 
- -- Guillem Jover <guillem@debian.org>  Fri, 16 Aug 2019 02:42:35 +0200
+ -- Guillem Jover <guillem@debian.org>  Fri, 16 Aug 2019 05:11:10 +0200
 
 libaio (0.3.112-4) unstable; urgency=medium
 
