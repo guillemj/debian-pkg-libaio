@@ -1,9 +1,10 @@
-From a1b19f2b9806c1585bab7ecc7ffb3df477498dce Mon Sep 17 00:00:00 2001
+From 5f0e08fda606b960eb1652f5e6743dc031e595f1 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Fri, 8 Feb 2019 22:31:15 +0100
-Subject: [PATCH 08/15] man: Remove spurious text
+Date: Sat, 20 Jul 2019 21:18:07 +0200
+Subject: [PATCH libaio 09/26] man: Remove spurious text
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io_getevents.3     | 1 -
  man/io_prep_pread.3    | 2 +-
@@ -50,5 +51,5 @@ index db91bad..6444aff 100644
  On success,
  .B io_queue_release
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

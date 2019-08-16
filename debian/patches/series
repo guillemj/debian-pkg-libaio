@@ -1,34 +1,37 @@
+# Upstream commits
+0001-Link-against-libgcc-to-avoid-unresolved-symbols.patch
+0001-harness-allow-running-tests-against-the-installed-li.patch
+0002-man-Add-missing-space-in-man-page-references.patch
+0003-man-Use-the-correct-troff-macro-for-comments.patch
+0004-man-Refer-to-libaio.h-instead-of-libio.h.patch
+0005-man-End-sentences-with-a-period.patch
+0006-man-Fix-casing.patch
+0007-man-Fix-period-formatting.patch
+0008-man-Remove-spurious-spaces.patch
+0009-man-Remove-spurious-text.patch
+0010-man-Add-None-to-empty-sections.patch
+0011-man-Fix-typos.patch
+0012-man-Fix-title-header.patch
+0013-man-Fix-markup.patch
+0014-man-Fold-short-lines.patch
+0015-man-Escape-verbatim-n-in-order-to-make-it-through-ro.patch
+0016-Use-ctx-consistently-for-io_context_t-instead-of-ctx.patch
+0017-harness-Use-destination-strncpy-expression-for-sizeo.patch
+0018-harness-Use-run-time-_SC_PAGE_SIZE-instead-of-build-.patch
+0019-harness-Make-RISC-V-use-SYS_eventfd2-instead-of-unav.patch
+0020-harness-Make-the-test-exit-with-a-code-matching-the-.patch
+0021-harness-add-support-for-skipping-tests.patch
+0022-harness-Add-fallback-code-for-filesystems-not-suppor.patch
+0023-harness-Handle-ENOTSUP-from-io_submit-with-RWF_NOWAI.patch
+0024-harness-skip-22.p-if-async_poll-isn-t-supported.patch
+0025-harness-fix-read-into-PROT_WRITE-mmap-test.patch
+0026-harness-Fix-PROT_WRITE-mmap-check.patch
+# Local changes, pending submission
 00_arches.patch
 00_arches_sh.patch
 00_arches_x32.patch
 00_arches_mips_fix_padding.patch
 # Build system
-01_link_libs.patch
 02_libdevdir.patch
 04_no_Werror.patch
 05_build-flags.patch
-# Harness fixes
-0001-harness-Use-destination-strncpy-expression-for-sizeo.patch
-0002-harness-Use-run-time-_SC_PAGE_SIZE-instead-of-build-.patch
-0003-harness-Make-RISC-V-use-SYS_eventfd2-instead-of-SYS_.patch
-0004-harness-Add-fallback-code-for-filesystems-not-suppor.patch
-0005-harness-Handle-ENOTSUP-from-io_submit-with-RWF_NOWAI.patch
-0006-harness-The-WRITE-call-does-not-change-across-differ.patch
-# XXX: The test suite is not ready to pass on Debian's peculiar buildd setup.
-#0007-harness-Make-the-test-exit-with-a-code-matching-the-.patch
-# Man pages fixes
-0001-man-Add-missing-space-in-man-page-references.patch
-0002-man-Use-the-correct-troff-macro-for-comments.patch
-0003-man-Refer-to-libaio.h-instead-of-libio.h.patch
-0004-man-End-sentences-with-a-period.patch
-0005-man-Fix-casing.patch
-0006-man-Fix-period-formatting.patch
-0007-man-Remove-spurious-spaces.patch
-0008-man-Remove-spurious-text.patch
-0009-man-Add-None-to-empty-sections.patch
-0010-man-Fix-typos.patch
-0011-man-Fix-title-header.patch
-0012-man-Fix-markup.patch
-0013-man-Fold-short-lines.patch
-0014-man-Escape-verbatim-n-in-order-to-make-it-through-ro.patch
-0015-Use-ctx-consistently-for-io_context_t-instead-of-ctx.patch

@@ -1,9 +1,10 @@
-From f8d3e59b6ff6a26f36efa611d956bcc2e03c7ee7 Mon Sep 17 00:00:00 2001
+From 767c68f7ea77f46fe9a227c2dc64a48f8eaa06f5 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sun, 13 Aug 2017 20:36:23 +0200
-Subject: [PATCH 07/15] man: Remove spurious spaces
+Date: Sat, 20 Jul 2019 21:18:06 +0200
+Subject: [PATCH libaio 08/26] man: Remove spurious spaces
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io_cancel.3     | 2 +-
  man/io_queue_run.3  | 2 +-
@@ -50,5 +51,5 @@ index e3598d9..fff8141 100644
  .SH "RETURN VALUES"
  May return
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

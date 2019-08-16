@@ -35,8 +35,10 @@ check-arch: build-arch
 	dh_testdir
 	
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
-	$(MAKE) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
-	        partcheck
+	-$(MAKE) partcheck \
+	  CPPFLAGS="$(CPPFLAGS)" \
+	  CFLAGS="$(CFLAGS)" \
+	  LDFLAGS="$(LDFLAGS)"
 endif
 
 install-arch: check-arch

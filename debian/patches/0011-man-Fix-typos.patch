@@ -1,9 +1,10 @@
-From d91ef01a7ab8c00b9a068e14669dc19c4f2539ec Mon Sep 17 00:00:00 2001
+From 716fe28caeefd07235413c309d316e9a92587e0c Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sun, 13 Aug 2017 20:36:23 +0200
-Subject: [PATCH 10/15] man: Fix typos
+Date: Sat, 20 Jul 2019 21:18:09 +0200
+Subject: [PATCH libaio 11/26] man: Fix typos
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io.3               | 2 +-
  man/io_fsync.3         | 4 ++--
@@ -208,5 +209,5 @@ index 76e68d1..3ae8721 100644
  contains an improperly initialized iocb, 
  .TP
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

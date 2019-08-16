@@ -1,13 +1,14 @@
-From 42e252f5fd42f147559452a781b5bb851ff0f40a Mon Sep 17 00:00:00 2001
+From f322f467c3cd2ac4d8d08a19bd281eabb65433b1 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Tue, 26 Feb 2019 01:45:15 +0100
-Subject: [PATCH 3/7] harness: Make RISC-V use SYS_eventfd2 instead of
- SYS_eventfd
+Date: Sat, 20 Jul 2019 21:21:00 +0200
+Subject: [PATCH libaio 19/26] harness: Make RISC-V use SYS_eventfd2 instead of
+ unavailable SYS_eventfd
 
 This is a recent architecture and as such does not provide legacy
 support for SYS_eventfd. Declare that we need to use the new syscall.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  harness/cases/16.t | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
@@ -33,5 +34,5 @@ index 5a546ff..b36bbd2 100644
  #error define SYS_eventfd for your arch!
  #endif
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

@@ -1,16 +1,17 @@
-From 91cfb8e29f999a5eb72f256cf9649d1c71ccabe7 Mon Sep 17 00:00:00 2001
+From 6f0b6fb5bb3ac118cb56848e52d40ff7e1ece3d1 Mon Sep 17 00:00:00 2001
 From: Stephan Springl <springl-libaio@bfw-online.de>
-Date: Sat, 9 Feb 2019 00:03:54 +0100
-Subject: [PATCH 14/15] man: Escape verbatim \n in order to make it through
- roff
+Date: Sat, 20 Jul 2019 21:18:13 +0200
+Subject: [PATCH libaio 15/26] man: Escape verbatim \n in order to make it
+ through roff
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io.3 | 12 ++++++------
  1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/man/io.3 b/man/io.3
-index bbb0a2d..2840bc7 100644
+index f40da41..bfa9836 100644
 --- a/man/io.3
 +++ b/man/io.3
 @@ -174,11 +174,11 @@ static const char *srcname = NULL;
@@ -56,5 +57,5 @@ index bbb0a2d..2840bc7 100644
  		}
  
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

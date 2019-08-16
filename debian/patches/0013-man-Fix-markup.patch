@@ -1,7 +1,7 @@
-From 469e352950fd873e028f7611aa4bea7ea2ca7521 Mon Sep 17 00:00:00 2001
+From a311701ea7eebff003e88694a391d810485f36e0 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sun, 10 Dec 2017 20:22:11 +0100
-Subject: [PATCH 12/15] man: Fix markup
+Date: Sat, 20 Jul 2019 21:18:11 +0200
+Subject: [PATCH libaio 13/26] man: Fix markup
 
 - Remove unnecessary macro argument quoting.
 - Variables, pathnames in italics.
@@ -10,6 +10,7 @@ Subject: [PATCH 12/15] man: Fix markup
 - Fix TP/TQ macro usage.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io.3               | 38 ++++++++++++++-------------
  man/io_cancel.3        | 23 ++++++++++------
@@ -27,7 +28,7 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  13 files changed, 195 insertions(+), 124 deletions(-)
 
 diff --git a/man/io.3 b/man/io.3
-index 52f0ab3..bbb0a2d 100644
+index 922fbca..f40da41 100644
 --- a/man/io.3
 +++ b/man/io.3
 @@ -10,16 +10,18 @@ io \- Asynchronous IO
@@ -142,7 +143,7 @@ index 52f0ab3..bbb0a2d 100644
  This is experimental.
  .SH EXAMPLE
 diff --git a/man/io_cancel.3 b/man/io_cancel.3
-index 62272c7..25dfec4 100644
+index a4683be..3ca629b 100644
 --- a/man/io_cancel.3
 +++ b/man/io_cancel.3
 @@ -9,7 +9,7 @@ io_cancel \- Cancel io requests
@@ -198,7 +199,7 @@ index 62272c7..25dfec4 100644
  .B ENOSYS 
  If not implemented.
 diff --git a/man/io_fsync.3 b/man/io_fsync.3
-index 6938f6b..ec3ab0a 100644
+index bc6778a..06538c4 100644
 --- a/man/io_fsync.3
 +++ b/man/io_fsync.3
 @@ -15,7 +15,7 @@ io_fsync \- Synchronize a file's complete in-core state with that on disk
@@ -232,7 +233,7 @@ index 6938f6b..ec3ab0a 100644
  .TP
  .B EFAULT
 diff --git a/man/io_getevents.3 b/man/io_getevents.3
-index fd67929..623752c 100644
+index 05b2507..6fbcc24 100644
 --- a/man/io_getevents.3
 +++ b/man/io_getevents.3
 @@ -42,19 +42,25 @@ struct io_event {
@@ -288,7 +289,7 @@ index fd67929..623752c 100644
  .B EFAULT 
  If any of the memory specified to is invalid.
 diff --git a/man/io_prep_fsync.3 b/man/io_prep_fsync.3
-index 7b6dd4b..61e8850 100644
+index bc0c43b..d332709 100644
 --- a/man/io_prep_fsync.3
 +++ b/man/io_prep_fsync.3
 @@ -16,7 +16,7 @@ io_prep_fsync \- Synchronize a file's complete in-core state with that on disk
@@ -390,7 +391,7 @@ index 7b6dd4b..61e8850 100644
  None.
  .SH ERRORS
 diff --git a/man/io_prep_pread.3 b/man/io_prep_pread.3
-index a0508d7..72463f7 100644
+index e981e41..e0756a7 100644
 --- a/man/io_prep_pread.3
 +++ b/man/io_prep_pread.3
 @@ -19,7 +19,7 @@ io_prep_pread \- Set up asynchronous read
@@ -442,7 +443,7 @@ index a0508d7..72463f7 100644
  .SH "RETURN VALUES"
  None.
 diff --git a/man/io_prep_pwrite.3 b/man/io_prep_pwrite.3
-index 8ce96ce..f41d4f5 100644
+index f2837b6..b3770b4 100644
 --- a/man/io_prep_pwrite.3
 +++ b/man/io_prep_pwrite.3
 @@ -19,8 +19,8 @@ io_prep_pwrite \- Set up iocb for asynchronous writes
@@ -488,7 +489,7 @@ index 8ce96ce..f41d4f5 100644
  .PP
  Simultaneous asynchronous operations using the same iocb produce
 diff --git a/man/io_queue_init.3 b/man/io_queue_init.3
-index b09da50..33c907f 100644
+index d8753a7..661f377 100644
 --- a/man/io_queue_init.3
 +++ b/man/io_queue_init.3
 @@ -10,25 +10,31 @@ io_queue_init \- Initialize asynchronous io state machine
@@ -556,7 +557,7 @@ index b09da50..33c907f 100644
  .BR io (3),
  .BR io_cancel (3),
 diff --git a/man/io_queue_release.3 b/man/io_queue_release.3
-index d6d5def..879d894 100644
+index 392a478..7a67141 100644
 --- a/man/io_queue_release.3
 +++ b/man/io_queue_release.3
 @@ -8,7 +8,7 @@ io_queue_release \- Release the context associated with the userspace handle
@@ -600,7 +601,7 @@ index d6d5def..879d894 100644
  .BR errno (3).
 -
 diff --git a/man/io_queue_run.3 b/man/io_queue_run.3
-index ff6eb78..05e188a 100644
+index dc54acd..93e322b 100644
 --- a/man/io_queue_run.3
 +++ b/man/io_queue_run.3
 @@ -9,17 +9,19 @@ io_queue_run \- Handle completed io requests
@@ -641,7 +642,7 @@ index ff6eb78..05e188a 100644
  contains an improperly initialized iocb.
  .TP
 diff --git a/man/io_queue_wait.3 b/man/io_queue_wait.3
-index dedfcdd..96b61f7 100644
+index 356c3b2..ad5e7f4 100644
 --- a/man/io_queue_wait.3
 +++ b/man/io_queue_wait.3
 @@ -9,22 +9,27 @@ io_queue_wait \- Wait for io requests to complete
@@ -692,7 +693,7 @@ index dedfcdd..96b61f7 100644
  contains an improperly initialized iocb.
  .TP
 diff --git a/man/io_set_callback.3 b/man/io_set_callback.3
-index e8d8e60..26a0cd0 100644
+index 25b9a7f..855f4b9 100644
 --- a/man/io_set_callback.3
 +++ b/man/io_set_callback.3
 @@ -10,7 +10,7 @@ io_set_callback \- Set up io completion callback function
@@ -715,7 +716,7 @@ index e8d8e60..26a0cd0 100644
  None.
  .SH ERRORS
 diff --git a/man/io_submit.3 b/man/io_submit.3
-index 953246c..587045b 100644
+index 01c25cd..a195653 100644
 --- a/man/io_submit.3
 +++ b/man/io_submit.3
 @@ -32,21 +32,21 @@ struct iocb {
@@ -794,5 +795,5 @@ index 953246c..587045b 100644
  .BR io (3),
  .BR io_cancel (3),
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

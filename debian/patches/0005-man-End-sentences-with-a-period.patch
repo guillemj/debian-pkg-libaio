@@ -1,9 +1,10 @@
-From 0abb26053c5d814510e97e08ced56742f0044eeb Mon Sep 17 00:00:00 2001
+From d868db4f2c993ebb2895ca77c32b5a5d000355d7 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sun, 13 Aug 2017 20:36:23 +0200
-Subject: [PATCH 04/15] man: End sentences with a period
+Date: Sat, 20 Jul 2019 21:18:03 +0200
+Subject: [PATCH libaio 05/26] man: End sentences with a period
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io_prep_fsync.3    | 4 ++--
  man/io_prep_pread.3    | 4 ++--
@@ -129,5 +130,5 @@ index cc842f7..71efd2f 100644
  .SH ERRORS
  .SH "SEE ALSO"
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

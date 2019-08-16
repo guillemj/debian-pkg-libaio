@@ -1,7 +1,17 @@
+From d7f5065448efb49b2a26e728ff735e12ea05b62e Mon Sep 17 00:00:00 2001
 From: Jeff Moyer <jmoyer@redhat.com>
-Date: Mon, 29 Jul 2019 10:30:05 -0400
-Subject: [PATCH 6/7] harness: Fix the arch-dependent condition for the READ
- call
+Date: Tue, 13 Aug 2019 15:30:05 -0400
+Subject: [PATCH libaio 25/26] harness: fix read into PROT_WRITE mmap test
+
+This test has been broken forever.  Fix it up to perform an
+aio_read using the result of a regular read as the expected
+return code.
+
+Reported-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
+---
+ harness/cases/5.t | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/harness/cases/5.t b/harness/cases/5.t
 index 2b4b4bb..7d67562 100644
@@ -25,4 +35,6 @@ index 2b4b4bb..7d67562 100644
  
  	return status;
  }
+-- 
+2.23.0.rc1.170.gbd704faa3e
 

@@ -1,8 +1,8 @@
-From ad2cdc64cd2953288f4cccadbf448e1bbf9ab338 Mon Sep 17 00:00:00 2001
+From b9e17f6afdc4d0e81b1598aecea7b80d0c54b13a Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sat, 9 Feb 2019 00:25:38 +0100
-Subject: [PATCH 1/7] harness: Use destination strncpy() expression for
- sizeof() argument
+Date: Sat, 20 Jul 2019 21:20:58 +0200
+Subject: [PATCH libaio 17/26] harness: Use destination strncpy() expression
+ for sizeof() argument
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -16,6 +16,7 @@ turned into an error by -Werror:
     [-Werror=sizeof-pointer-memaccess]
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  harness/cases/19.t | 2 +-
  harness/cases/21.t | 2 +-
@@ -48,5 +49,5 @@ index 441eaa8..fe33a9d 100644
  	if (fd < 0) {
  		perror("mkstemp");
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

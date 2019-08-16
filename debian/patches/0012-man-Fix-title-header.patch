@@ -1,7 +1,7 @@
-From cdc581ebea3a745ca7c43130a1c0ec5366fa2b19 Mon Sep 17 00:00:00 2001
+From ed25b0e63b2bedecc9c181a620422627f27064ef Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sun, 10 Dec 2017 20:20:04 +0100
-Subject: [PATCH 11/15] man: Fix title header
+Date: Tue, 23 Jul 2019 01:28:10 +0200
+Subject: [PATCH libaio 12/26] man: Fix title header
 
 - Update year.
 - Balance double quotes.
@@ -9,6 +9,7 @@ Subject: [PATCH 11/15] man: Fix title header
 - Fix all sections numbers to 3.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io.3               | 2 +-
  man/io_cancel.3        | 2 +-
@@ -26,27 +27,27 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  13 files changed, 13 insertions(+), 13 deletions(-)
 
 diff --git a/man/io.3 b/man/io.3
-index bc529ea..52f0ab3 100644
+index bc529ea..922fbca 100644
 --- a/man/io.3
 +++ b/man/io.3
 @@ -1,4 +1,4 @@
 -.TH io 3 2002-09-12 "Linux 2.4" Linux IO"
-+.TH io 3 2017-12-10 "Linux" "Linux AIO"
++.TH io 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io \- Asynchronous IO
  .SH SYNOPSIS
 diff --git a/man/io_cancel.3 b/man/io_cancel.3
-index 261a407..62272c7 100644
+index 261a407..a4683be 100644
 --- a/man/io_cancel.3
 +++ b/man/io_cancel.3
 @@ -1,4 +1,4 @@
 -.TH io_cancel 2 2002-09-03 "Linux 2.4" "Linux AIO"
-+.TH io_cancel 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_cancel 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_cancel \- Cancel io requests
  .SH SYNOPSIS
 diff --git a/man/io_fsync.3 b/man/io_fsync.3
-index 5400d41..6938f6b 100644
+index 5400d41..bc6778a 100644
 --- a/man/io_fsync.3
 +++ b/man/io_fsync.3
 @@ -4,7 +4,7 @@
@@ -54,12 +55,12 @@ index 5400d41..6938f6b 100644
  .\" 	return io_submit(ctx, 1, &iocb);
  .\" }
 -.TH io_fsync 3 2002-09-12 "Linux 2.4" Linux AIO"
-+.TH io_fsync 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_fsync 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_fsync \- Synchronize a file's complete in-core state with that on disk
  .SH SYNOPSIS
 diff --git a/man/io_getevents.3 b/man/io_getevents.3
-index 95fa86e..fd67929 100644
+index 95fa86e..05b2507 100644
 --- a/man/io_getevents.3
 +++ b/man/io_getevents.3
 @@ -16,7 +16,7 @@
@@ -67,12 +68,12 @@ index 95fa86e..fd67929 100644
  .\"                                 struct timespec *timeout)
  .\"
 -.TH io_getevents 2 2002-09-03 "Linux 2.4" "Linux AIO"
-+.TH io_getevents 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_getevents 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_getevents, aio_pgetevents \- Read resulting events from io requests
  .SH SYNOPSIS
 diff --git a/man/io_prep_fsync.3 b/man/io_prep_fsync.3
-index 0397172..7b6dd4b 100644
+index 0397172..bc0c43b 100644
 --- a/man/io_prep_fsync.3
 +++ b/man/io_prep_fsync.3
 @@ -5,7 +5,7 @@
@@ -80,12 +81,12 @@ index 0397172..7b6dd4b 100644
  .\" 	iocb->aio_reqprio = 0;
  .\" }
 -.TH io_prep_fsync 3 2002-09-12 "Linux 2.4" Linux AIO"
-+.TH io_prep_fsync 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_prep_fsync 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_prep_fsync \- Synchronize a file's complete in-core state with that on disk
  .SH SYNOPSIS
 diff --git a/man/io_prep_pread.3 b/man/io_prep_pread.3
-index 3c28f61..a0508d7 100644
+index 3c28f61..e981e41 100644
 --- a/man/io_prep_pread.3
 +++ b/man/io_prep_pread.3
 @@ -8,7 +8,7 @@
@@ -93,12 +94,12 @@ index 3c28f61..a0508d7 100644
  .\" 	iocb->u.c.offset = offset;
  .\" }
 -.TH io_prep_pread 3 2002-09-12 "Linux 2.4" Linux AIO"
-+.TH io_prep_pread 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_prep_pread 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_prep_pread \- Set up asynchronous read
  .SH SYNOPSIS
 diff --git a/man/io_prep_pwrite.3 b/man/io_prep_pwrite.3
-index 69479c2..8ce96ce 100644
+index 69479c2..f2837b6 100644
 --- a/man/io_prep_pwrite.3
 +++ b/man/io_prep_pwrite.3
 @@ -8,7 +8,7 @@
@@ -106,63 +107,63 @@ index 69479c2..8ce96ce 100644
  .\" 	iocb->u.c.offset = offset;
  .\" }
 -.TH io_prep_pwrite 3 2002-09-12 "Linux 2.4" Linux AIO"
-+.TH io_prep_pwrite 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_prep_pwrite 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_prep_pwrite \- Set up iocb for asynchronous writes
  .SH SYNOPSIS
 diff --git a/man/io_queue_init.3 b/man/io_queue_init.3
-index 9c04b3f..b09da50 100644
+index 9c04b3f..d8753a7 100644
 --- a/man/io_queue_init.3
 +++ b/man/io_queue_init.3
 @@ -1,4 +1,4 @@
 -.TH io_queue_init 2 2002-09-03 "Linux 2.4" "Linux AIO"
-+.TH io_queue_init 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_queue_init 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_queue_init \- Initialize asynchronous io state machine
  
 diff --git a/man/io_queue_release.3 b/man/io_queue_release.3
-index 5c9ded1..d6d5def 100644
+index 5c9ded1..392a478 100644
 --- a/man/io_queue_release.3
 +++ b/man/io_queue_release.3
 @@ -1,4 +1,4 @@
 -.TH io_queue_release 2 2002-09-03 "Linux 2.4" "Linux AIO"
-+.TH io_queue_release 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_queue_release 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_queue_release \- Release the context associated with the userspace handle
  .SH SYNOPSIS
 diff --git a/man/io_queue_run.3 b/man/io_queue_run.3
-index 8e0691c..ff6eb78 100644
+index 8e0691c..dc54acd 100644
 --- a/man/io_queue_run.3
 +++ b/man/io_queue_run.3
 @@ -1,4 +1,4 @@
 -.TH io_queue_run 2 2002-09-03 "Linux 2.4" "Linux AIO"
-+.TH io_queue_run 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_queue_run 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_queue_run \- Handle completed io requests
  .SH SYNOPSIS
 diff --git a/man/io_queue_wait.3 b/man/io_queue_wait.3
-index 0cf0497..dedfcdd 100644
+index 0cf0497..356c3b2 100644
 --- a/man/io_queue_wait.3
 +++ b/man/io_queue_wait.3
 @@ -1,4 +1,4 @@
 -.TH io_queue_wait 2 2002-09-03 "Linux 2.4" "Linux AIO"
-+.TH io_queue_wait 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_queue_wait 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_queue_wait \- Wait for io requests to complete
  .SH SYNOPSIS
 diff --git a/man/io_set_callback.3 b/man/io_set_callback.3
-index 3599e8c..e8d8e60 100644
+index 3599e8c..25b9a7f 100644
 --- a/man/io_set_callback.3
 +++ b/man/io_set_callback.3
 @@ -1,5 +1,5 @@
  .\"static inline void io_set_callback(struct iocb *iocb, io_callback_t cb)
 -.TH io_set_callback 3 2002-09-12 "Linux 2.4" Linux AIO"
-+.TH io_set_callback 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_set_callback 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_set_callback \- Set up io completion callback function
  .SH SYNOPSIS
 diff --git a/man/io_submit.3 b/man/io_submit.3
-index 3ae8721..953246c 100644
+index 3ae8721..01c25cd 100644
 --- a/man/io_submit.3
 +++ b/man/io_submit.3
 @@ -10,7 +10,7 @@
@@ -170,10 +171,10 @@ index 3ae8721..953246c 100644
  .\" *      fail with -ENOSYS if not implemented.
  .\" */
 -.TH io_submit 2 2002-09-02 "Linux 2.4" "Linux AIO"
-+.TH io_submit 3 2017-12-10 "Linux" "Linux AIO"
++.TH io_submit 3 2019-07-23 "Linux" "Linux AIO"
  .SH NAME
  io_submit \- Submit io requests
  .SH SYNOPSIS
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

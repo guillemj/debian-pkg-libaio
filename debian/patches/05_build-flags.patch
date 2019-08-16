@@ -15,21 +15,24 @@ Last-Update: 2014-10-09
 
 --- a/harness/Makefile
 +++ b/harness/Makefile
-@@ -6,13 +6,16 @@ PROGS:=$(PARTPROGS) $(EXTRAPROGS)
+@@ -6,8 +6,11 @@ PROGS:=$(PARTPROGS) $(EXTRAPROGS)
  HARNESS_SRCS:=main.c
  # io_queue.c
  
--CFLAGS+=-Wall -I../src -g -O2 -DPAGE_SIZE=$(shell getconf PAGESIZE)
-+MK_CPPFLAGS := -I../src -DPAGE_SIZE=$(shell getconf PAGESIZE) $(CPPFLAGS)
+-CFLAGS+=-Wall -I../src -g -O2
++MK_CPPFLAGS := -I../src $(CPPFLAGS)
 +CFLAGS = -Wall -g -O2
  #-lpthread -lrt
 +MK_CFLAGS = $(CFLAGS)
-+MK_LDFLAGS = main.c ../src/libaio.a -lpthread $(LDFLAGS)
++MK_LDFLAGS = main.c $(LIBAIO) -lpthread $(LDFLAGS)
  
+ # Change this on the build line to run tests against the installed libraries:
+ # make LIBAIO=-laio partcheck
+@@ -16,7 +19,7 @@ LIBAIO?=../src/libaio.a
  all: $(PROGS)
  
  $(PROGS): %.p: %.t $(HARNESS_SRCS)
--	$(CC) $(CFLAGS) -DTEST_NAME=\"$<\" -o $@ main.c ../src/libaio.a -lpthread
+-	$(CC) $(CFLAGS) -DTEST_NAME=\"$<\" -o $@ main.c $(LIBAIO) -lpthread
 +	$(CC) $(MK_CPPFLAGS) $(MK_CFLAGS) -DTEST_NAME=\"$<\" -o $@ $(MK_LDFLAGS)
  
  clean:

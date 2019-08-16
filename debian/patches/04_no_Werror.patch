@@ -17,8 +17,8 @@ Last-Update: 2014-10-09
  HARNESS_SRCS:=main.c
  # io_queue.c
  
--CFLAGS+=-Wall -Werror -I../src -g -O2 -DPAGE_SIZE=$(shell getconf PAGESIZE)
-+CFLAGS+=-Wall -I../src -g -O2 -DPAGE_SIZE=$(shell getconf PAGESIZE)
+-CFLAGS+=-Wall -Werror -I../src -g -O2
++CFLAGS+=-Wall -I../src -g -O2
  #-lpthread -lrt
  
- all: $(PROGS)
+ # Change this on the build line to run tests against the installed libraries:

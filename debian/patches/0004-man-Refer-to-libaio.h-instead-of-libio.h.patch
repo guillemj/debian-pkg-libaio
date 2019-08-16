@@ -1,9 +1,10 @@
-From 183d0f60be9e0bfcb987b03818868351364cd54d Mon Sep 17 00:00:00 2001
+From e9dce27ad722dc2f17f913e56432107bc3c1229f Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sun, 13 Aug 2017 20:47:46 +0200
-Subject: [PATCH 03/15] man: Refer to libaio.h instead of libio.h
+Date: Sat, 20 Jul 2019 21:18:02 +0200
+Subject: [PATCH libaio 04/26] man: Refer to libaio.h instead of libio.h
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io.3 | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
@@ -31,5 +32,5 @@ index 968b1f9..e4fe108 100644
  
  .nf
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

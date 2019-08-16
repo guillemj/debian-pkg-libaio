@@ -1,23 +1,27 @@
-From 6eb4eab6a70b5ee0f549b9f0086a76becbe3d4ec Mon Sep 17 00:00:00 2001
+From e2175569737a2905d3c7a6e6ff664f0febcf5a28 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Fri, 8 Feb 2019 23:37:58 +0100
-Subject: [PATCH 15/15] Use ctx consistently for io_context_t instead of ctx_id
+Date: Sat, 20 Jul 2019 21:18:14 +0200
+Subject: [PATCH libaio 16/26] Use ctx consistently for io_context_t instead of
+ ctx_id
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
- man/io_cancel.3     |    2 +-
- man/io_getevents.3  |    8 ++++----
- man/io_queue_run.3  |    2 +-
- man/io_queue_wait.3 |    2 +-
- man/io_submit.3     |    2 +-
- src/compat-0_1.c    |    4 ++--
- src/libaio.h        |    4 ++--
- src/vsys_def.h      |    2 +-
+ man/io_cancel.3     | 2 +-
+ man/io_getevents.3  | 8 ++++----
+ man/io_queue_run.3  | 2 +-
+ man/io_queue_wait.3 | 2 +-
+ man/io_submit.3     | 2 +-
+ src/compat-0_1.c    | 4 ++--
+ src/libaio.h        | 4 ++--
+ src/vsys_def.h      | 2 +-
  8 files changed, 13 insertions(+), 13 deletions(-)
 
+diff --git a/man/io_cancel.3 b/man/io_cancel.3
+index 3ca629b..8c6910e 100644
 --- a/man/io_cancel.3
 +++ b/man/io_cancel.3
-@@ -46,7 +46,7 @@ If any of the data structures pointed to
+@@ -46,7 +46,7 @@ If any of the data structures pointed to are invalid.
  If
  .I aio_context
  specified by
@@ -26,6 +30,8 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  is invalid.
  .TP
  .B EAGAIN
+diff --git a/man/io_getevents.3 b/man/io_getevents.3
+index 6fbcc24..6ff686d 100644
 --- a/man/io_getevents.3
 +++ b/man/io_getevents.3
 @@ -1,7 +1,7 @@
@@ -56,9 +62,11 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  is invalid, if
  .I min_nr
  is out of range, if
+diff --git a/man/io_queue_run.3 b/man/io_queue_run.3
+index 93e322b..2bb9701 100644
 --- a/man/io_queue_run.3
 +++ b/man/io_queue_run.3
-@@ -16,7 +16,7 @@ io_queue_run \- Handle completed io requ
+@@ -16,7 +16,7 @@ io_queue_run \- Handle completed io requests
  .BR io_queue_run ()
  attempts to read all the events from
  the completion queue for the aio_context specified by
@@ -67,9 +75,11 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  .SH "RETURN VALUES"
  May return
  .B 0
+diff --git a/man/io_queue_wait.3 b/man/io_queue_wait.3
+index ad5e7f4..1cf4f0b 100644
 --- a/man/io_queue_wait.3
 +++ b/man/io_queue_wait.3
-@@ -15,7 +15,7 @@ io_queue_wait \- Wait for io requests to
+@@ -15,7 +15,7 @@ io_queue_wait \- Wait for io requests to complete
  .BR io_queue_wait ()
  attempts to read an event from
  the completion queue for the aio_context specified by
@@ -78,6 +88,8 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  .SH "RETURN VALUES"
  May return
  .B 0
+diff --git a/man/io_submit.3 b/man/io_submit.3
+index c0791ed..c15134f 100644
 --- a/man/io_submit.3
 +++ b/man/io_submit.3
 @@ -1,7 +1,7 @@
@@ -89,9 +101,11 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  .\" *      *iocbpp[0] is not properly initialized, if the operation specified
  .\" *      is invalid for the file descriptor in the iocb.  May fail with
  .\" *      -EFAULT if any of the data structures point to invalid data.  May
+diff --git a/src/compat-0_1.c b/src/compat-0_1.c
+index 136396f..722e107 100644
 --- a/src/compat-0_1.c
 +++ b/src/compat-0_1.c
-@@ -49,14 +49,14 @@ int compat0_1_io_queue_wait(io_context_t
+@@ -49,14 +49,14 @@ int compat0_1_io_queue_wait(io_context_t ctx, struct timespec *when)
  
  /* ABI change.  Provide backwards compatibility for this one. */
  SYMVER(compat0_1_io_getevents, io_getevents, 0.1);
@@ -108,9 +122,11 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  			const_timeout ? &timeout : NULL);
  }
  
+diff --git a/src/libaio.h b/src/libaio.h
+index 2bc24e0..8b33382 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
-@@ -168,8 +168,8 @@ extern int io_setup(int maxevents, io_co
+@@ -162,8 +162,8 @@ extern int io_setup(int maxevents, io_context_t *ctxp);
  extern int io_destroy(io_context_t ctx);
  extern int io_submit(io_context_t ctx, long nr, struct iocb *ios[]);
  extern int io_cancel(io_context_t ctx, struct iocb *iocb, struct io_event *evt);
@@ -121,12 +137,17 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  		struct io_event *events, struct timespec *timeout,
  		sigset_t *sigmask);
  
+diff --git a/src/vsys_def.h b/src/vsys_def.h
+index 13d032e..dd711dc 100644
 --- a/src/vsys_def.h
 +++ b/src/vsys_def.h
-@@ -20,5 +20,5 @@ extern int vsys_io_destroy(io_context_t
+@@ -20,5 +20,5 @@ extern int vsys_io_destroy(io_context_t ctx);
  extern int vsys_io_submit(io_context_t ctx, long nr, struct iocb *iocbs[]);
  extern int vsys_io_cancel(io_context_t ctx, struct iocb *iocb);
  extern int vsys_io_wait(io_context_t ctx, struct iocb *iocb, const struct timespec *when);
 -extern int vsys_io_getevents(io_context_t ctx_id, long nr, struct io_event *events, const struct timespec *timeout);
 +extern int vsys_io_getevents(io_context_t ctx, long nr, struct io_event *events, const struct timespec *timeout);
  
+-- 
+2.23.0.rc1.170.gbd704faa3e
+

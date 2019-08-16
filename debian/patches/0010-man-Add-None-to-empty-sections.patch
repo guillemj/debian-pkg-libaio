@@ -1,9 +1,10 @@
-From 6d39d8f03e277b459d05b8d22f0baf0d496037f2 Mon Sep 17 00:00:00 2001
+From 69874fec6fef24564302b2efa9af53af07851058 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sun, 13 Aug 2017 20:36:23 +0200
-Subject: [PATCH 09/15] man: Add "None" to empty sections
+Date: Sat, 20 Jul 2019 21:18:08 +0200
+Subject: [PATCH libaio 10/26] man: Add "None" to empty sections
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io_set_callback.3 | 2 ++
  1 file changed, 2 insertions(+)
@@ -23,5 +24,5 @@ index 71efd2f..4ee4b05 100644
  .BR io (3),
  .BR io_cancel (3),
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

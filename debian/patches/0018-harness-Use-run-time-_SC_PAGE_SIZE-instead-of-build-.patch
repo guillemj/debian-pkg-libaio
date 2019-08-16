@@ -1,32 +1,33 @@
-From ce13c8eb716beec3b6a83285a6295212cbf3ce80 Mon Sep 17 00:00:00 2001
+From fca5217d524635bed70532aa68baff065d22d790 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sat, 9 Feb 2019 00:28:53 +0100
-Subject: [PATCH 2/7] harness: Use run-time _SC_PAGE_SIZE instead of build-time
- PAGESIZE
+Date: Sat, 20 Jul 2019 21:20:59 +0200
+Subject: [PATCH libaio 18/26] harness: Use run-time _SC_PAGE_SIZE instead of
+ build-time PAGESIZE
 
 The getconf(1) command is inherently not cross-compilation friendly.
 In addition PAGESIZE depends on the specific system, even within a
 specific arch, so using a hard-coded value is never safe.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  harness/Makefile   |  2 +-
  harness/cases/18.t | 34 ++++++++++++++++++++++++----------
  2 files changed, 25 insertions(+), 11 deletions(-)
 
 diff --git a/harness/Makefile b/harness/Makefile
-index f477737..a3c3b46 100644
+index 87b33f6..5cc2b25 100644
 --- a/harness/Makefile
 +++ b/harness/Makefile
 @@ -6,7 +6,7 @@ PROGS:=$(PARTPROGS) $(EXTRAPROGS)
  HARNESS_SRCS:=main.c
  # io_queue.c
  
--MK_CPPFLAGS := -I../src -DPAGE_SIZE=$(shell getconf PAGESIZE) $(CPPFLAGS)
-+MK_CPPFLAGS := -I../src $(CPPFLAGS)
- CFLAGS = -Wall -g -O2
+-CFLAGS+=-Wall -Werror -I../src -g -O2 -DPAGE_SIZE=$(shell getconf PAGESIZE)
++CFLAGS+=-Wall -Werror -I../src -g -O2
  #-lpthread -lrt
- MK_CFLAGS = $(CFLAGS)
+ 
+ # Change this on the build line to run tests against the installed libraries:
 diff --git a/harness/cases/18.t b/harness/cases/18.t
 index 5587ceb..daa1d26 100644
 --- a/harness/cases/18.t
@@ -111,5 +112,5 @@ index 5587ceb..daa1d26 100644
  
  	for (i = 0; i < THREADS_NUM; i++) {
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 

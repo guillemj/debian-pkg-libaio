@@ -1,3 +1,16 @@
+libaio (0.3.112-5) UNRELEASED; urgency=medium
+
+  * Sync with upstream commits:
+    - Make test suite failures fatal, so we ignore errors for now, until it
+      passes at least in all release architectures.
+    - Add support for SKIPable tests.
+    - Allow running tests against the installed library, which will make
+      possible to add autopkgtests.
+    - Fix test case 5.t, by using a write() instead of a read() to force the
+      kernel to read from the unreadable buffer.
+
+ -- Guillem Jover <guillem@debian.org>  Fri, 16 Aug 2019 02:42:35 +0200
+
 libaio (0.3.112-4) unstable; urgency=medium
 
   * Switch to Standards-Version 4.4.0 (no changes needed).

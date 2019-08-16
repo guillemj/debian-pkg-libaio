@@ -1,9 +1,10 @@
-From 9e6d0631a0a1094bc4082550664490230f0257e0 Mon Sep 17 00:00:00 2001
+From 0319efeeea3dbd4b53b81934b4f24bba96d77959 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
-Date: Sun, 13 Aug 2017 20:36:23 +0200
-Subject: [PATCH 06/15] man: Fix period formatting
+Date: Sat, 20 Jul 2019 21:18:05 +0200
+Subject: [PATCH libaio 07/26] man: Fix period formatting
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
 ---
  man/io.3               | 13 +++++--------
  man/io_fsync.3         |  2 +-
@@ -207,5 +208,5 @@ index a810b3f..76e68d1 100644
  .B "IO_CMD_PREAD"
  a read operation is enqueued, similar to a call
 -- 
-2.21.0.rc2.261.ga7da99ff1b
+2.23.0.rc1.170.gbd704faa3e
 
