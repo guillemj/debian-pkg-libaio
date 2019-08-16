@@ -8,6 +8,11 @@ libaio (0.3.112-5) UNRELEASED; urgency=medium
       possible to add autopkgtests.
     - Fix test case 5.t, by using a write() instead of a read() to force the
       kernel to read from the unreadable buffer.
+  * Add a workaround to io_pgetevents() for 32-bit userland running on
+    64-bit kernels to cope with the broken compat kernel syscall, which uses
+    a 64-bit pointer instead of a 32-bit one, and eats the sigset_t size
+    member which makes it then fail a consistency check and return -EINVAL.
+    This fixes test case 22.t. The kernel fix is being prepared as well.
 
  -- Guillem Jover <guillem@debian.org>  Fri, 16 Aug 2019 02:42:35 +0200
 
