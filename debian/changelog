@@ -13,6 +13,7 @@ libaio (0.3.112-5) UNRELEASED; urgency=medium
     a 64-bit pointer instead of a 32-bit one, and eats the sigset_t size
     member which makes it then fail a consistency check and return -EINVAL.
     This fixes test case 22.t. The kernel fix is being prepared as well.
+  * Add more detailed error messages to test case 22.t.
 
  -- Guillem Jover <guillem@debian.org>  Fri, 16 Aug 2019 02:42:35 +0200
 
