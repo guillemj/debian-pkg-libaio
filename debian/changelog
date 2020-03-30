@@ -4,6 +4,8 @@ libaio (0.3.112-6) UNRELEASED; urgency=medium
     - Rebase against latest upstream git master.
     - Skip the test if io_pgetevents() is not implemented.
   * Switch to Standards-Version 4.5.0 (no changes needed).
+  * Do not pass --add-udeb to dh_makeshlibs anymore, it's autodetected since
+    debhelper 12.3, for which we add an explicit versioned Build-Depends.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 30 Mar 2020 04:50:14 +0200
 

@@ -11,9 +11,6 @@ include /usr/share/dpkg/buildtools.mk
 
 export CC
 
-lib := libaio1
-libudeb := $(lib)-udeb
-
 build-indep:
 
 build-arch:
@@ -69,7 +66,7 @@ binary-arch: install-arch
 	dh_strip -a
 	dh_compress -a
 	dh_fixperms -a
-	dh_makeshlibs -a --add-udeb '$(libudeb)'
+	dh_makeshlibs -a
 	dh_shlibdeps -a
 	dh_installdeb -a
 	dh_gencontrol -a
