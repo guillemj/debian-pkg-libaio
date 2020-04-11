@@ -1,9 +1,11 @@
-Description: Add support for x32 (from the Yocto project)
-Author: Daniel Schepler <dschepler@gmail.com>
+Description: Add support for x32
+Author:
+ Guillem Jover <guillem@debian.org>
+ Daniel Schepler <dschepler@gmail.com>
 Origin: vendor
 Forwarded: no
 Bug-Debian: 702183
-Last-Update: 2013-05-06
+Last-Update: 2020-04-11
 
 
 ---
@@ -13,21 +15,22 @@ Last-Update: 2013-05-06
 
 --- a/src/syscall-x86_64.h
 +++ b/src/syscall-x86_64.h
-@@ -1,5 +1,15 @@
-+#ifndef __NR_io_setup
+@@ -1,6 +1,16 @@
++#if __ILP32__
++#define __X32_SYSCALL_BIT    0x40000000
++#define __NR_io_setup (__X32_SYSCALL_BIT + 543)
++#define __NR_io_destroy (__X32_SYSCALL_BIT + 207)
++#define __NR_io_submit (__X32_SYSCALL_BIT + 544)
++#define __NR_io_cancel (__X32_SYSCALL_BIT + 210)
++#define __NR_io_getevents (__X32_SYSCALL_BIT + 208)
++#define __NR_io_pgetevents (__X32_SYSCALL_BIT + 333)
++#else
  #define __NR_io_setup		206
-+#endif
-+#ifndef __NR_io_destroy
  #define __NR_io_destroy		207
-+#endif
-+#ifndef __NR_io_getevents
  #define __NR_io_getevents	208
-+#endif
-+#ifndef __NR_io_submit
  #define __NR_io_submit		209
-+#endif
-+#ifndef __NR_io_cancel
  #define __NR_io_cancel		210
+ #define __NR_io_pgetevents	333
 +#endif
 --- a/harness/main.c
 +++ b/harness/main.c

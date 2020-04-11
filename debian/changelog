@@ -6,6 +6,7 @@ libaio (0.3.112-6) UNRELEASED; urgency=medium
   * Switch to Standards-Version 4.5.0 (no changes needed).
   * Do not pass --add-udeb to dh_makeshlibs anymore, it's autodetected since
     debhelper 12.3, for which we add an explicit versioned Build-Depends.
+  * Use correct syscall numbers for x32 port.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 30 Mar 2020 04:50:14 +0200
 
