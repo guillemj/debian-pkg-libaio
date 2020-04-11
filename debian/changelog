@@ -52,7 +52,7 @@ libaio (0.3.112-4) unstable; urgency=medium
 
   * Switch to Standards-Version 4.4.0 (no changes needed).
   * Switch to debhelper compatibility level 12.
-  * Switch from debian/compat to debhelper-commpat in Build-Depends.
+  * Switch from debian/compat to debhelper-compat in Build-Depends.
   * Test suite fixes:
     - Fix the attempt_rw READ call to be arch-dependent instead of making
       it the WRITE call. Thanks to Jeff Moyer <jmoyer@redhat.com>.
