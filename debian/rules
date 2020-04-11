@@ -17,6 +17,12 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
   endif
 else
   TESTS_RUN = no
+
+  # XXX: Temporary check architectures built on an emulator.
+  ifeq (,$(filter $(DEB_HOST_ARCH),m68k sh4))
+    TESTS_RUN = yes
+    TESTS_FLAKY = yes
+  endif
 endif
 
 export CC

@@ -9,6 +9,8 @@ libaio (0.3.112-6) UNRELEASED; urgency=medium
   * Use correct syscall numbers for x32 port.
   * Make the testsuite fatal on architectures known to pass it, to avoid
     future regressions.
+  * Temporarily force a flaky test suite run on architectures built under
+    and emulator, to get test results.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 30 Mar 2020 04:50:14 +0200
 
