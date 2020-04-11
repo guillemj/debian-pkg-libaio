@@ -1,7 +1,7 @@
 From aef192335a7f16384c4b95a2cc2ce9c46fa72e02 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:18:00 +0200
-Subject: [PATCH libaio 02/26] man: Add missing space in man page references
+Subject: [PATCH libaio 02/28] man: Add missing space in man page references
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
@@ -464,5 +464,5 @@ index b6966ef..7281147 100644
 +.BR io_set_callback (3),
 +.BR errno (3).
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

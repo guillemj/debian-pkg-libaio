@@ -1,7 +1,7 @@
 From f322f467c3cd2ac4d8d08a19bd281eabb65433b1 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:21:00 +0200
-Subject: [PATCH libaio 19/26] harness: Make RISC-V use SYS_eventfd2 instead of
+Subject: [PATCH libaio 19/28] harness: Make RISC-V use SYS_eventfd2 instead of
  unavailable SYS_eventfd
 
 This is a recent architecture and as such does not provide legacy
@@ -34,5 +34,5 @@ index 5a546ff..b36bbd2 100644
  #error define SYS_eventfd for your arch!
  #endif
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

@@ -1,7 +1,7 @@
 From ac60a850d5ce22ae21e3746f72a9ebb2623d17f8 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:21:01 +0200
-Subject: [PATCH libaio 22/26] harness: Add fallback code for filesystems not
+Subject: [PATCH libaio 22/28] harness: Add fallback code for filesystems not
  supporting O_DIRECT
 
 When running the harness on a filesystem such as a tmpfs, which do not
@@ -107,5 +107,5 @@ index fe33a9d..ba988ed 100644
  		return 1;
  	}
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

@@ -1,7 +1,7 @@
 From 711c0381798c85f3e25ea0ab503b24857850a762 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 04:42:42 +0200
-Subject: [PATCH libaio 26/26] harness: Fix PROT_WRITE mmap check
+Subject: [PATCH libaio 26/28] harness: Fix PROT_WRITE mmap check
 
 This partially reverts commit d7f5065448efb49b2a26e728ff735e12ea05b62e.
 
@@ -42,5 +42,5 @@ index 7d67562..b0a7c56 100644
  	return status;
  }
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

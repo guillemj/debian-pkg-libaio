@@ -1,7 +1,7 @@
 From 0319efeeea3dbd4b53b81934b4f24bba96d77959 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:18:05 +0200
-Subject: [PATCH libaio 07/26] man: Fix period formatting
+Subject: [PATCH libaio 07/28] man: Fix period formatting
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
@@ -208,5 +208,5 @@ index a810b3f..76e68d1 100644
  .B "IO_CMD_PREAD"
  a read operation is enqueued, similar to a call
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

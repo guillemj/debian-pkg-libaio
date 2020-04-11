@@ -1,7 +1,7 @@
 From b7e04d72bda89f22ce013030358e6743417f7fea Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:21:02 +0200
-Subject: [PATCH libaio 23/26] harness: Handle -ENOTSUP from io_submit() with
+Subject: [PATCH libaio 23/28] harness: Handle -ENOTSUP from io_submit() with
  RWF_NOWAIT
 
 On filesystems such as tmpfs the syscall might return -ENOTSUP instead
@@ -41,5 +41,5 @@ index ba988ed..4164c02 100644
  		errno = -ret;
  		perror("io_submit");
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

@@ -1,7 +1,7 @@
 From 5f0e08fda606b960eb1652f5e6743dc031e595f1 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:18:07 +0200
-Subject: [PATCH libaio 09/26] man: Remove spurious text
+Subject: [PATCH libaio 09/28] man: Remove spurious text
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
@@ -51,5 +51,5 @@ index db91bad..6444aff 100644
  On success,
  .B io_queue_release
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

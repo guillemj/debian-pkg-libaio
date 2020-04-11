@@ -1,7 +1,7 @@
 From 96fe0e8a3efb8bb058852a46c0273125dd54ba49 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:18:12 +0200
-Subject: [PATCH libaio 14/26] man: Fold short lines
+Subject: [PATCH libaio 14/28] man: Fold short lines
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
@@ -51,5 +51,5 @@ index a195653..c0791ed 100644
  for this element of the array (except that the way
  the termination is signalled is different, as we will see below).  If
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

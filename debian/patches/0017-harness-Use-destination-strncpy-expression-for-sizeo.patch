@@ -1,7 +1,7 @@
 From b9e17f6afdc4d0e81b1598aecea7b80d0c54b13a Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:20:58 +0200
-Subject: [PATCH libaio 17/26] harness: Use destination strncpy() expression
+Subject: [PATCH libaio 17/28] harness: Use destination strncpy() expression
  for sizeof() argument
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
@@ -49,5 +49,5 @@ index 441eaa8..fe33a9d 100644
  	if (fd < 0) {
  		perror("mkstemp");
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

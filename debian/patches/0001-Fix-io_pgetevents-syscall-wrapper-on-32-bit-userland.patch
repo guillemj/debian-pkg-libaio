@@ -24,15 +24,13 @@ we retry with a structure padded to what the kernel expects.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
- src/io_pgetevents.c | 38 +++++++++++++++++++++++++++++++-------
- src/libaio.h        | 10 ++++++++++
+ src/io_pgetevents.c |   38 +++++++++++++++++++++++++++++++-------
+ src/libaio.h        |   10 ++++++++++
  2 files changed, 41 insertions(+), 7 deletions(-)
 
-diff --git a/src/io_pgetevents.c b/src/io_pgetevents.c
-index e6b0614..b2515f2 100644
 --- a/src/io_pgetevents.c
 +++ b/src/io_pgetevents.c
-@@ -33,17 +33,41 @@ int io_pgetevents(io_context_t ctx, long min_nr, long nr,
+@@ -33,17 +33,41 @@ int io_pgetevents(io_context_t ctx, long
  		struct io_event *events, struct timespec *timeout,
  		sigset_t *sigmask)
  {
@@ -81,11 +79,9 @@ index e6b0614..b2515f2 100644
  }
  #else
  int io_pgetevents(io_context_t ctx, long min_nr, long nr,
-diff --git a/src/libaio.h b/src/libaio.h
-index 8b33382..30ccc34 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
-@@ -144,6 +144,16 @@ struct io_event {
+@@ -150,6 +150,16 @@ struct io_event {
  	PADDEDul(res2, __pad4);
  };
  
@@ -102,6 +98,3 @@ index 8b33382..30ccc34 100644
  #undef PADDED
  #undef PADDEDptr
  #undef PADDEDul
--- 
-2.23.0.rc1.170.gbd704faa3e
-

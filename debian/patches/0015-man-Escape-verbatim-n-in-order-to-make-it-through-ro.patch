@@ -1,7 +1,7 @@
 From 6f0b6fb5bb3ac118cb56848e52d40ff7e1ece3d1 Mon Sep 17 00:00:00 2001
 From: Stephan Springl <springl-libaio@bfw-online.de>
 Date: Sat, 20 Jul 2019 21:18:13 +0200
-Subject: [PATCH libaio 15/26] man: Escape verbatim \n in order to make it
+Subject: [PATCH libaio 15/28] man: Escape verbatim \n in order to make it
  through roff
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
@@ -57,5 +57,5 @@ index f40da41..bfa9836 100644
  		}
  
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

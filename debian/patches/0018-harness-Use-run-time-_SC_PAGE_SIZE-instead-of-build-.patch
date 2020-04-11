@@ -1,7 +1,7 @@
 From fca5217d524635bed70532aa68baff065d22d790 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:20:59 +0200
-Subject: [PATCH libaio 18/26] harness: Use run-time _SC_PAGE_SIZE instead of
+Subject: [PATCH libaio 18/28] harness: Use run-time _SC_PAGE_SIZE instead of
  build-time PAGESIZE
 
 The getconf(1) command is inherently not cross-compilation friendly.
@@ -112,5 +112,5 @@ index 5587ceb..daa1d26 100644
  
  	for (i = 0; i < THREADS_NUM; i++) {
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

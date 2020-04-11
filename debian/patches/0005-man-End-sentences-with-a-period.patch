@@ -1,7 +1,7 @@
 From d868db4f2c993ebb2895ca77c32b5a5d000355d7 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:18:03 +0200
-Subject: [PATCH libaio 05/26] man: End sentences with a period
+Subject: [PATCH libaio 05/28] man: End sentences with a period
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
@@ -130,5 +130,5 @@ index cc842f7..71efd2f 100644
  .SH ERRORS
  .SH "SEE ALSO"
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

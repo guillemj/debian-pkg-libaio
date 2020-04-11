@@ -26,6 +26,8 @@
 0024-harness-skip-22.p-if-async_poll-isn-t-supported.patch
 0025-harness-fix-read-into-PROT_WRITE-mmap-test.patch
 0026-harness-Fix-PROT_WRITE-mmap-check.patch
+0027-harness-Print-better-error-messages-on-error-conditi.patch
+0028-harness-Skip-the-test-if-io_pgetevents-is-not-implem.patch
 # Local changes, pending submission
 00_arches.patch
 00_arches_sh.patch
@@ -37,4 +39,3 @@
 05_build-flags.patch
 # Code and harness
 0001-Fix-io_pgetevents-syscall-wrapper-on-32-bit-userland.patch
-0001-harness-Print-better-error-messages-on-error-conditi.patch

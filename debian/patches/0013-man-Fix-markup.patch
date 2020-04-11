@@ -1,7 +1,7 @@
 From a311701ea7eebff003e88694a391d810485f36e0 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sat, 20 Jul 2019 21:18:11 +0200
-Subject: [PATCH libaio 13/26] man: Fix markup
+Subject: [PATCH libaio 13/28] man: Fix markup
 
 - Remove unnecessary macro argument quoting.
 - Variables, pathnames in italics.
@@ -795,5 +795,5 @@ index 01c25cd..a195653 100644
  .BR io (3),
  .BR io_cancel (3),
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

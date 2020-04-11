@@ -1,7 +1,7 @@
 From ed25b0e63b2bedecc9c181a620422627f27064ef Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Tue, 23 Jul 2019 01:28:10 +0200
-Subject: [PATCH libaio 12/26] man: Fix title header
+Subject: [PATCH libaio 12/28] man: Fix title header
 
 - Update year.
 - Balance double quotes.
@@ -176,5 +176,5 @@ index 3ae8721..01c25cd 100644
  io_submit \- Submit io requests
  .SH SYNOPSIS
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 

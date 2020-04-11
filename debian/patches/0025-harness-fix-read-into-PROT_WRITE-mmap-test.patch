@@ -1,7 +1,7 @@
 From d7f5065448efb49b2a26e728ff735e12ea05b62e Mon Sep 17 00:00:00 2001
 From: Jeff Moyer <jmoyer@redhat.com>
 Date: Tue, 13 Aug 2019 15:30:05 -0400
-Subject: [PATCH libaio 25/26] harness: fix read into PROT_WRITE mmap test
+Subject: [PATCH libaio 25/28] harness: fix read into PROT_WRITE mmap test
 
 This test has been broken forever.  Fix it up to perform an
 aio_read using the result of a regular read as the expected
@@ -36,5 +36,5 @@ index 2b4b4bb..7d67562 100644
  	return status;
  }
 -- 
-2.23.0.rc1.170.gbd704faa3e
+2.26.0.292.g33ef6b2f38
 
