@@ -9,6 +9,16 @@ DEB_CFLAGS_MAINT_PREPEND = -Wall
 include /usr/share/dpkg/default.mk
 include /usr/share/dpkg/buildtools.mk
 
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+  TESTS_RUN = yes
+  # The following architectures still fail the test suite.
+  ifeq (,$(filter $(DEB_HOST_ARCH),armhf riscv64 sparc64 hppa))
+    TESTS_FLAKY = yes
+  endif
+else
+  TESTS_RUN = no
+endif
+
 export CC
 
 build-indep:
@@ -31,8 +41,8 @@ clean:
 check-arch: build-arch
 	dh_testdir
 	
-ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
-	-$(MAKE) partcheck \
+ifeq ($(TESTS_RUN),yes))
+	$(if $(TESTS_FLAKY),-)$(MAKE) partcheck \
 	  CPPFLAGS="$(CPPFLAGS)" \
 	  CFLAGS="$(CFLAGS)" \
 	  LDFLAGS="$(LDFLAGS)"

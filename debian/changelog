@@ -7,6 +7,8 @@ libaio (0.3.112-6) UNRELEASED; urgency=medium
   * Do not pass --add-udeb to dh_makeshlibs anymore, it's autodetected since
     debhelper 12.3, for which we add an explicit versioned Build-Depends.
   * Use correct syscall numbers for x32 port.
+  * Make the testsuite fatal on architectures known to pass it, to avoid
+    future regressions.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 30 Mar 2020 04:50:14 +0200
 
