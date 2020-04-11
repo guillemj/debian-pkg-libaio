@@ -12,6 +12,10 @@ include /usr/share/dpkg/buildtools.mk
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
   TESTS_RUN = yes
   # The following architectures still fail the test suite:
+  #   m68k
+  #     (emulated, no proper test results)
+  #   sh4
+  #     (emulated, no proper test results)
   #   riscv64
   #     (5: 512 instead of EFAULT on write)
   #   sparc64
@@ -21,17 +25,11 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
   #     (5: 512 instead of EFAULT on write)
   #     (19: mremap EINVAL)
   #     (17: looping, timeout?)
-  ifneq (,$(filter $(DEB_HOST_ARCH),riscv64 sparc64 hppa))
+  ifneq (,$(filter $(DEB_HOST_ARCH),m68k sh4 riscv64 sparc64 hppa))
     TESTS_FLAKY = yes
   endif
 else
   TESTS_RUN = no
-
-  # XXX: Temporary check architectures built on an emulator.
-  ifneq (,$(filter $(DEB_HOST_ARCH),m68k sh4))
-    TESTS_RUN = yes
-    TESTS_FLAKY = yes
-  endif
 endif
 
 export CC

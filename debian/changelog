@@ -2,6 +2,8 @@ libaio (0.3.112-8) UNRELEASED; urgency=medium
 
   * Add a comment with the reason for each architecture being in the flaky
     test suite mode.
+  * Remove temporary forced flaky test suite run on architectures built under
+    an emulator, and move them to the permanent flaky list.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 13 Apr 2020 02:22:03 +0200
 
