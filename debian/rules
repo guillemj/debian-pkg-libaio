@@ -12,14 +12,14 @@ include /usr/share/dpkg/buildtools.mk
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
   TESTS_RUN = yes
   # The following architectures still fail the test suite.
-  ifeq (,$(filter $(DEB_HOST_ARCH),armhf riscv64 sparc64 hppa))
+  ifneq (,$(filter $(DEB_HOST_ARCH),armhf riscv64 sparc64 hppa))
     TESTS_FLAKY = yes
   endif
 else
   TESTS_RUN = no
 
   # XXX: Temporary check architectures built on an emulator.
-  ifeq (,$(filter $(DEB_HOST_ARCH),m68k sh4))
+  ifneq (,$(filter $(DEB_HOST_ARCH),m68k sh4))
     TESTS_RUN = yes
     TESTS_FLAKY = yes
   endif
