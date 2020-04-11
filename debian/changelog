@@ -1,4 +1,4 @@
-libaio (0.3.112-6) UNRELEASED; urgency=medium
+libaio (0.3.112-6) unstable; urgency=medium
 
   * Sync with upstream commits:
     - Rebase against latest upstream git master.
@@ -12,7 +12,7 @@ libaio (0.3.112-6) UNRELEASED; urgency=medium
   * Temporarily force a flaky test suite run on architectures built under
     and emulator, to get test results.
 
- -- Guillem Jover <guillem@debian.org>  Mon, 30 Mar 2020 04:50:14 +0200
+ -- Guillem Jover <guillem@debian.org>  Sat, 11 Apr 2020 19:06:49 +0200
 
 libaio (0.3.112-5) unstable; urgency=medium
 
