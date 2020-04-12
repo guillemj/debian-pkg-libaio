@@ -31,10 +31,12 @@ upstream/0028-harness-Skip-the-test-if-io_pgetevents-is-not-implem.patch
 # Local changes, pending submission
 0001-syscall-Fix-ARM-definitions-to-match-exactly-the-ker.patch
 0002-syscall-Fix-ia64-definitions-to-match-exactly-the-ke.patch
-00_arches.patch
-00_arches_sh.patch
-00_arches_x32.patch
-00_arches_mips_fix_padding.patch
+0003-harness-Add-KERNEL_RW_POINTER-for-various-32-bit-arc.patch
+0004-Fix-and-improve-MIPS-support.patch
+0005-Add-PARISC-support.patch
+0006-Add-m68k-support.patch
+0007-Add-SH-support.patch
+0008-Add-x32-support.patch
 # Build system
 02_libdevdir.patch
 04_no_Werror.patch
