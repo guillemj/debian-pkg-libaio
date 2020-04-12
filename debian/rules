@@ -12,7 +12,7 @@ include /usr/share/dpkg/buildtools.mk
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
   TESTS_RUN = yes
   # The following architectures still fail the test suite.
-  ifneq (,$(filter $(DEB_HOST_ARCH),armhf riscv64 sparc64 hppa))
+  ifneq (,$(filter $(DEB_HOST_ARCH),riscv64 sparc64 hppa))
     TESTS_FLAKY = yes
   endif
 else
