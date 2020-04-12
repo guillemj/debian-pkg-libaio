@@ -37,9 +37,8 @@ upstream/0028-harness-Skip-the-test-if-io_pgetevents-is-not-implem.patch
 0006-Add-m68k-support.patch
 0007-Add-SH-support.patch
 0008-Add-x32-support.patch
-# Build system
-02_libdevdir.patch
-04_no_Werror.patch
-05_build-flags.patch
+0009-build-Fix-DESTDIR-handling.patch
+0010-build-Do-not-use-Werror-by-default.patch
+0011-build-Honour-user-build-flags.patch
 # Code and harness
 0001-Fix-io_pgetevents-syscall-wrapper-on-32-bit-userland.patch

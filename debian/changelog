@@ -8,6 +8,8 @@ libaio (0.3.112-7) UNRELEASED; urgency=medium
     - Fix syscall definitions for hppa to match the kernel exactly.
     - Make __X32_SYSCALL_BIT an unsigned long constant to match the kernel.
     - Fix x32 structures padding.
+    - Rework build system patches to ready them for upstream submission,
+      and drop libdevdir support which we do not use anymore.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 12 Apr 2020 04:04:24 +0200
 
