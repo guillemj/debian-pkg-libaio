@@ -12,6 +12,7 @@ libaio (0.3.112-7) UNRELEASED; urgency=medium
       and drop libdevdir support which we do not use anymore.
   * Fix logic inversion in test suite flaky handling.
   * Remove trailing closing parenthesis from TESTS_RUN conditional.
+  * Print a message when we run the test suite in flaky mode.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 12 Apr 2020 04:04:24 +0200
 

@@ -48,6 +48,9 @@ check-arch: build-arch
 	dh_testdir
 	
 ifeq ($(TESTS_RUN),yes)
+ifeq ($(TESTS_FLAKY),yes)
+	@echo "Notice: Running tests in flaky mode, errors will be ignored."
+endif
 	$(if $(TESTS_FLAKY),-)$(MAKE) partcheck \
 	  CPPFLAGS="$(CPPFLAGS)" \
 	  CFLAGS="$(CFLAGS)" \
