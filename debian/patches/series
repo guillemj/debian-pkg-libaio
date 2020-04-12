@@ -40,5 +40,5 @@ upstream/0028-harness-Skip-the-test-if-io_pgetevents-is-not-implem.patch
 0009-build-Fix-DESTDIR-handling.patch
 0010-build-Do-not-use-Werror-by-default.patch
 0011-build-Honour-user-build-flags.patch
-# Code and harness
+# Local changes, not for upstream
 0001-Fix-io_pgetevents-syscall-wrapper-on-32-bit-userland.patch

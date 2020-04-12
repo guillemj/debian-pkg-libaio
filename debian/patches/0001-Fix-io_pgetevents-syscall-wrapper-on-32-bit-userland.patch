@@ -1,4 +1,4 @@
-From 1013c9dccb3b60a66c2e8606762a246f995d8796 Mon Sep 17 00:00:00 2001
+From 70bed6aad97ad28d3bfc6dc8bf3c8f9aed77282b Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Fri, 16 Aug 2019 02:33:46 +0200
 Subject: [PATCH libaio] Fix io_pgetevents() syscall wrapper on 32-bit userland
@@ -24,13 +24,15 @@ we retry with a structure padded to what the kernel expects.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
- src/io_pgetevents.c |   38 +++++++++++++++++++++++++++++++-------
- src/libaio.h        |   10 ++++++++++
+ src/io_pgetevents.c | 38 +++++++++++++++++++++++++++++++-------
+ src/libaio.h        | 10 ++++++++++
  2 files changed, 41 insertions(+), 7 deletions(-)
 
+diff --git a/src/io_pgetevents.c b/src/io_pgetevents.c
+index e6b0614..b2515f2 100644
 --- a/src/io_pgetevents.c
 +++ b/src/io_pgetevents.c
-@@ -33,17 +33,41 @@ int io_pgetevents(io_context_t ctx, long
+@@ -33,17 +33,41 @@ int io_pgetevents(io_context_t ctx, long min_nr, long nr,
  		struct io_event *events, struct timespec *timeout,
  		sigset_t *sigmask)
  {
@@ -79,9 +81,11 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  }
  #else
  int io_pgetevents(io_context_t ctx, long min_nr, long nr,
+diff --git a/src/libaio.h b/src/libaio.h
+index ce3aad1..36ab9bc 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
-@@ -150,6 +150,16 @@ struct io_event {
+@@ -152,6 +152,16 @@ struct io_event {
  	PADDEDul(res2, __pad4);
  };
  
@@ -98,3 +102,6 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  #undef PADDED
  #undef PADDEDptr
  #undef PADDEDul
+-- 
+2.26.0.292.g33ef6b2f38
+
