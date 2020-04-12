@@ -47,7 +47,7 @@ clean:
 check-arch: build-arch
 	dh_testdir
 	
-ifeq ($(TESTS_RUN),yes))
+ifeq ($(TESTS_RUN),yes)
 	$(if $(TESTS_FLAKY),-)$(MAKE) partcheck \
 	  CPPFLAGS="$(CPPFLAGS)" \
 	  CFLAGS="$(CFLAGS)" \
