@@ -29,6 +29,8 @@ upstream/0026-harness-Fix-PROT_WRITE-mmap-check.patch
 upstream/0027-harness-Print-better-error-messages-on-error-conditi.patch
 upstream/0028-harness-Skip-the-test-if-io_pgetevents-is-not-implem.patch
 # Local changes, pending submission
+0001-syscall-Fix-ARM-definitions-to-match-exactly-the-ker.patch
+0002-syscall-Fix-ia64-definitions-to-match-exactly-the-ke.patch
 00_arches.patch
 00_arches_sh.patch
 00_arches_x32.patch
