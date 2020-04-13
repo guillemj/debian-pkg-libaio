@@ -1,3 +1,10 @@
+libaio (0.3.112-8) UNRELEASED; urgency=medium
+
+  * Add a comment with the reason for each architecture being in the flaky
+    test suite mode.
+
+ -- Guillem Jover <guillem@debian.org>  Mon, 13 Apr 2020 02:22:03 +0200
+
 libaio (0.3.112-7) unstable; urgency=medium
 
   * Cleanup patches:

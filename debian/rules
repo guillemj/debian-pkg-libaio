@@ -11,7 +11,16 @@ include /usr/share/dpkg/buildtools.mk
 
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
   TESTS_RUN = yes
-  # The following architectures still fail the test suite.
+  # The following architectures still fail the test suite:
+  #   riscv64
+  #     (5: 512 instead of EFAULT on write)
+  #   sparc64
+  #     (5: 512 instead of EFAULT on write)
+  #     (19: mremap EINVAL)
+  #   hppa
+  #     (5: 512 instead of EFAULT on write)
+  #     (19: mremap EINVAL)
+  #     (17: looping, timeout?)
   ifneq (,$(filter $(DEB_HOST_ARCH),riscv64 sparc64 hppa))
     TESTS_FLAKY = yes
   endif
