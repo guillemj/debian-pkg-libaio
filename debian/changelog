@@ -4,6 +4,8 @@ libaio (0.3.112-8) UNRELEASED; urgency=medium
     test suite mode.
   * Remove temporary forced flaky test suite run on architectures built under
     an emulator, and move them to the permanent flaky list.
+  * Add x32 to the flaky test suite mode list, it's still failing on the build
+    daemons, even though it worked locally.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 13 Apr 2020 02:22:03 +0200
 
