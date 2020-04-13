@@ -1,4 +1,4 @@
-libaio (0.3.112-8) UNRELEASED; urgency=medium
+libaio (0.3.112-8) unstable; urgency=medium
 
   * Add a comment with the reason for each architecture being in the flaky
     test suite mode.
@@ -8,7 +8,7 @@ libaio (0.3.112-8) UNRELEASED; urgency=medium
     daemons, even though it worked locally.
   * Remove no longer needed TESTS_RUN logic, and inline the nocheck condition.
 
- -- Guillem Jover <guillem@debian.org>  Mon, 13 Apr 2020 02:22:03 +0200
+ -- Guillem Jover <guillem@debian.org>  Mon, 13 Apr 2020 02:58:47 +0200
 
 libaio (0.3.112-7) unstable; urgency=medium
 
