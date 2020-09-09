@@ -8,8 +8,6 @@ Homepage: https://pagure.io/libaio
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Build-Depends:
-# Needed for buildtools.mk fragment.
- dpkg-dev (>= 1.19.0),
 # Needed for dh_makeshlibs udeb support.
  debhelper (>= 12.3),
  debhelper-compat (= 12),

@@ -1,3 +1,9 @@
+libaio (0.3.112-9) UNRELEASED; urgency=medium
+
+  * Remove Build-Depends on dpkg-dev, satisfied in stable.
+
+ -- Guillem Jover <guillem@debian.org>  Wed, 09 Sep 2020 03:07:54 +0200
+
 libaio (0.3.112-8) unstable; urgency=medium
 
   * Add a comment with the reason for each architecture being in the flaky
