@@ -80,7 +80,7 @@ binary-arch: install-arch
 	dh_testdir
 	dh_testroot
 	dh_install -a
-	dh_installchangelogs -a ChangeLog
+	dh_installchangelogs -a
 	dh_installdocs -a
 	dh_installexamples -a
 	dh_installman -a
