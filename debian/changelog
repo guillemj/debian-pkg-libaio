@@ -1,6 +1,7 @@
 libaio (0.3.112-9) UNRELEASED; urgency=medium
 
   * Remove Build-Depends on dpkg-dev, satisfied in stable.
+  * Switch to debhelper compatibility level 13.
 
  -- Guillem Jover <guillem@debian.org>  Wed, 09 Sep 2020 03:07:54 +0200
 

@@ -8,9 +8,7 @@ Homepage: https://pagure.io/libaio
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Build-Depends:
-# Needed for dh_makeshlibs udeb support.
- debhelper (>= 12.3),
- debhelper-compat (= 12),
+ debhelper-compat (= 13),
 
 Package: libaio1
 Architecture: linux-any
