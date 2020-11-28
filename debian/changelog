@@ -5,6 +5,7 @@ libaio (0.3.112-9) UNRELEASED; urgency=medium
   * Do not pass ChangeLog to dh_installchangelogs, now handled by default.
   * Switch to Standards-Version 4.5.1 (no changes needed).
   * Switch to the dh sequencer.
+  * Add debian/upstream/metadata file.
 
  -- Guillem Jover <guillem@debian.org>  Wed, 09 Sep 2020 03:07:54 +0200
 
