@@ -1,4 +1,4 @@
-libaio (0.3.112-9) UNRELEASED; urgency=medium
+libaio (0.3.112-9) unstable; urgency=medium
 
   * Remove Build-Depends on dpkg-dev, satisfied in stable.
   * Switch to debhelper compatibility level 13.
@@ -7,7 +7,7 @@ libaio (0.3.112-9) UNRELEASED; urgency=medium
   * Switch to the dh sequencer.
   * Add debian/upstream/metadata file.
 
- -- Guillem Jover <guillem@debian.org>  Wed, 09 Sep 2020 03:07:54 +0200
+ -- Guillem Jover <guillem@debian.org>  Thu, 24 Dec 2020 15:41:17 +0100
 
 libaio (0.3.112-8) unstable; urgency=medium
 
