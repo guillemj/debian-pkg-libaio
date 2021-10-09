@@ -1,1 +1,2 @@
-usr/lib/*/lib*.so.*
+usr/lib/*/libaio.so.1
+usr/lib/*/libaio.so.1.*
