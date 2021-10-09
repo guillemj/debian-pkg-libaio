@@ -1,3 +1,9 @@
+libaio (0.3.112-10) UNRELEASED; urgency=medium
+
+  * Add autopkgtests.
+
+ -- Guillem Jover <guillem@debian.org>  Sat, 09 Oct 2021 17:13:28 +0200
+
 libaio (0.3.112-9) unstable; urgency=medium
 
   * Remove Build-Depends on dpkg-dev, satisfied in stable.
