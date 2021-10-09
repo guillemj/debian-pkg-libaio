@@ -1,4 +1,4 @@
-libaio (0.3.112-10) UNRELEASED; urgency=medium
+libaio (0.3.112-10) unstable; urgency=medium
 
   * Add autopkgtests.
   * Switch to Standards-Version 4.6.0 (no changes needed).
@@ -10,7 +10,7 @@ libaio (0.3.112-10) UNRELEASED; urgency=medium
   * List pathnames explicitly in debhelper .install fragment files, instead
     of using over matching globs.
 
- -- Guillem Jover <guillem@debian.org>  Sat, 09 Oct 2021 17:13:28 +0200
+ -- Guillem Jover <guillem@debian.org>  Sat, 09 Oct 2021 17:31:09 +0200
 
 libaio (0.3.112-9) unstable; urgency=medium
 
