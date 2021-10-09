@@ -1,6 +1,7 @@
 libaio (0.3.112-10) UNRELEASED; urgency=medium
 
   * Add autopkgtests.
+  * Switch to Standards-Version 4.6.0 (no changes needed).
 
  -- Guillem Jover <guillem@debian.org>  Sat, 09 Oct 2021 17:13:28 +0200
 
