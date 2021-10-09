@@ -2,6 +2,10 @@ libaio (0.3.112-10) UNRELEASED; urgency=medium
 
   * Add autopkgtests.
   * Switch to Standards-Version 4.6.0 (no changes needed).
+  * Ship all man pages again, now that the redundant ones are no longer
+    present, and the ones that describe the interfaces in the library live
+    in section 3 which do not conflict with the ones in manpages-dev.
+    (Closes: #995110)
 
  -- Guillem Jover <guillem@debian.org>  Sat, 09 Oct 2021 17:13:28 +0200
 
