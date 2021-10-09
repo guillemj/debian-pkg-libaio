@@ -6,6 +6,7 @@ libaio (0.3.112-10) UNRELEASED; urgency=medium
     present, and the ones that describe the interfaces in the library live
     in section 3 which do not conflict with the ones in manpages-dev.
     (Closes: #995110)
+  * Stop shipping upstream TODO file in libaio-dev.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 09 Oct 2021 17:13:28 +0200
 
