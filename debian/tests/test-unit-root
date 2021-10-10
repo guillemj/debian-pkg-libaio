@@ -11,4 +11,4 @@ else
   CC=gcc
 fi
 
-make check CC="$(CC)" LIBAIO=-laio
+make check CC="$CC" LIBAIO=-laio

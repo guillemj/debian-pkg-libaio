@@ -11,4 +11,4 @@ else
   CC=gcc
 fi
 
-make partcheck CC="$(CC)" LIBAIO=-laio
+make partcheck CC="$CC" LIBAIO=-laio
