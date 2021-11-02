@@ -1,6 +1,8 @@
 libaio (0.3.112-12) UNRELEASED; urgency=medium
 
   * Add patch from upstream to fix test suite warning with gcc-11.
+  * Fix LTO build by using symver function attribute instead of .symver
+    __asm__ statement. (Closes: #998309)
 
  -- Guillem Jover <guillem@debian.org>  Wed, 03 Nov 2021 00:29:59 +0100
 

@@ -42,5 +42,7 @@ upstream/0001-Fix-test-issue-with-gcc-11.patch
 0010-build-Do-not-use-Werror-by-default.patch
 0011-build-Honour-user-build-flags.patch
 0001-man-Fix-typos.patch
+0001-Move-semicolon-to-SYMVER-and-DEFSYMVER-call-sites.patch
+0002-Use-new-symver-function-attribute-to-support-LTO-bui.patch
 # Local changes, not for upstream
 0001-Fix-io_pgetevents-syscall-wrapper-on-32-bit-userland.patch
