@@ -10,12 +10,10 @@ passed.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
- harness/Makefile |  7 +++++--
- src/Makefile     | 18 +++++++++---------
+ harness/Makefile |    7 +++++--
+ src/Makefile     |   18 +++++++++---------
  2 files changed, 14 insertions(+), 11 deletions(-)
 
-diff --git a/harness/Makefile b/harness/Makefile
-index 84e03a6..42aa49a 100644
 --- a/harness/Makefile
 +++ b/harness/Makefile
 @@ -6,8 +6,11 @@ PROGS:=$(PARTPROGS) $(EXTRAPROGS)
@@ -29,9 +27,9 @@ index 84e03a6..42aa49a 100644
 +MK_CFLAGS = $(CFLAGS)
 +MK_LDFLAGS = main.c $(LIBAIO) -lpthread $(LDFLAGS)
  
- # Change this on the build line to run tests against the installed libraries:
- # make LIBAIO=-laio partcheck
-@@ -16,7 +19,7 @@ LIBAIO?=../src/libaio.a
+ # gcc-11 does not like the test case in 3.t that
+ # passes an invalid pointer (-1) to the kernel, so
+@@ -21,7 +24,7 @@ LIBAIO?=../src/libaio.a
  all: $(PROGS)
  
  $(PROGS): %.p: %.t $(HARNESS_SRCS)
@@ -40,8 +38,6 @@ index 84e03a6..42aa49a 100644
  
  clean:
  	rm -f $(PROGS) *.o runtests.out rofile wofile rwfile
-diff --git a/src/Makefile b/src/Makefile
-index a53c43c..f6215f9 100644
 --- a/src/Makefile
 +++ b/src/Makefile
 @@ -3,12 +3,12 @@ prefix=/usr
@@ -63,7 +59,7 @@ index a53c43c..f6215f9 100644
  ENABLE_SHARED ?= 1
  
  soname=libaio.so.1
-@@ -43,10 +43,10 @@ libaio_sobjs := $(patsubst %.c,%.os,$(libaio_srcs))
+@@ -43,10 +43,10 @@ libaio_sobjs := $(patsubst %.c,%.os,$(li
  $(libaio_objs) $(libaio_sobjs): libaio.h vsys_def.h
  
  %.os: %.c
@@ -85,6 +81,3 @@ index a53c43c..f6215f9 100644
  
  install: $(all_targets)
  	install -D -m 644 libaio.h $(DESTDIR)$(includedir)/libaio.h
--- 
-2.26.0.292.g33ef6b2f38
-

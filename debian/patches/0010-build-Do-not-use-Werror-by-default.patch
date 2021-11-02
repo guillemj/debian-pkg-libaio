@@ -9,11 +9,9 @@ failures.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
- harness/Makefile | 2 +-
+ harness/Makefile |    2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/harness/Makefile b/harness/Makefile
-index 5cc2b25..84e03a6 100644
 --- a/harness/Makefile
 +++ b/harness/Makefile
 @@ -6,7 +6,7 @@ PROGS:=$(PARTPROGS) $(EXTRAPROGS)
@@ -24,7 +22,4 @@ index 5cc2b25..84e03a6 100644
 +CFLAGS+=-Wall -I../src -g -O2
  #-lpthread -lrt
  
- # Change this on the build line to run tests against the installed libraries:
--- 
-2.26.0.292.g33ef6b2f38
-
+ # gcc-11 does not like the test case in 3.t that

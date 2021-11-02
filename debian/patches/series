@@ -28,6 +28,7 @@ upstream/0025-harness-fix-read-into-PROT_WRITE-mmap-test.patch
 upstream/0026-harness-Fix-PROT_WRITE-mmap-check.patch
 upstream/0027-harness-Print-better-error-messages-on-error-conditi.patch
 upstream/0028-harness-Skip-the-test-if-io_pgetevents-is-not-implem.patch
+upstream/0001-Fix-test-issue-with-gcc-11.patch
 # Local changes, pending submission
 0001-syscall-Fix-ARM-definitions-to-match-exactly-the-ker.patch
 0002-syscall-Fix-ia64-definitions-to-match-exactly-the-ke.patch
