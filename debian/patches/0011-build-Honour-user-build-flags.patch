@@ -1,34 +1,46 @@
-From b8f802cee62430d4951990f578bcd27eba27476e Mon Sep 17 00:00:00 2001
+From a0bd410d67e0632526ba3eb891791c6753b51374 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 12 Apr 2020 04:01:27 +0200
-Subject: [PATCH libaio 11/11] build: Honour user build flags
+Subject: [PATCH] build: Honor user build flags
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-CPPFLAGS, CFLAGS and LDFLAGS are user flags, which we need to preserve.
-Any required flag that the build system needs, has to be set in some
-other flag so that the build will succeed even if the user flags are
-passed.
+CPPFLAGS, CFLAGS and LDFLAGS are user flags, which we need to preserve,
+regardless of the user passing them over the environment or the
+command-line. Any required flag that the build system needs, has to be
+set in some other flag (which we will namespace with «MK_») so that the
+build will use even if the user flags are passed, even though the user
+should be able to override by appending after them. We pass CPPFLAGS to
+any compilation command that missed them.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
- harness/Makefile |    7 +++++--
+ harness/Makefile |    9 ++++++---
  src/Makefile     |   18 +++++++++---------
- 2 files changed, 14 insertions(+), 11 deletions(-)
+ 2 files changed, 15 insertions(+), 12 deletions(-)
 
 --- a/harness/Makefile
 +++ b/harness/Makefile
-@@ -6,8 +6,11 @@ PROGS:=$(PARTPROGS) $(EXTRAPROGS)
+@@ -6,13 +6,16 @@ PROGS:=$(PARTPROGS) $(EXTRAPROGS)
  HARNESS_SRCS:=main.c
  # io_queue.c
  
 -CFLAGS+=-Wall -I../src -g -O2
-+MK_CPPFLAGS := -I../src $(CPPFLAGS)
-+CFLAGS = -Wall -g -O2
- #-lpthread -lrt
++MK_CPPFLAGS = -I../src $(CPPFLAGS)
++CFLAGS ?= -Wall -g -O2
 +MK_CFLAGS = $(CFLAGS)
+ #-lpthread -lrt
 +MK_LDFLAGS = main.c $(LIBAIO) -lpthread $(LDFLAGS)
  
  # gcc-11 does not like the test case in 3.t that
  # passes an invalid pointer (-1) to the kernel, so
+ # tell the compiler we do not need a warning here
+-cases/3.p:	CFLAGS+=-Wno-stringop-overflow
++cases/3.p:	MK_CFLAGS+=-Wno-stringop-overflow
+ 
+ # Change this on the build line to run tests against the installed libraries:
+ # make LIBAIO=-laio partcheck
 @@ -21,7 +24,7 @@ LIBAIO?=../src/libaio.a
  all: $(PROGS)
  
@@ -50,9 +62,9 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
 -L_CFLAGS=$(CFLAGS)
 -LINK_FLAGS=
 -LINK_FLAGS+=$(LDFLAGS)
-+MK_CPPFLAGS = -I.
++MK_CPPFLAGS = -I. $(CPPFLAGS)
++CFLAGS ?= -Wall -g -fomit-frame-pointer -O2
 +MK_CFLAGS = -fPIC $(CFLAGS)
-+CFLAGS = -Wall -g -fomit-frame-pointer -O2
 +SO_CFLAGS = -shared $(MK_CFLAGS)
 +L_CFLAGS = $(MK_CFLAGS)
 +MK_LDFLAGS = $(LDFLAGS)

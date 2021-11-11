@@ -1,3 +1,10 @@
+libaio (0.3.112-13) UNRELEASED; urgency=medium
+
+  * Pass CPPFLAGS to linker command, which as a side effect makes the
+    build reproducible on differing build pathnames.
+
+ -- Guillem Jover <guillem@debian.org>  Thu, 11 Nov 2021 04:51:36 +0100
+
 libaio (0.3.112-12) unstable; urgency=medium
 
   * Add patch from upstream to fix test suite warning with gcc-11.

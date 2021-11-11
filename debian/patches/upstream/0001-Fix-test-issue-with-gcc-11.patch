@@ -58,7 +58,7 @@ index 5cc2b25..4f225d3 100644
 +# gcc-11 does not like the test case in 3.t that
 +# passes an invalid pointer (-1) to the kernel, so
 +# tell the compiler we do not need a warning here
-+cases/3.p:	override CFLAGS+=-Wno-stringop-overflow
++cases/3.p:	CFLAGS+=-Wno-stringop-overflow
 +
  # Change this on the build line to run tests against the installed libraries:
  # make LIBAIO=-laio partcheck
