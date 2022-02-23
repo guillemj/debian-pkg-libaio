@@ -29,6 +29,7 @@ Package: libaio1-udeb
 Package-Type: udeb
 Section: debian-installer
 Architecture: linux-any
+Build-Profiles: <!noudeb>
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},

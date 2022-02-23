@@ -1,3 +1,9 @@
+libaio (0.3.112-14) UNRELEASED; urgency=medium
+
+  * Add support for the noudeb build profile.
+
+ -- Guillem Jover <guillem@debian.org>  Thu, 24 Feb 2022 00:46:15 +0100
+
 libaio (0.3.112-13) unstable; urgency=medium
 
   * Pass CPPFLAGS to linker command, which as a side effect makes the
