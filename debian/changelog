@@ -1,3 +1,11 @@
+libaio (0.3.113-2) UNRELEASED; urgency=medium
+
+  * Skip new test case 23, which was added upstream for a kernel regression,
+    so we are not worse off than before. Its failure was known and being
+    looked at upstream.
+
+ -- Guillem Jover <guillem@debian.org>  Tue, 19 Apr 2022 15:53:23 +0200
+
 libaio (0.3.113-1) unstable; urgency=medium
 
   * New upstream release.

@@ -14,3 +14,4 @@
 0013-Add-x32-support.patch
 # Local changes, not for upstream
 0014-Fix-io_pgetevents-syscall-wrapper-on-32-bit-userland.patch
+0001-harness-Disable-failing-test-23.patch
