@@ -1,7 +1,7 @@
-From f9c8695989fea731c93d99c684482df5744b385c Mon Sep 17 00:00:00 2001
+From cf9ef834c4e15c546808b6100a4d95343cf02e9b Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 03:18:50 +0200
-Subject: [PATCH libaio 04/11] Fix and improve MIPS support
+Subject: [PATCH libaio 09/14] Fix and improve MIPS support
 
 Fix structure padding for MIPS 64, add syscall definitions, and the
 kernel R/W pointer.
@@ -29,7 +29,7 @@ index 0eed7bd..33d8e46 100644
  #elif defined(__arm__) || defined(__s390__)
  #define KERNEL_RW_POINTER	((void *)0x00010000)
 diff --git a/src/libaio.h b/src/libaio.h
-index 8b33382..26b07f9 100644
+index 24b4b8a..570ef2b 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
 @@ -52,7 +52,9 @@ typedef enum io_iocb_cmd {
@@ -40,18 +40,18 @@ index 8b33382..26b07f9 100644
 +    defined(__sh__) || \
 +    defined(__bfin__) || \
 +    (defined(__MIPSEL__) && !defined(__mips64)) || \
-     defined(__cris__) || (defined(__riscv) && __riscv_xlen == 32) || \
+     defined(__cris__) || defined(__loongarch32) || \
+     (defined(__riscv) && __riscv_xlen == 32) || \
      (defined(__GNUC__) && defined(__BYTE_ORDER__) && \
-          __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__ && __SIZEOF_LONG__ == 4)
-@@ -62,6 +64,7 @@ typedef enum io_iocb_cmd {
+@@ -63,6 +65,7 @@ typedef enum io_iocb_cmd {
  
  /* little endian, 64 bits */
  #elif defined(__ia64__) || defined(__x86_64__) || defined(__alpha__) || \
 +      (defined(__mips64) && defined(__MIPSEL__)) || \
        (defined(__aarch64__) && defined(__AARCH64EL__)) || \
+       defined(__loongarch64) || \
        (defined(__riscv) && __riscv_xlen == 64) || \
-       (defined(__GNUC__) && defined(__BYTE_ORDER__) && \
-@@ -73,6 +76,7 @@ typedef enum io_iocb_cmd {
+@@ -75,6 +78,7 @@ typedef enum io_iocb_cmd {
  /* big endian, 64 bits */
  #elif defined(__powerpc64__) || defined(__s390x__) || \
        (defined(__sparc__) && defined(__arch64__)) || \
@@ -120,18 +120,18 @@ index 0000000..2c4245e
 +#define __NR_io_cancel			(__NR_Linux + 204)
 +#endif /* _MIPS_SIM == _MIPS_SIM_NABI32 */
 diff --git a/src/syscall.h b/src/syscall.h
-index b53da4c..db78e28 100644
+index 59e0bb3..4e56894 100644
 --- a/src/syscall.h
 +++ b/src/syscall.h
-@@ -27,6 +27,8 @@
+@@ -40,6 +40,8 @@
  #include "syscall-arm.h"
  #elif defined(__sparc__)
  #include "syscall-sparc.h"
 +#elif defined(__mips__)
 +#include "syscall-mips.h"
- #elif defined(__aarch64__) || defined(__riscv)
+ #elif defined(__aarch64__) || defined(__loongarch__) || defined(__riscv)
  #include "syscall-generic.h"
  #else
 -- 
-2.26.0.292.g33ef6b2f38
+2.35.2
 

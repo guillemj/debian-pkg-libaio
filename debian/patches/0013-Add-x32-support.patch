@@ -1,7 +1,7 @@
-From 15e2be45860c5f7bac4beed0551ec8257e863d7e Mon Sep 17 00:00:00 2001
+From a70f29d317a02a7cf5c0c1cbacc8f020c52cdea9 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 12 Apr 2020 03:36:39 +0200
-Subject: [PATCH libaio 08/11] Add x32 support
+Subject: [PATCH libaio 13/14] Add x32 support
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
@@ -24,7 +24,7 @@ index ac0fba2..db42a18 100644
  #elif defined(__hppa__)
  #define KERNEL_RW_POINTER	((void *)0x10100000)
 diff --git a/src/libaio.h b/src/libaio.h
-index c748454..9695a53 100644
+index 2dbb6bb..c731298 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
 @@ -51,7 +51,9 @@ typedef enum io_iocb_cmd {
@@ -60,5 +60,5 @@ index 0eccef3..6a44d53 100644
  #define __NR_io_pgetevents	333
 +#endif
 -- 
-2.26.0.292.g33ef6b2f38
+2.35.2
 

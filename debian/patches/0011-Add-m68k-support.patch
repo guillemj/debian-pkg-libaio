@@ -1,7 +1,7 @@
-From 7791885da4e72ecbd9dd5c27be53b876f3630e9a Mon Sep 17 00:00:00 2001
+From bfbe6653ef0a9bac41ea54f1f3a12c21d5ff0a57 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 03:25:22 +0200
-Subject: [PATCH libaio 06/11] Add m68k support
+Subject: [PATCH libaio 11/14] Add m68k support
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
@@ -36,10 +36,10 @@ index 0000000..2dd4a9b
 +#define __NR_io_submit		244
 +#define __NR_io_cancel		245
 diff --git a/src/syscall.h b/src/syscall.h
-index 61c18c6..a88876f 100644
+index 3a6c85e..e3825df 100644
 --- a/src/syscall.h
 +++ b/src/syscall.h
-@@ -27,6 +27,8 @@
+@@ -40,6 +40,8 @@
  #include "syscall-arm.h"
  #elif defined(__sparc__)
  #include "syscall-sparc.h"
@@ -49,5 +49,5 @@ index 61c18c6..a88876f 100644
  #include "syscall-parisc.h"
  #elif defined(__mips__)
 -- 
-2.26.0.292.g33ef6b2f38
+2.35.2
 

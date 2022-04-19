@@ -1,55 +1,60 @@
-From d4ec369c6457cca55db5297701ddd5d9d3ff5ae0 Mon Sep 17 00:00:00 2001
+From 67a28d3c066465668ebffb9ebfb71e89f0e5c19c Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 12 Apr 2020 03:58:12 +0200
-Subject: [PATCH libaio 09/11] build: Fix DESTDIR handling
+Subject: [PATCH libaio 02/14] build: Fix DESTDIR and pathname variables
+ handling
 
 The convention for DESTDIR is that it is only prefixed during the
 install target. In this case we postpone that to the inner Makefile
 so that it can be invoked directly while preserving the expected
-semantics.
+semantics. We should also prefer the user specified pathname variables
+if already set in any way, and do not need to pass them explicitly
+to the sub-make.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
- Makefile     |  8 +++++++-
- src/Makefile | 11 ++++++-----
- 2 files changed, 13 insertions(+), 6 deletions(-)
+ Makefile     |  6 +-----
+ src/Makefile | 16 ++++++++--------
+ 2 files changed, 9 insertions(+), 13 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index c1fb831..e48b520 100644
+index c1fb831..c194d9e 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -4,6 +4,7 @@ VERSION=$(shell awk '/Version:/ { print $$2 }' $(SPECFILE))
+@@ -4,17 +4,13 @@ VERSION=$(shell awk '/Version:/ { print $$2 }' $(SPECFILE))
  TAG = $(NAME)-$(VERSION)
  RPMBUILD=$(shell `which rpmbuild >&/dev/null` && echo "rpmbuild" || echo "rpm")
  
-+DESTDIR=
- prefix=/usr
- includedir=$(prefix)/include
- libdir=$(prefix)/lib
-@@ -14,7 +15,12 @@ all:
+-prefix=/usr
+-includedir=$(prefix)/include
+-libdir=$(prefix)/lib
+-
+ default: all
+ 
+ all:
  	@$(MAKE) -C src
  
  install:
 -	@$(MAKE) -C src install prefix=$(DESTDIR)$(prefix) includedir=$(DESTDIR)$(includedir) libdir=$(DESTDIR)$(libdir)
-+	@$(MAKE) -C src install \
-+	  DESTDIR=$(DESTDIR) \
-+	  prefix=$(prefix) \
-+	  includedir=$(includedir) \
-+	  libdir=$(libdir) \
-+	  $(nil)
++	@$(MAKE) -C src install
  
  check:
  	@$(MAKE) -C harness check
 diff --git a/src/Makefile b/src/Makefile
-index 37ae219..a53c43c 100644
+index d080a1b..9a36d0d 100644
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -1,3 +1,4 @@
-+DESTDIR=
- prefix=/usr
- includedir=$(prefix)/include
- libdir=$(prefix)/lib
-@@ -58,12 +59,12 @@ $(libname): $(libaio_sobjs) libaio.map
+@@ -1,6 +1,6 @@
+-prefix=/usr
+-includedir=$(prefix)/include
+-libdir=$(prefix)/lib
++prefix ?= /usr
++includedir ?= $(prefix)/include
++libdir ?= $(prefix)/lib
+ 
+ CFLAGS ?= -g -fomit-frame-pointer -O2
+ CFLAGS += -Wall -I. -fPIC
+@@ -59,12 +59,12 @@ $(libname): $(libaio_sobjs) libaio.map
  	$(CC) $(SO_CFLAGS) -Wl,--version-script=libaio.map -Wl,-soname=$(soname) -o $@ $(libaio_sobjs) $(LINK_FLAGS)
  
  install: $(all_targets)
@@ -68,5 +73,5 @@ index 37ae219..a53c43c 100644
  
  $(libaio_objs): libaio.h
 -- 
-2.26.0.292.g33ef6b2f38
+2.35.2
 

@@ -1,5 +1,10 @@
-libaio (0.3.112-14) UNRELEASED; urgency=medium
+libaio (0.3.113-1) UNRELEASED; urgency=medium
 
+  * New upstream release.
+    - Remove patches taken from upstream, now unneeded.
+    - Remove -Werror removal patch, as we override CFLAGS.
+    - Refresh patches.
+    - Update copyright years.
   * Add support for the noudeb build profile.
 
  -- Guillem Jover <guillem@debian.org>  Thu, 24 Feb 2022 00:46:15 +0100

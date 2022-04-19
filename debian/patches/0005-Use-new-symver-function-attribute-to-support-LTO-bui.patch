@@ -1,7 +1,8 @@
-From e06dceb47bf17894295a96032eb8a2ee53a5a615 Mon Sep 17 00:00:00 2001
+From 3ec8be29fc945238788f1fc7f0d998b145a761c7 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Tue, 2 Nov 2021 22:37:32 +0100
-Subject: [PATCH 2/2] Use new symver function attribute to support LTO builds
+Subject: [PATCH libaio 05/14] Use new symver function attribute to support LTO
+ builds
 
 The LTO support cannot work properly when there are versioned symbols
 via asm statements, as those are not seen by the compiler. Use the new
@@ -89,5 +90,5 @@ index f7ce979..59e0bb3 100644
  #if defined(__i386__)
  #include "syscall-i386.h"
 -- 
-2.33.1
+2.35.2
 

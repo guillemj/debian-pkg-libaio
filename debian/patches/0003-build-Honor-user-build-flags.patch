@@ -1,7 +1,7 @@
-From a0bd410d67e0632526ba3eb891791c6753b51374 Mon Sep 17 00:00:00 2001
+From dd2a4c0d176b82781040c08a39fa4c75ccca63f5 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 12 Apr 2020 04:01:27 +0200
-Subject: [PATCH] build: Honor user build flags
+Subject: [PATCH libaio 03/14] build: Honor user build flags
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -16,19 +16,21 @@ any compilation command that missed them.
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
- harness/Makefile |    9 ++++++---
- src/Makefile     |   18 +++++++++---------
- 2 files changed, 15 insertions(+), 12 deletions(-)
+ harness/Makefile |  9 ++++++---
+ src/Makefile     | 20 ++++++++++----------
+ 2 files changed, 16 insertions(+), 13 deletions(-)
 
+diff --git a/harness/Makefile b/harness/Makefile
+index 4f225d3..8cb27fa 100644
 --- a/harness/Makefile
 +++ b/harness/Makefile
 @@ -6,13 +6,16 @@ PROGS:=$(PARTPROGS) $(EXTRAPROGS)
  HARNESS_SRCS:=main.c
  # io_queue.c
  
--CFLAGS+=-Wall -I../src -g -O2
+-CFLAGS+=-Wall -Werror -I../src -g -O2
 +MK_CPPFLAGS = -I../src $(CPPFLAGS)
-+CFLAGS ?= -Wall -g -O2
++CFLAGS ?= -Wall -Werror -g -O2
 +MK_CFLAGS = $(CFLAGS)
  #-lpthread -lrt
 +MK_LDFLAGS = main.c $(LIBAIO) -lpthread $(LDFLAGS)
@@ -50,11 +52,13 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  
  clean:
  	rm -f $(PROGS) *.o runtests.out rofile wofile rwfile
+diff --git a/src/Makefile b/src/Makefile
+index 9a36d0d..9a1ba51 100644
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -3,12 +3,12 @@ prefix=/usr
- includedir=$(prefix)/include
- libdir=$(prefix)/lib
+@@ -2,12 +2,12 @@ prefix ?= /usr
+ includedir ?= $(prefix)/include
+ libdir ?= $(prefix)/lib
  
 -CFLAGS ?= -g -fomit-frame-pointer -O2
 -CFLAGS += -Wall -I. -fPIC
@@ -71,7 +75,7 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  ENABLE_SHARED ?= 1
  
  soname=libaio.so.1
-@@ -43,10 +43,10 @@ libaio_sobjs := $(patsubst %.c,%.os,$(li
+@@ -42,10 +42,10 @@ libaio_sobjs := $(patsubst %.c,%.os,$(libaio_srcs))
  $(libaio_objs) $(libaio_sobjs): libaio.h vsys_def.h
  
  %.os: %.c
@@ -84,12 +88,17 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  
  AR ?= ar
  RANLIB ?= ranlib
-@@ -56,7 +56,7 @@ libaio.a: $(libaio_objs)
+@@ -55,8 +55,8 @@ libaio.a: $(libaio_objs)
  	$(RANLIB) libaio.a
  
  $(libname): $(libaio_sobjs) libaio.map
+-	$(CC) $(CFLAGS) -c struct_offsets.c
 -	$(CC) $(SO_CFLAGS) -Wl,--version-script=libaio.map -Wl,-soname=$(soname) -o $@ $(libaio_sobjs) $(LINK_FLAGS)
++	$(CC) $(MK_CPPFLAGS) $(MK_CFLAGS) -c struct_offsets.c
 +	$(CC) $(SO_CFLAGS) -Wl,--version-script=libaio.map -Wl,-soname=$(soname) -o $@ $(libaio_sobjs) $(MK_LDFLAGS)
  
  install: $(all_targets)
  	install -D -m 644 libaio.h $(DESTDIR)$(includedir)/libaio.h
+-- 
+2.35.2
+

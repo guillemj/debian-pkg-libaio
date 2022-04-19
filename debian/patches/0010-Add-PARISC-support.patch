@@ -1,7 +1,7 @@
-From 1f01c77ff58df16b75d666a4737d80a09ba61b92 Mon Sep 17 00:00:00 2001
+From a7cb322acddb2ab595a51beffb74942e45bb54f2 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 03:22:10 +0200
-Subject: [PATCH libaio 05/11] Add PARISC support
+Subject: [PATCH libaio 10/14] Add PARISC support
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
@@ -26,10 +26,10 @@ index 33d8e46..01c81aa 100644
  #define KERNEL_RW_POINTER	((void *)0xf0010000)
  #else
 diff --git a/src/libaio.h b/src/libaio.h
-index 26b07f9..29005d0 100644
+index 570ef2b..af02ec0 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
-@@ -75,6 +75,7 @@ typedef enum io_iocb_cmd {
+@@ -77,6 +77,7 @@ typedef enum io_iocb_cmd {
  
  /* big endian, 64 bits */
  #elif defined(__powerpc64__) || defined(__s390x__) || \
@@ -49,10 +49,10 @@ index 0000000..1738075
 +#define __NR_io_submit		218
 +#define __NR_io_cancel		219
 diff --git a/src/syscall.h b/src/syscall.h
-index db78e28..61c18c6 100644
+index 4e56894..3a6c85e 100644
 --- a/src/syscall.h
 +++ b/src/syscall.h
-@@ -27,6 +27,8 @@
+@@ -40,6 +40,8 @@
  #include "syscall-arm.h"
  #elif defined(__sparc__)
  #include "syscall-sparc.h"
@@ -60,7 +60,7 @@ index db78e28..61c18c6 100644
 +#include "syscall-parisc.h"
  #elif defined(__mips__)
  #include "syscall-mips.h"
- #elif defined(__aarch64__) || defined(__riscv)
+ #elif defined(__aarch64__) || defined(__loongarch__) || defined(__riscv)
 -- 
-2.26.0.292.g33ef6b2f38
+2.35.2
 

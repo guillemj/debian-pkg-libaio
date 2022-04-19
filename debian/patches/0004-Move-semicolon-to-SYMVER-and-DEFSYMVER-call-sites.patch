@@ -1,7 +1,8 @@
-From d794e5b83056aaa7b96b20fa5f505b777f66f41f Mon Sep 17 00:00:00 2001
+From fa00b019422170118b5b4086b84e2dfd1a50811e Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 3 Nov 2021 00:20:50 +0100
-Subject: [PATCH 1/2] Move semicolon to SYMVER and DEFSYMVER call sites
+Subject: [PATCH libaio 04/14] Move semicolon to SYMVER and DEFSYMVER call
+ sites
 
 These look like function macros, so let's unify their call sites to use
 function syntax with a final semicolon.
@@ -62,5 +63,5 @@ index d2a117b..f7ce979 100644
  #if defined(__i386__)
  #include "syscall-i386.h"
 -- 
-2.33.1
+2.35.2
 
