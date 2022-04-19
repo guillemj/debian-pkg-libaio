@@ -1,4 +1,4 @@
-libaio (0.3.113-1) UNRELEASED; urgency=medium
+libaio (0.3.113-1) unstable; urgency=medium
 
   * New upstream release.
     - Remove patches taken from upstream, now unneeded.
@@ -7,7 +7,7 @@ libaio (0.3.113-1) UNRELEASED; urgency=medium
     - Update copyright years.
   * Add support for the noudeb build profile.
 
- -- Guillem Jover <guillem@debian.org>  Thu, 24 Feb 2022 00:46:15 +0100
+ -- Guillem Jover <guillem@debian.org>  Tue, 19 Apr 2022 03:22:49 +0200
 
 libaio (0.3.112-13) unstable; urgency=medium
 
