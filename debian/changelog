@@ -1,3 +1,9 @@
+libaio (0.3.113-3) UNRELEASED; urgency=medium
+
+  * Add upstream/metadata fields for bug submitting and database.
+
+ -- Guillem Jover <guillem@debian.org>  Sun, 04 Dec 2022 16:38:16 +0100
+
 libaio (0.3.113-2) unstable; urgency=medium
 
   * Skip new test case 23, which was added upstream for a kernel regression,
