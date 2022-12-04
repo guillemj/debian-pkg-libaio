@@ -6,6 +6,8 @@ libaio (0.3.113-3) UNRELEASED; urgency=medium
   * Move debian/copyright Source field immediately after Format field.
   * Export DEB_BUILD_MAINT_OPTIONS and DEB_CFLAGS_MAINT_PREPEND.
   * Switch from hardening=+bindnow to hardening=+all.
+  * Enable future=+lfs build feature as it does not affect the shared library
+    ABI, but affects the test harness.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 04 Dec 2022 16:38:16 +0100
 
