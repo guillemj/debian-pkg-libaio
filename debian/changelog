@@ -1,4 +1,4 @@
-libaio (0.3.113-3) UNRELEASED; urgency=medium
+libaio (0.3.113-3) unstable; urgency=medium
 
   * Add upstream/metadata fields for bug submitting and database.
   * Update lintian overrides.
@@ -9,7 +9,7 @@ libaio (0.3.113-3) UNRELEASED; urgency=medium
   * Enable future=+lfs build feature as it does not affect the shared library
     ABI, but affects the test harness.
 
- -- Guillem Jover <guillem@debian.org>  Sun, 04 Dec 2022 16:38:16 +0100
+ -- Guillem Jover <guillem@debian.org>  Sun, 04 Dec 2022 18:06:09 +0100
 
 libaio (0.3.113-2) unstable; urgency=medium
 
