@@ -1,6 +1,7 @@
 libaio (0.3.113-3) UNRELEASED; urgency=medium
 
   * Add upstream/metadata fields for bug submitting and database.
+  * Update lintian overrides.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 04 Dec 2022 16:38:16 +0100
 
