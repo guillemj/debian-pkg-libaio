@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://pagure.io/libaio.git
 Upstream-Name: libaio
 Upstream-Contact: Jeff Moyer <jmoyer@redhat.com>
-Source: https://pagure.io/libaio.git
 
 Files: *
 Copyright:
