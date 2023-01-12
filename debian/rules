@@ -46,3 +46,6 @@ endif
 override_dh_auto_install:
 	dh_auto_install -- \
 	  libdir=/usr/lib/$(DEB_HOST_MULTIARCH)
+
+override_dh_installchangelogs:
+	dh_installchangelogs --no-trim
