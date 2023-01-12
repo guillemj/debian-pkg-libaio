@@ -1,3 +1,9 @@
+libaio (0.3.113-4) UNRELEASED; urgency=medium
+
+  * Switch to Standards-Version 4.6.2 (no changes needed).
+
+ -- Guillem Jover <guillem@debian.org>  Thu, 12 Jan 2023 23:35:18 +0100
+
 libaio (0.3.113-3) unstable; urgency=medium
 
   * Add upstream/metadata fields for bug submitting and database.
