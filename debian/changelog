@@ -2,6 +2,7 @@ libaio (0.3.113-4) UNRELEASED; urgency=medium
 
   * Switch to Standards-Version 4.6.2 (no changes needed).
   * Do not trim debian/changelog.
+  * Update debian/patches metadata.
 
  -- Guillem Jover <guillem@debian.org>  Thu, 12 Jan 2023 23:35:18 +0100
 

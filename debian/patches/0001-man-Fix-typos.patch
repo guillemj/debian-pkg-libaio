@@ -2,6 +2,8 @@ From f95e1898b6efd3eaf50273bd1c5a8a40816b5160 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 10 Oct 2021 06:14:51 +0200
 Subject: [PATCH libaio 01/14] man: Fix typos
+Origin: vendor
+Forwarded: https://marc.info/?l=linux-aio&m=164999309220532
 
 Warned-by: lintian
 Signed-off-by: Guillem Jover <guillem@hadrons.org>

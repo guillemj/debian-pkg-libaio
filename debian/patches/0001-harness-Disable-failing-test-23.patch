@@ -2,6 +2,8 @@ From 90fde4fb458fbf1d497c427c3f945f3d7ee11684 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Tue, 19 Apr 2022 15:45:39 +0200
 Subject: [PATCH libaio] harness: Disable failing test 23
+Origin: vendor
+Forwarded: not-needed
 
 This new test fails on several architectures. But it is a new test
 intended to check for a Linux kernel regression, so we are not worse

@@ -3,6 +3,8 @@ From: Guillem Jover <guillem@hadrons.org>
 Date: Tue, 2 Nov 2021 22:37:32 +0100
 Subject: [PATCH libaio 05/14] Use new symver function attribute to support LTO
  builds
+Origin: vendor
+Forwarded: https://marc.info/?l=linux-aio&m=164999309520544
 
 The LTO support cannot work properly when there are versioned symbols
 via asm statements, as those are not seen by the compiler. Use the new

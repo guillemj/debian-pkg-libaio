@@ -3,6 +3,8 @@ From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 3 Nov 2021 00:20:50 +0100
 Subject: [PATCH libaio 04/14] Move semicolon to SYMVER and DEFSYMVER call
  sites
+Origin: vendor
+Forwarded: https://marc.info/?l=linux-aio&m=164999309420541
 
 These look like function macros, so let's unify their call sites to use
 function syntax with a final semicolon.

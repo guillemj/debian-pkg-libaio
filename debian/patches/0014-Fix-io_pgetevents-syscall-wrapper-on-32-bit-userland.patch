@@ -3,6 +3,8 @@ From: Guillem Jover <guillem@hadrons.org>
 Date: Fri, 16 Aug 2019 02:33:46 +0200
 Subject: [PATCH libaio 14/14] Fix io_pgetevents() syscall wrapper on 32-bit
  userland on 64-bit kernels
+Origin: vendor
+Forwarded: not-needed
 
 The kernel compat syscall in the kernel got introduced with a broken
 layout, which requires a pointer to the actual sigset_t variable but
