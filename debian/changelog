@@ -1,10 +1,10 @@
-libaio (0.3.113-4) UNRELEASED; urgency=medium
+libaio (0.3.113-4) unstable; urgency=medium
 
   * Switch to Standards-Version 4.6.2 (no changes needed).
   * Do not trim debian/changelog.
   * Update debian/patches metadata.
 
- -- Guillem Jover <guillem@debian.org>  Thu, 12 Jan 2023 23:35:18 +0100
+ -- Guillem Jover <guillem@debian.org>  Wed, 18 Jan 2023 01:35:12 +0100
 
 libaio (0.3.113-3) unstable; urgency=medium
 
