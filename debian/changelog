@@ -1,3 +1,9 @@
+libaio (0.3.113-5) UNRELEASED; urgency=medium
+
+  * Wrap fields in debian/tests/control.
+
+ -- Guillem Jover <guillem@debian.org>  Sun, 06 Aug 2023 21:03:17 +0200
+
 libaio (0.3.113-4) unstable; urgency=medium
 
   * Switch to Standards-Version 4.6.2 (no changes needed).
