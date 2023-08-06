@@ -1,7 +1,7 @@
-From a70f29d317a02a7cf5c0c1cbacc8f020c52cdea9 Mon Sep 17 00:00:00 2001
+From d656a19f18c51d7952f97913b8346e965aaf133c Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 12 Apr 2020 03:36:39 +0200
-Subject: [PATCH libaio 13/14] Add x32 support
+Subject: [PATCH libaio 14/16] Add x32 support
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
@@ -60,5 +60,5 @@ index 0eccef3..6a44d53 100644
  #define __NR_io_pgetevents	333
 +#endif
 -- 
-2.35.2
+2.40.1
 

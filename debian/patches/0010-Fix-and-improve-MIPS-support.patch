@@ -1,7 +1,7 @@
-From cf9ef834c4e15c546808b6100a4d95343cf02e9b Mon Sep 17 00:00:00 2001
+From f250ac83c2007e81863aeace3dd3fdcfd5f549a5 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 03:18:50 +0200
-Subject: [PATCH libaio 09/14] Fix and improve MIPS support
+Subject: [PATCH libaio 10/16] Fix and improve MIPS support
 
 Fix structure padding for MIPS 64, add syscall definitions, and the
 kernel R/W pointer.
@@ -133,5 +133,5 @@ index 59e0bb3..4e56894 100644
  #include "syscall-generic.h"
  #else
 -- 
-2.35.2
+2.40.1
 

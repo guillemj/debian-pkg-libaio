@@ -1,7 +1,7 @@
-From 97daff5b92530896f9ea6e89ed2d1ec6df264944 Mon Sep 17 00:00:00 2001
+From d3fe396f569d113e1259a77f875cde0ed52104ab Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Fri, 16 Aug 2019 02:33:46 +0200
-Subject: [PATCH libaio 14/14] Fix io_pgetevents() syscall wrapper on 32-bit
+Subject: [PATCH libaio 15/16] Fix io_pgetevents() syscall wrapper on 32-bit
  userland on 64-bit kernels
 Origin: vendor
 Forwarded: not-needed
@@ -24,6 +24,7 @@ We do that, by trying the non-broken layout (that would be used with
 a 32-bit userland on a 32-bit kernel), and if that fails with -EINVAL
 we retry with a structure padded to what the kernel expects.
 
+Sent-Upstream: rejected
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
  src/io_pgetevents.c | 38 +++++++++++++++++++++++++++++++-------
@@ -105,5 +106,5 @@ index c731298..fc3118c 100644
  #undef PADDEDptr
  #undef PADDEDul
 -- 
-2.35.2
+2.40.1
 

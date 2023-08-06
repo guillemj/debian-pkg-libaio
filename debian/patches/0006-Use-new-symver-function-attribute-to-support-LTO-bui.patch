@@ -1,7 +1,7 @@
-From 3ec8be29fc945238788f1fc7f0d998b145a761c7 Mon Sep 17 00:00:00 2001
+From d2d9bd8ec04c3ddbea1f816da47475248135c515 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Tue, 2 Nov 2021 22:37:32 +0100
-Subject: [PATCH libaio 05/14] Use new symver function attribute to support LTO
+Subject: [PATCH libaio 06/16] Use new symver function attribute to support LTO
  builds
 Origin: vendor
 Forwarded: https://marc.info/?l=linux-aio&m=164999309520544
@@ -92,5 +92,5 @@ index f7ce979..59e0bb3 100644
  #if defined(__i386__)
  #include "syscall-i386.h"
 -- 
-2.35.2
+2.40.1
 

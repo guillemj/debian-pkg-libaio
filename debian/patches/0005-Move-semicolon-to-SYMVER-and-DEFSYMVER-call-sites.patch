@@ -1,7 +1,7 @@
-From fa00b019422170118b5b4086b84e2dfd1a50811e Mon Sep 17 00:00:00 2001
+From ed76466ea5e551a916e3003b8ed3d7afd5248e9a Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 3 Nov 2021 00:20:50 +0100
-Subject: [PATCH libaio 04/14] Move semicolon to SYMVER and DEFSYMVER call
+Subject: [PATCH libaio 05/16] Move semicolon to SYMVER and DEFSYMVER call
  sites
 Origin: vendor
 Forwarded: https://marc.info/?l=linux-aio&m=164999309420541
@@ -65,5 +65,5 @@ index d2a117b..f7ce979 100644
  #if defined(__i386__)
  #include "syscall-i386.h"
 -- 
-2.35.2
+2.40.1
 

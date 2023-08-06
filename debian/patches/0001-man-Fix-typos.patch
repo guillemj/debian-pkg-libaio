@@ -1,7 +1,7 @@
 From f95e1898b6efd3eaf50273bd1c5a8a40816b5160 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 10 Oct 2021 06:14:51 +0200
-Subject: [PATCH libaio 01/14] man: Fix typos
+Subject: [PATCH libaio 01/16] man: Fix typos
 Origin: vendor
 Forwarded: https://marc.info/?l=linux-aio&m=164999309220532
 
@@ -34,5 +34,5 @@ index bfa9836..c4554a5 100644
  		    howmany(length - offset, AIO_BLKSIZE));
  	if (n > 0) {
 -- 
-2.35.2
+2.40.1
 

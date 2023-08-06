@@ -1,6 +1,8 @@
 libaio (0.3.113-5) UNRELEASED; urgency=medium
 
   * Wrap fields in debian/tests/control.
+  * Fix upstream build system to remove all test artifacts on clean.
+    Reported by Lucas Nussbaum <lucas@debian.org>.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 06 Aug 2023 21:03:17 +0200
 

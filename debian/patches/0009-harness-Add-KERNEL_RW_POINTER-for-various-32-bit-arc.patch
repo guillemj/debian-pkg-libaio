@@ -1,7 +1,7 @@
-From 046d978cd399324cb3bca3bb2e1b72fb0bd8d9c3 Mon Sep 17 00:00:00 2001
+From 2b7c98e3861ae0d4e452d3d652643976fa64ed13 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 03:30:09 +0200
-Subject: [PATCH libaio 08/14] harness: Add KERNEL_RW_POINTER for various
+Subject: [PATCH libaio 09/16] harness: Add KERNEL_RW_POINTER for various
  32-bit architectures
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
@@ -31,5 +31,5 @@ index 82e9c69..0eed7bd 100644
  //#warning Not really sure where kernel memory is.  Guessing.
  #define KERNEL_RW_POINTER	((void *)0xffffffff81000000)
 -- 
-2.35.2
+2.40.1
 

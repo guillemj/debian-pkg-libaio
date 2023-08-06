@@ -1,7 +1,7 @@
-From 588df950b1867d224a6227b5d64a0186c8a5c5f5 Mon Sep 17 00:00:00 2001
+From 86b9a1c53b40622d1d72ff338d3397315dbdb799 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 12 Apr 2020 03:44:43 +0200
-Subject: [PATCH libaio 07/14] syscall: Fix ia64 definitions to match exactly
+Subject: [PATCH libaio 08/16] syscall: Fix ia64 definitions to match exactly
  the kernel
 
 Otherwise we get preprocessor warnings due to the redefinitions.
@@ -28,5 +28,5 @@ index a21e93b..765c423 100644
 +#define __NR_io_submit		(__NR_Linux + 217)
 +#define __NR_io_cancel		(__NR_Linux + 218)
 -- 
-2.35.2
+2.40.1
 

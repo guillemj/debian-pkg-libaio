@@ -1,7 +1,7 @@
-From a7cb322acddb2ab595a51beffb74942e45bb54f2 Mon Sep 17 00:00:00 2001
+From 374f18277ef714ec8db8cdc3bbdafadef8a7e2ab Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 03:22:10 +0200
-Subject: [PATCH libaio 10/14] Add PARISC support
+Subject: [PATCH libaio 11/16] Add PARISC support
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
@@ -62,5 +62,5 @@ index 4e56894..3a6c85e 100644
  #include "syscall-mips.h"
  #elif defined(__aarch64__) || defined(__loongarch__) || defined(__riscv)
 -- 
-2.35.2
+2.40.1
 

@@ -1,7 +1,7 @@
-From 90fde4fb458fbf1d497c427c3f945f3d7ee11684 Mon Sep 17 00:00:00 2001
+From b108f741b6ebd1e68a0392a72ba8e35537689ba0 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Tue, 19 Apr 2022 15:45:39 +0200
-Subject: [PATCH libaio] harness: Disable failing test 23
+Subject: [PATCH libaio 16/16] harness: Disable failing test 23
 Origin: vendor
 Forwarded: not-needed
 
@@ -18,7 +18,7 @@ Signed-off-by: Guillem Jover <guillem@hadrons.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/harness/Makefile b/harness/Makefile
-index 8cb27fa..01613e7 100644
+index ae4e45e..ff0a041 100644
 --- a/harness/Makefile
 +++ b/harness/Makefile
 @@ -1,6 +1,6 @@
@@ -30,5 +30,5 @@ index 8cb27fa..01613e7 100644
  PROGS:=$(PARTPROGS) $(EXTRAPROGS)
  HARNESS_SRCS:=main.c
 -- 
-2.35.2
+2.40.1
 

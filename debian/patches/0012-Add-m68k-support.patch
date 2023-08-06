@@ -1,7 +1,7 @@
-From bfbe6653ef0a9bac41ea54f1f3a12c21d5ff0a57 Mon Sep 17 00:00:00 2001
+From 6839e97b30b41fe4ca13d35d947b11a6ae52bac0 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 03:25:22 +0200
-Subject: [PATCH libaio 11/14] Add m68k support
+Subject: [PATCH libaio 12/16] Add m68k support
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
@@ -49,5 +49,5 @@ index 3a6c85e..e3825df 100644
  #include "syscall-parisc.h"
  #elif defined(__mips__)
 -- 
-2.35.2
+2.40.1
 
