@@ -1,3 +1,10 @@
+libaio (0.3.113-6) UNRELEASED; urgency=medium
+
+  * Switch from future=+lfs to abi=+lfs build flags feature, and Build-Depends
+    on dpkg-dev >= 1.22.0.
+
+ -- Guillem Jover <guillem@debian.org>  Wed, 17 Jan 2024 02:57:39 +0100
+
 libaio (0.3.113-5) unstable; urgency=medium
 
   * Wrap fields in debian/tests/control.
