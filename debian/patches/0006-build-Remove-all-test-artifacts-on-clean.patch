@@ -1,7 +1,7 @@
-From 42c45d44a68eaab67776477706fee811508560e1 Mon Sep 17 00:00:00 2001
+From 1859031a47b56a13db2e181902e53691edd4d08b Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 6 Aug 2023 20:56:10 +0200
-Subject: [PATCH libaio 04/16] build: Remove all test artifacts on clean
+Subject: [PATCH libaio 06/26] build: Remove all test artifacts on clean
 
 We create these artifacts when running the test suite, so should remove
 them when running the clean target.
@@ -28,5 +28,5 @@ index 8cb27fa..ae4e45e 100644
  .PHONY:
  
 -- 
-2.40.1
+2.43.0
 

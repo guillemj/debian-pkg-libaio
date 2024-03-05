@@ -1,7 +1,7 @@
-From 725d6873f853324ca09dfed1cf8c5cb7826ce9aa Mon Sep 17 00:00:00 2001
+From dad807a71fdc9af5e26fa45b9f0e338fe517c1d3 Mon Sep 17 00:00:00 2001
 From: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
 Date: Sun, 12 Apr 2020 03:30:41 +0200
-Subject: [PATCH libaio 13/16] Add SH support
+Subject: [PATCH libaio 18/26] Add SH support
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
@@ -26,7 +26,7 @@ index 99d393f..ac0fba2 100644
  #elif defined(__hppa__)
  #define KERNEL_RW_POINTER	((void *)0x10100000)
 diff --git a/src/libaio.h b/src/libaio.h
-index af02ec0..2dbb6bb 100644
+index 684bc7e..474dbd6 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
 @@ -52,7 +52,7 @@ typedef enum io_iocb_cmd {
@@ -72,5 +72,5 @@ index e3825df..57dd1fa 100644
  #include "syscall-generic.h"
  #else
 -- 
-2.40.1
+2.43.0
 

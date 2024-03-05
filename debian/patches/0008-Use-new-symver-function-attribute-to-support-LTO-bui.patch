@@ -1,10 +1,8 @@
-From d2d9bd8ec04c3ddbea1f816da47475248135c515 Mon Sep 17 00:00:00 2001
+From cd2e1fdcf6a3474ac874303989e05e8333c7d2a2 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Tue, 2 Nov 2021 22:37:32 +0100
-Subject: [PATCH libaio 06/16] Use new symver function attribute to support LTO
+Subject: [PATCH libaio 08/26] Use new symver function attribute to support LTO
  builds
-Origin: vendor
-Forwarded: https://marc.info/?l=linux-aio&m=164999309520544
 
 The LTO support cannot work properly when there are versioned symbols
 via asm statements, as those are not seen by the compiler. Use the new
@@ -13,6 +11,8 @@ function attributes if supported instead of the asm statements.
 We need to move the SYMVER calls after the function definitions
 otherwise it will reference symbols not yet seen.
 
+Origin: vendor
+Forwarded: https://marc.info/?l=linux-aio&m=164999309520544
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
  src/compat-0_1.c |  7 +++----
@@ -92,5 +92,5 @@ index f7ce979..59e0bb3 100644
  #if defined(__i386__)
  #include "syscall-i386.h"
 -- 
-2.40.1
+2.43.0
 

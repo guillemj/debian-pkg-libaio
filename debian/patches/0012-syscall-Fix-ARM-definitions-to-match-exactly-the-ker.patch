@@ -1,7 +1,7 @@
-From 16dbb3e9fca41d30065e0f5f86cc29724ecded74 Mon Sep 17 00:00:00 2001
+From 19fca4e7582fc39def19c41dc5225e014156c553 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 12 Apr 2020 03:39:47 +0200
-Subject: [PATCH libaio 07/16] syscall: Fix ARM definitions to match exactly
+Subject: [PATCH libaio 12/26] syscall: Fix ARM definitions to match exactly
  the kernel
 
 Otherwise we get preprocessor warnings due to the redefinitions.
@@ -30,5 +30,5 @@ index 556852b..315a37b 100644
 +#define __NR_io_submit		(__NR_SYSCALL_BASE + 246)
 +#define __NR_io_cancel		(__NR_SYSCALL_BASE + 247)
 -- 
-2.40.1
+2.43.0
 

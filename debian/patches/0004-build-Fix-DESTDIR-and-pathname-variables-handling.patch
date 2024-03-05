@@ -1,7 +1,7 @@
-From 67a28d3c066465668ebffb9ebfb71e89f0e5c19c Mon Sep 17 00:00:00 2001
+From dd9f5dedcf99ea734500cddb1925bc1cdea097d0 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 12 Apr 2020 03:58:12 +0200
-Subject: [PATCH libaio 02/16] build: Fix DESTDIR and pathname variables
+Subject: [PATCH libaio 04/26] build: Fix DESTDIR and pathname variables
  handling
 
 The convention for DESTDIR is that it is only prefixed during the
@@ -73,5 +73,5 @@ index d080a1b..9a36d0d 100644
  
  $(libaio_objs): libaio.h
 -- 
-2.40.1
+2.43.0
 

@@ -1,7 +1,7 @@
-From dd2a4c0d176b82781040c08a39fa4c75ccca63f5 Mon Sep 17 00:00:00 2001
+From 8fcd6ce582be188c068751f5133c511a341b2819 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Sun, 12 Apr 2020 04:01:27 +0200
-Subject: [PATCH libaio 03/16] build: Honor user build flags
+Subject: [PATCH libaio 05/26] build: Honor user build flags
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -100,5 +100,5 @@ index 9a36d0d..9a1ba51 100644
  install: $(all_targets)
  	install -D -m 644 libaio.h $(DESTDIR)$(includedir)/libaio.h
 -- 
-2.40.1
+2.43.0
 

@@ -49,3 +49,9 @@ override_dh_auto_install:
 
 override_dh_installchangelogs:
 	dh_installchangelogs --no-trim
+
+override_dh_makeshlibs:
+	# XXX: Ideally we'd also rename the udeb, but d-i does not really
+	# care about file conflicts, and that would take us through NEW
+	# in the middle of the time64 transition.
+	dh_makeshlibs --add-udeb=libaio1-udeb

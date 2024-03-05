@@ -1,7 +1,7 @@
-From 374f18277ef714ec8db8cdc3bbdafadef8a7e2ab Mon Sep 17 00:00:00 2001
+From ca23ee0222a148339d45945e744f7a4663d03cdc Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 03:22:10 +0200
-Subject: [PATCH libaio 11/16] Add PARISC support
+Subject: [PATCH libaio 16/26] Add PARISC support
 
 Signed-off-by: Guillem Jover <guillem@hadrons.org>
 ---
@@ -26,7 +26,7 @@ index 33d8e46..01c81aa 100644
  #define KERNEL_RW_POINTER	((void *)0xf0010000)
  #else
 diff --git a/src/libaio.h b/src/libaio.h
-index 570ef2b..af02ec0 100644
+index bd882c2..684bc7e 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
 @@ -77,6 +77,7 @@ typedef enum io_iocb_cmd {
@@ -62,5 +62,5 @@ index 4e56894..3a6c85e 100644
  #include "syscall-mips.h"
  #elif defined(__aarch64__) || defined(__loongarch__) || defined(__riscv)
 -- 
-2.40.1
+2.43.0
 

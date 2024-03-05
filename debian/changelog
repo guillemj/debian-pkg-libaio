@@ -2,6 +2,34 @@ libaio (0.3.113-6) UNRELEASED; urgency=medium
 
   * Switch from future=+lfs to abi=+lfs build flags feature, and Build-Depends
     on dpkg-dev >= 1.22.0.
+  * Add time64 support:
+    - Remove dead code for syscall handling.
+    - Refactor code to use an internal implementation for public functions
+      that handle timespec, by switching them to always use __kernel_timespec,
+      and add conversion functions to map from 'struct timespec' to
+      'struct __kernel_timespec', and from 'struct __kernel_timespec' to
+      'struct __kernel_old_timespec'.
+    - Add support for io_pgetevents_time64() Linux syscall, but disable it
+      for now as it only works on 32-bit kernels, but not on the compat
+      mode in 64-bit kernels running 32-bit userland, will be fixed in Linux
+      in parallel, as the timeouts used are supposed to be relative anyway,
+      and this does not and will not break ABI.
+    - Add dual time32/time64 ABI support by adding io_getevents_time64() and
+      io_pgetevents_time64() library functions on 32-bit architectures, that
+      get redirected from the io_getevents() and io_pgetevents() functions
+      when the user sets _TIME_BITS=64.
+    - Perform a SONAME bump to avoid stomping on upstream SONAME. Once and if
+      the new symbols are accepted by upstream then we can merge that back
+      into libaio.so.1 and drop the t64 packages and temporarily provide
+      a compat symlink for the t64 SONAME for a smooth transition back. This
+      should also be an easier way to revert this transition when there are
+      no file conflicts involved, and does not block on upstream support.
+    - Do not rename the udeb from libaio1-udeb, as d-i does not care, and
+      that would require a pointless trip through NEW. But update the shlibs
+      references for the libaio1t64 rename.
+    - We do not need a dependency on a newer dpkg-dev nor gcc as we are
+      explicitly handling the time64 dual-ABI independently of the toolchain.
+    Closes: #1062218
 
  -- Guillem Jover <guillem@debian.org>  Wed, 17 Jan 2024 02:57:39 +0100
 

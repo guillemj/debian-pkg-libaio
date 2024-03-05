@@ -1,7 +1,7 @@
-From f250ac83c2007e81863aeace3dd3fdcfd5f549a5 Mon Sep 17 00:00:00 2001
+From 75b6aca9086a656747f7d49fb365daa6ab90a4d0 Mon Sep 17 00:00:00 2001
 From: Guillem Jover <guillem@hadrons.org>
 Date: Wed, 14 Aug 2019 03:18:50 +0200
-Subject: [PATCH libaio 10/16] Fix and improve MIPS support
+Subject: [PATCH libaio 15/26] Fix and improve MIPS support
 
 Fix structure padding for MIPS 64, add syscall definitions, and the
 kernel R/W pointer.
@@ -29,7 +29,7 @@ index 0eed7bd..33d8e46 100644
  #elif defined(__arm__) || defined(__s390__)
  #define KERNEL_RW_POINTER	((void *)0x00010000)
 diff --git a/src/libaio.h b/src/libaio.h
-index 24b4b8a..570ef2b 100644
+index f247c96..bd882c2 100644
 --- a/src/libaio.h
 +++ b/src/libaio.h
 @@ -52,7 +52,9 @@ typedef enum io_iocb_cmd {
@@ -133,5 +133,5 @@ index 59e0bb3..4e56894 100644
  #include "syscall-generic.h"
  #else
 -- 
-2.40.1
+2.43.0
 

@@ -12,7 +12,7 @@ Build-Depends:
  debhelper (>= 13.10),
  dpkg-dev (>= 1.22.0),
 
-Package: libaio1
+Package: libaio1t64
 Architecture: linux-any
 Multi-Arch: same
 Pre-Depends:
@@ -48,7 +48,7 @@ Architecture: linux-any
 Multi-Arch: same
 Depends:
  ${misc:Depends},
- libaio1 (= ${binary:Version}),
+ libaio1t64 (= ${binary:Version}),
 Description: Linux kernel AIO access library - development files
  This library enables userspace to use Linux kernel asynchronous I/O
  system calls, important for the performance of databases and other
