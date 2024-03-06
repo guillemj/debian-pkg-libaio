@@ -15,10 +15,8 @@ include /usr/share/dpkg/buildtools.mk
 #   sh4
 #     (emulated, no proper test results)
 #   sparc64
-#     (5: 512 instead of EFAULT on write)
 #     (19: mremap EINVAL)
 #   hppa
-#     (5: 512 instead of EFAULT on write)
 #     (19: mremap EINVAL)
 #     (17: looping, timeout?)
 ifneq (,$(filter $(DEB_HOST_ARCH),m68k sh4 sparc64 hppa))

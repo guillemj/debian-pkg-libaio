@@ -27,3 +27,4 @@
 0024-Disable-io_pgetevents_time64-as-it-is-broken-on-64-b.patch
 0025-build-Use-a-temporary-SONAME-bump-to-avoid-stomping-.patch
 0026-harness-Disable-failing-test-23.patch
+0001-harness-Hardcode-list-of-ports-that-cannot-check-PRO.patch

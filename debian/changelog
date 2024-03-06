@@ -2,6 +2,9 @@ libaio (0.3.113-7) UNRELEASED; urgency=medium
 
   * Do not mark test suite as flaky on riscv64 and x32, these ports now work
     as expected.
+  * Hardcode list of ports that cannot check for a readable PROT_WRITE, and
+    instead expect the return value to be SIZE. This includes hppa, sparc
+    and loong64.
 
  -- Guillem Jover <guillem@debian.org>  Wed, 06 Mar 2024 03:12:20 +0100
 
