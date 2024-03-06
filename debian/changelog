@@ -1,4 +1,4 @@
-libaio (0.3.113-7) UNRELEASED; urgency=medium
+libaio (0.3.113-7) unstable; urgency=medium
 
   * Do not mark test suite as flaky on riscv64 and x32, these ports now work
     as expected.
@@ -6,7 +6,7 @@ libaio (0.3.113-7) UNRELEASED; urgency=medium
     instead expect the return value to be SIZE. This includes hppa, sparc
     and loong64.
 
- -- Guillem Jover <guillem@debian.org>  Wed, 06 Mar 2024 03:12:20 +0100
+ -- Guillem Jover <guillem@debian.org>  Wed, 06 Mar 2024 13:20:49 +0100
 
 libaio (0.3.113-6) unstable; urgency=medium
 
