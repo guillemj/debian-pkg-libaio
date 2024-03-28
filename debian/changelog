@@ -1,11 +1,11 @@
-libaio (0.3.113-8) UNRELEASED; urgency=medium
+libaio (0.3.113-8) unstable; urgency=medium
 
   * Add a backwards compatibility symlink for the libaio.so.1 SONAME in the
     udeb, as the SONAME bump we did was ABI compatible, but just done to
     avoid stomping over upstream interface, where this is not a concern
     for the d-i system. (Closes: #1067831)
 
- -- Guillem Jover <guillem@debian.org>  Thu, 28 Mar 2024 00:59:06 +0100
+ -- Guillem Jover <guillem@debian.org>  Thu, 28 Mar 2024 01:01:37 +0100
 
 libaio (0.3.113-7) unstable; urgency=medium
 
