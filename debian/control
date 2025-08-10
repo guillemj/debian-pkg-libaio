@@ -1,6 +1,5 @@
 Source: libaio
 Maintainer: Guillem Jover <guillem@debian.org>
-Priority: optional
 Section: libs
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/libaio.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/libaio.git
