@@ -1,3 +1,9 @@
+libaio (0.3.113-9) UNRELEASED; urgency=medium
+
+  * Remove «Rules-Requires-Root: no», which is the current default.
+
+ -- Guillem Jover <guillem@debian.org>  Sun, 10 Aug 2025 19:51:28 +0200
+
 libaio (0.3.113-8) unstable; urgency=medium
 
   * Add a backwards compatibility symlink for the libaio.so.1 SONAME in the
