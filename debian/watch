@@ -1,3 +1,5 @@
-# Site		Directory		Pattern			Version	Script
-version=4
-https://releases.pagure.org/libaio/libaio-([\d\.]+)\.tar\.(?:gz|xz) debian uupdate
+Version: 5
+
+Source: https://releases.pagure.org/libaio/
+Matching-Pattern: libaio-([\d\.]+)\.tar\.(?:gz|xz)
+Update-Script: uupdate

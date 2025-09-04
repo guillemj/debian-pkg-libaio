@@ -6,6 +6,7 @@ libaio (0.3.113-9) UNRELEASED; urgency=medium
   * Remove lintian overrides that no longer get emitted.
   * Add spaces around make assignment operators to distinguish from shell ones.
   * Finish multi-line commands in debian/rules with a comment marker.
+  * Switch to debian/watch version 5.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 10 Aug 2025 19:51:28 +0200
 
