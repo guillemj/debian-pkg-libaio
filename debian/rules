@@ -35,11 +35,13 @@ endif
 	$(if $(TESTS_FLAKY),-)$(MAKE) partcheck \
 	  CPPFLAGS="$(CPPFLAGS)" \
 	  CFLAGS="$(CFLAGS)" \
-	  LDFLAGS="$(LDFLAGS)"
+	  LDFLAGS="$(LDFLAGS)" \
+	  # EOC
 
 override_dh_auto_install:
 	dh_auto_install -- \
-	  libdir=/usr/lib/$(DEB_HOST_MULTIARCH)
+	  libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
+	  # EOC
 
 override_dh_installchangelogs:
 	dh_installchangelogs --no-trim
