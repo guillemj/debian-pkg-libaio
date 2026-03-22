@@ -1,4 +1,4 @@
-libaio (0.3.113-9) UNRELEASED; urgency=medium
+libaio (0.3.113-9) unstable; urgency=medium
 
   * Remove «Rules-Requires-Root: no», which is the current default.
   * Remove «Priority: optional», which is the current default.
@@ -9,7 +9,7 @@ libaio (0.3.113-9) UNRELEASED; urgency=medium
   * Switch to debian/watch version 5.
   * Switch to Standards-Version 4.7.3 (no changes needed).
 
- -- Guillem Jover <guillem@debian.org>  Sun, 10 Aug 2025 19:51:28 +0200
+ -- Guillem Jover <guillem@debian.org>  Sun, 22 Mar 2026 04:45:17 +0100
 
 libaio (0.3.113-8) unstable; urgency=medium
 
