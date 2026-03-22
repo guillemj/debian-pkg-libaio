@@ -4,7 +4,7 @@ Section: libs
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/libaio.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/libaio.git
 Homepage: https://pagure.io/libaio
-Standards-Version: 4.6.2
+Standards-Version: 4.7.3
 Build-Depends:
  debhelper-compat (= 13),
  debhelper (>= 13.10),
