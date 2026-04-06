@@ -7,7 +7,6 @@ Homepage: https://pagure.io/libaio
 Standards-Version: 4.7.3
 Build-Depends:
  debhelper-compat (= 13),
- debhelper (>= 13.10),
 
 Package: libaio1t64
 Architecture: linux-any
