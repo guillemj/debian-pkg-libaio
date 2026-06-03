@@ -7,6 +7,10 @@ Homepage: https://pagure.io/libaio
 Standards-Version: 4.7.4
 Build-Depends:
  debhelper-compat (= 13),
+Description: Linux kernel AIO access library
+ This library enables userspace to use Linux kernel asynchronous I/O
+ system calls, important for the performance of databases and other
+ advanced applications.
 
 Package: libaio1t64
 Architecture: linux-any
@@ -16,12 +20,10 @@ Pre-Depends:
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
-Description: Linux kernel AIO access library - shared library
- This library enables userspace to use Linux kernel asynchronous I/O
- system calls, important for the performance of databases and other
- advanced applications.
- .
+Description: ${source:Synopsis} - shared library
  This package contains the shared library.
+ .
+ ${source:Extended-Description}
 
 Package: libaio1-udeb
 Package-Type: udeb
@@ -31,12 +33,10 @@ Build-Profiles: <!noudeb>
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
-Description: Linux kernel AIO access library - shared library
- This library enables userspace to use Linux kernel asynchronous I/O
- system calls, important for the performance of databases and other
- advanced applications.
- .
+Description: ${source:Synopsis} - udeb shared library
  This package contains the udeb shared library.
+ .
+ ${source:Extended-Description}
 
 Package: libaio-dev
 Section: libdevel
@@ -45,9 +45,7 @@ Multi-Arch: same
 Depends:
  ${misc:Depends},
  libaio1t64 (= ${binary:Version}),
-Description: Linux kernel AIO access library - development files
- This library enables userspace to use Linux kernel asynchronous I/O
- system calls, important for the performance of databases and other
- advanced applications.
- .
+Description: ${source:Synopsis} - development files
  This package contains the static library and the header files.
+ .
+ ${source:Extended-Description}
