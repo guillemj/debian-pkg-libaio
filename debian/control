@@ -3,7 +3,7 @@ Maintainer: Guillem Jover <guillem@debian.org>
 Section: libs
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/libaio.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/libaio.git
-Homepage: https://pagure.io/libaio
+Homepage: https://codeberg.org/jmoyer/libaio
 Standards-Version: 4.7.4
 Build-Depends:
  debhelper-compat (= 13),

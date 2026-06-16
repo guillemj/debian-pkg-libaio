@@ -1,5 +1,6 @@
 Version: 5
 
-Source: https://releases.pagure.org/libaio/
-Matching-Pattern: libaio-([\d\.]+)\.tar\.(?:gz|xz)
+Source: https://codeberg.org/api/v1/repos/jmoyer/libaio/releases
+Matching-Pattern: https://codeberg.org/jmoyer/libaio/releases/download/libaio-([\d\.]+)/libaio-(?:[\d\.]+)\.tar\.(?:gz|xz)
+Search-Mode: plain
 Update-Script: uupdate

@@ -1,4 +1,4 @@
-Repository: https://pagure.io/libaio.git
-Repository-Browse: https://pagure.io/libaio
-Bug-Database: https://pagure.io/libaio/issues
-Bug-Submit: https://pagure.io/libaio/new_issue
+Repository: https://codeberg.org/jmoyer/libaio.git
+Repository-Browse: https://codeberg.org/jmoyer/libaio
+Bug-Database: https://codeberg.org/jmoyer/libaio/issues
+Bug-Submit: https://codeberg.org/jmoyer/libaio/issues/new
